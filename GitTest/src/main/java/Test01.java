@@ -10,6 +10,8 @@ public class Test01 {
 		System.out.println("승현이 더 최고~2!!");
 		System.out.println("동동댄스 푸쉬 확인 완료!!");
 		System.out.println("동동댄스~~~~~");
+		System.out.println("추천곡 : drowning love (piano)~");
+		System.out.println("추천곡 : drowning love (piano)~");
 	}
 
 }
