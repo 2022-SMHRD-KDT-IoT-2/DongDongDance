@@ -6,8 +6,8 @@ public class Test01 {
 		System.out.println("¼¼Á¤ Ä¿¹Ô!!!!!!!!!!!!!!!!!");
 		System.out.println("¼ºÁØ Ä¿¹Ô!!");
 		System.out.println("¼öÁøÂ¯ ÃÖ¾Ç¾Ç¾Ç¾Ç~!!");
-		System.out.println("½ÂÇöÀÌ ´õ ÃÖ°í~!!");
-		System.out.println("½ÂÇöÀÌ ´õ ÃÖ°í~2!!");
+		System.out.println("½ÂÇöÀÌ ÃÖ¾Ç");
+		System.out.println("666¾Ç¸¶½ÂÇö666");
 		System.out.println("µ¿µ¿´í½º Çª½¬ È®ÀÎ ¿Ï·á!!");
 		System.out.println("µ¿µ¿´í½º~~~~~");
 		System.out.println("ÃßÃµ°î : drowning love (piano)~");
