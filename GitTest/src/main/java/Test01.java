@@ -7,6 +7,7 @@ public class Test01 {
 		System.out.println("2¹øÂÅ Ä¿¹Ô!!");
 		System.out.println("¼¼Á¤ Ä¿¹Ô!!");
 		System.out.println("¼ºÁØ Ä¿¹Ô!!");
+		System.out.println("¼öÁøÂ¯ ÃÖ°í~!!");
 		
 	}
 
