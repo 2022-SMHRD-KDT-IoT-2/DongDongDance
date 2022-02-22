@@ -5,7 +5,7 @@ public class Test01 {
 		
 		System.out.println("1锅掳 目乖!!");
 		System.out.println("2锅屡 目乖!!");
-		System.out.println("技沥 目乖窃!!");
+		System.out.println("技沥 目乖!!");
 	}
 
 }
