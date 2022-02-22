@@ -8,7 +8,8 @@ public class Test01 {
 		System.out.println("세정 커밋!!");
 		System.out.println("성준 커밋!!");
 		System.out.println("수진짱 최고~!!");
-		
+		System.out.println("승현이 더 최고~!!");
+		System.out.println("승현이 더 최고~2!!");
 	}
 
 }
