@@ -12,6 +12,7 @@ public class Test01 {
 		System.out.println("µ¿µ¿´í½º~~~~~");
 		System.out.println("ÃßÃµ°î : drowning love (piano)~");
 		System.out.println("ÃßÃµ°î : drowning love (piano)~");
+		System.out.println("Â¯±¸ Â¯¾Æ ÈòµÕÀÌ ¼öÁö À¯¸®~ °«º®Á¶~~");
 	}
 
 }
