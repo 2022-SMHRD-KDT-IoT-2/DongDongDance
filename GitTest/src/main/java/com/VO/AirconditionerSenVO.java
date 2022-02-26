@@ -1,4 +1,4 @@
-package com.model;
+package com.VO;
 
 public class AirconditionerSenVO {
 	// ³Ã³­¹æ ¼¾½Ì ¼ø¹ø 
