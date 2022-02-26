@@ -21,13 +21,13 @@
     <nav class="navbar flex-nowrap p-0">
         <div class="navbar-brand-wrapper d-flex align-items-center col-auto">
             <!-- Logo For Mobile View -->
-            <a class="navbar-brand navbar-brand-mobile" href="/">
+            <a class="navbar-brand navbar-brand-mobile" href="index.html">
                 <img class="img-fluid w-100" src="public/img/logo-mini.png" alt="Graindashboard">
             </a>
             <!-- End Logo For Mobile View -->
 
             <!-- Logo For Desktop View -->
-            <a class="navbar-brand navbar-brand-desktop" href="/">
+            <a class="navbar-brand navbar-brand-desktop" href="index.html">
                 <img class="side-nav-show-on-closed" src="public/img/logo-mini.png" alt="Graindashboard" style="width: auto; height: 33px;">
                 <img class="side-nav-hide-on-closed" src="public/img/logo.png" alt="Graindashboard" style="width: auto; height: 33px;">
             </a>
@@ -92,7 +92,7 @@
                 <!-- User Avatar -->
                 <div class="dropdown mx-3 dropdown ml-2">
                     <a id="profileMenuInvoker" class="header-complex-invoker" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#profileMenu" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                        <!--img class="avatar rounded-circle mr-md-2" src="#" alt="John Doe"-->                       
+                        <!--img class="avatar rounded-circle mr-md-2" src="#" alt="John Doe"-->
                         <span class="d-none d-md-block">USER NAME</span>
                         <i class="gd-angle-down d-none d-md-block ml-2"></i>
                     </a>
@@ -132,8 +132,8 @@
             <!-- End Title -->
 
             <!-- Dashboard -->
-            <li class="side-nav-menu-item active">
-                <a class="side-nav-menu-link media align-items-center" href="#">
+            <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="index.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-dashboard"></i>
               </span>
@@ -144,9 +144,9 @@
 
             <!-- Documentation -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="#" target="_blank">
+                <a class="side-nav-menu-link media align-items-center" href="monitoring.html">
               <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-file"></i>
+                <i class="gd-desktop"></i>
               </span>
                     <span class="side-nav-fadeout-on-closed media-body">모니터링</span>
                 </a>
@@ -158,7 +158,7 @@
             <!-- End Title -->
 
             <!-- Users -->
-            <li class="side-nav-menu-item side-nav-has-menu">
+            <li class="side-nav-menu-item side-nav-has-menu active side-nav-opened">
                 <a class="side-nav-menu-link media align-items-center" href="#"
                    data-target="#subUsers">
                   <span class="side-nav-menu-icon d-flex mr-3">
@@ -172,8 +172,8 @@
                 </a>
 
                 <!-- Users: subUsers -->
-                <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
-                    <li class="side-nav-menu-item">
+                <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0" style="display: block;">
+                    <li class="side-nav-menu-item active">
                         <a class="side-nav-menu-link" href="users.html">모든사원조회</a>
                     </li>
                     <li class="side-nav-menu-item">
@@ -233,7 +233,7 @@
 
             <!-- Static -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="#">
+                <a class="side-nav-menu-link media align-items-center" href="static-non-auth.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-file"></i>
               </span>
@@ -255,15 +255,15 @@
                     <nav class="d-none d-md-block" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="#">Users</a>
+                                <a href="#">사원관리</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">All Users</li>
+                            <li class="breadcrumb-item active" aria-current="page">모든사원조회</li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
 
                     <div class="mb-3 mb-md-4 d-flex justify-content-between">
-                        <div class="h3 mb-0">Users</div>
+                        <div class="h3 mb-0">사원관리</div>
                     </div>
 
 
