@@ -16,7 +16,7 @@
 			placeholder="area_id을 입력하세요"></li>
 		<li><input type="text" name="area_i_name"
 			placeholder="area_name를 입력하세요"></li>
-		<li><input type="submit" value="삽입!!!"></li>
+		<li><input type="submit" value="삽입!!!"></li> 
 	</form>
 
 	DELETE
