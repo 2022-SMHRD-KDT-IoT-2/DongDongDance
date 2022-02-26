@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.DAO.EmployeeDAO;
-import com.VO.EmployeeVO;
+import com.model.EmployeeVO;
 
 
 @WebServlet("/LoginCon")

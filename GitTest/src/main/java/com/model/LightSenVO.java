@@ -1,4 +1,4 @@
-package com.VO;
+package com.model;
 
 public class LightSenVO {
 	// 조명센싱 순번 

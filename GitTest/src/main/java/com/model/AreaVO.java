@@ -1,4 +1,4 @@
-package com.VO;
+package com.model;
 
 public class AreaVO {
 	 // 구역 아이디 

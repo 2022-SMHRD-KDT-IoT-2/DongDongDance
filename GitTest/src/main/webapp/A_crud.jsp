@@ -1,4 +1,4 @@
-<%@page import="com.VO.AreaVO"%>
+<%@page import="com.model.AreaVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.AreaDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"

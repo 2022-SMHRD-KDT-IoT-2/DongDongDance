@@ -1,4 +1,4 @@
-package com.VO;
+package com.model;
 
 public class LightVO {
 	// 조명 순번 

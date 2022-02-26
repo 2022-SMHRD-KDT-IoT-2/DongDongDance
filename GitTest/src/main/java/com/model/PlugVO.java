@@ -1,4 +1,4 @@
-package com.VO;
+package com.model;
 
 public class PlugVO {
 	// 플러그 순번 
