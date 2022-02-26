@@ -8,6 +8,13 @@ public class AreaVO {
     // ±ΈΏͺ Έν 
     private String areaName;
     
+	public AreaVO(String areaId, String areaStatus, String areaName) {
+		super();
+		this.areaId = areaId;
+		this.areaStatus = areaStatus;
+		this.areaName = areaName;
+	}
+	
 	public String getAreaId() {
 		return areaId;
 	}

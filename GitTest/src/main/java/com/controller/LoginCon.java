@@ -20,7 +20,7 @@ public class LoginCon extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-
+		
 		EmployeeDAO dao = new EmployeeDAO();
 		EmployeeVO vo = dao.login(id, pw);
 		
