@@ -1,23 +1,17 @@
-package com.controller;
+package com.POJO;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.Command.Command;
 import com.DAO.EmployeeDAO;
 import com.VO.EmployeeVO;
 
+public class UpdateEmp2Con implements Command {
 
-@WebServlet("/UpdateEmp2Con")
-public class UpdateEmp2Con extends HttpServlet {
-
-	// 직원용 직원정보 수정
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("euc-kr");
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String pw1 = request.getParameter("pw1"); // 현재 비밀번호
 		String pw2 = request.getParameter("pw2"); // 수정 비밀번호
 		String phone = request.getParameter("pw2"); // 수정 핸드폰 번호
@@ -38,14 +32,10 @@ public class UpdateEmp2Con extends HttpServlet {
 		int cnt = dao.updateEmp2(pw1, pw2, phone, id);
 
 			if(cnt>0) {
-				response.sendRedirect("main1.jsp");
-				System.out.println("수정성공");
 				vo = new EmployeeVO(id, name, seat, status, superid, yn, rfid, area, plug);
 				session.setAttribute("loginvo", vo);
-			}else {
-				response.sendRedirect("main1.jsp");
-				System.out.println("수정실패");
 			}
-	}
-
+			
+		return "main1.jsp";
+}
 }

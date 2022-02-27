@@ -215,27 +215,28 @@ public class EmployeeDAO {
 	}
 	
 	//직원용 직원정보수정
-	public int updateEmp2(String id, String pw, String phone) {
-			int cnt = 0;
+	public int updateEmp2(String pw1, String pw2, String phone, String id) {
+		int cnt = 0;
+		
+		try {
+			connect();
 			
-			try {
-				connect();
-				
-				String sql = "update t_employee set emp_pw = ?, emp_phone = ? where emp_id = ?";
-				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, pw);
-				psmt.setString(2, phone);
-				psmt.setString(3, id);
-				
-				cnt = psmt.executeUpdate();
-				
-			}catch(Exception e){
-				e.printStackTrace();
-			}finally {
-				close();
-			}
-			return cnt;
+			String sql = "update t_employee set emp_pw = ?, emp_phone = ? where emp_name = ? and emp_pw = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, pw1);
+			psmt.setString(2, phone);
+			psmt.setString(3, id);
+			psmt.setString(4, pw2);
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
 		}
+		return cnt;
+	}
 	
 	// 직원 정보 삭제
 	public int deleteEmp(String id) {
