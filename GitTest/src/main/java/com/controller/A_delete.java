@@ -19,7 +19,7 @@ public class A_delete extends HttpServlet {
 		String id = request.getParameter("area_d_id");
 
 		AreaDAO dao = new AreaDAO();
-		int cnt = dao.delete(id);
+		int cnt = dao.deleteArea(id);
 
 		if (cnt > 0) {
 			System.out.println("삭제성공");

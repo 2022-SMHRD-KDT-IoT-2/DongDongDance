@@ -49,7 +49,7 @@ public class AreaDAO {
 			e2.printStackTrace();
 		}
 	}
-	public int join(String id, String name) {
+	public int regArea(String id, String name) {
 
 		int cnt = 0;
 		try {
@@ -72,7 +72,7 @@ public class AreaDAO {
 		return cnt;
 	}
 	
-	public int update(String target_id, String id, String status, String name) { // 일단 인자 다넣음 // 추후 수정
+	public int updateArea(String target_id, String id, String status, String name) { // 일단 인자 다넣음 // 추후 수정
 
 		int cnt = 0;
 		try {
@@ -126,7 +126,7 @@ public class AreaDAO {
 		return al;
 	}
 
-	public int delete(String target_id) {
+	public int deleteArea(String target_id) {
 		int cnt = 0;
 		try {
 			conn();

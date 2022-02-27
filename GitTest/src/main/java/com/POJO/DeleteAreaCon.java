@@ -4,17 +4,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Command.Command;
-import com.DAO.EmployeeDAO;
+import com.DAO.AreaDAO;
 
-public class DeleteEmpCon implements Command {
+public class DeleteAreaCon implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String id = request.getParameter("id");
-		
-		EmployeeDAO dao = new EmployeeDAO();
-		dao.deleteEmp(id);
+		String id = request.getParameter("area_d_id");
 
-		return "main2.jsp";
-}
+		AreaDAO dao = new AreaDAO();
+		dao.deleteArea(id);
+
+		return "A_crud.jsp";
+	}
+	
+
 }

@@ -21,7 +21,7 @@ public class A_joincon extends HttpServlet {
 
 		System.out.println(id + name);
 		AreaDAO dao = new AreaDAO();
-		int cnt = dao.join(id, name);
+		int cnt = dao.regArea(id, name);
 
 		if (cnt > 0) {
 			System.out.println("등록성공");

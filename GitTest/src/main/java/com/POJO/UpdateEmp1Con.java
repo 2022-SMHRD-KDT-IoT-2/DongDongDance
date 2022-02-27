@@ -23,7 +23,7 @@ public class UpdateEmp1Con implements Command {
 		int plug = Integer.parseInt(request.getParameter("plug"));
 			
 		EmployeeDAO dao = new EmployeeDAO();
-		int cnt = dao.updateEmp1(id, name, seat, phone, superid, yn, rfid, area, plug);
+		dao.updateEmp1(id, name, seat, phone, superid, yn, rfid, area, plug);
 	
 		return "main2.jsp";
 }

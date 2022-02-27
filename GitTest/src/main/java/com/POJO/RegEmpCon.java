@@ -24,7 +24,7 @@ public class RegEmpCon implements Command {
 		
 		
 		EmployeeDAO dao = new EmployeeDAO();
-		int cnt = dao.regEmp(id, name, seat, phone, superid, yn, rfid, area, plug);
+		dao.regEmp(id, name, seat, phone, superid, yn, rfid, area, plug);
 		
 		return "main2.jsp";
 }
