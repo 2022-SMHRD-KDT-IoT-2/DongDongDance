@@ -1,4 +1,4 @@
-package com.model;
+package com.VO;
 
 public class RfidVO {
 	// 로그 순번 

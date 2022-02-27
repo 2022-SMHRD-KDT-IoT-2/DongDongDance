@@ -1,4 +1,4 @@
-package com.model;
+package com.VO;
 
 public class PlugSenVO {
 	// 플센 순번 

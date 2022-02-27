@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.model.EmployeeVO;
+import com.VO.EmployeeVO;
 
 
 public class EmployeeDAO {

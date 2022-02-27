@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.model.AreaVO;
+import com.VO.AreaVO;
 
 public class AreaDAO {
 	Connection conn = null;

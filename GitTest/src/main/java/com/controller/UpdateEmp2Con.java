@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.DAO.EmployeeDAO;
-import com.model.EmployeeVO;
+import com.VO.EmployeeVO;
 
 
 @WebServlet("/UpdateEmp2Con")

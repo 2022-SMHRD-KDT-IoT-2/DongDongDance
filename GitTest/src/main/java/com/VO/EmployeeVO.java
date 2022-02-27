@@ -1,4 +1,4 @@
-package com.model;
+package com.VO;
 
 public class EmployeeVO {
 	// 사원 아이디 
