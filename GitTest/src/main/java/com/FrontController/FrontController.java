@@ -10,12 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.Command.Command;
 import com.POJO.DeleteAreaCon;
 import com.POJO.DeleteEmpCon;
+import com.POJO.DeletePlugCon;
 import com.POJO.LoginCon;
 import com.POJO.LogoutCon;
 import com.POJO.RegAreaCon;
 import com.POJO.RegEmpCon;
+import com.POJO.RegPlugCon;
 import com.POJO.UpdateEmp1Con;
 import com.POJO.UpdateEmp2Con;
+import com.POJO.UpdatePlugCon;
 
 
 // 확장자패턴 사용 : 어떤 요청이던 뒤에 .do가 붙어 있으면 이 서블릿에서 받아서 처리
@@ -52,6 +55,12 @@ public class FrontController extends HttpServlet {
 			command = new DeleteEmpCon();
 		}else if(result.equals("DeleteAreaCon.do")) {
 			command = new DeleteAreaCon();
+		}else if(result.equals("RegPlugCon.do")) {
+			command = new RegPlugCon();
+		}else if(result.equals("UpdatePlugCon.do")) {
+			command = new UpdatePlugCon();
+		}else if(result.equals("DeletePlugCon.do")) {
+			command = new DeletePlugCon();
 		}
 		
 		String url = command.execute(request, response);

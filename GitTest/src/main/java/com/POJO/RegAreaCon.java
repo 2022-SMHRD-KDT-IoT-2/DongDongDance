@@ -13,7 +13,6 @@ public class RegAreaCon implements Command {
 		String id = request.getParameter("area_i_id");
 		String name = request.getParameter("area_i_name");
 
-		System.out.println(id + name);
 		AreaDAO dao = new AreaDAO();
 		dao.regArea(id, name);
 		

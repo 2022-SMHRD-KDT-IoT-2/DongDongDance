@@ -14,8 +14,15 @@ public class PlugVO {
     // 구역 아이디 
     private String areaId;
     
-    
-    
+	public PlugVO(int plugSeq, String seatNo, Double plugPower, String plugStatus, String plugInsDate, String areaId) {
+		super();
+		this.plugSeq = plugSeq;
+		this.seatNo = seatNo;
+		this.plugPower = plugPower;
+		this.plugStatus = plugStatus;
+		this.plugInsDate = plugInsDate;
+		this.areaId = areaId;
+	}
 	public int getPlugSeq() {
 		return plugSeq;
 	}
