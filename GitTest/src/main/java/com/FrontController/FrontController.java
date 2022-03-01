@@ -16,9 +16,12 @@ import com.POJO.LogoutCon;
 import com.POJO.RegAreaCon;
 import com.POJO.RegEmpCon;
 import com.POJO.RegPlugCon;
+import com.POJO.UpdateAreaStCon;
 import com.POJO.UpdateEmp1Con;
 import com.POJO.UpdateEmp2Con;
+import com.POJO.UpdateEmpStCon;
 import com.POJO.UpdatePlugCon;
+import com.POJO.UpdatePlugStCon;
 
 
 // 확장자패턴 사용 : 어떤 요청이던 뒤에 .do가 붙어 있으면 이 서블릿에서 받아서 처리
@@ -61,6 +64,12 @@ public class FrontController extends HttpServlet {
 			command = new UpdatePlugCon();
 		}else if(result.equals("DeletePlugCon.do")) {
 			command = new DeletePlugCon();
+		}else if(result.equals("UpdatePlugStCon.do")) {
+			command = new UpdatePlugStCon();
+		}else if(result.equals("UpdateAreaStCon.do")) {
+			command = new UpdateAreaStCon();
+		}else if(result.equals("UpdateEmpStCon.do")) {
+			command = new UpdateEmpStCon();
 		}
 		
 		String url = command.execute(request, response);

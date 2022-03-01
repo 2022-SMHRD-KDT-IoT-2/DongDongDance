@@ -221,7 +221,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "update t_employee set emp_pw = ?, emp_phone = ? where emp_name = ? and emp_pw = ?";
+			String sql = "update t_employee set emp_pw = ?, emp_phone = ? where emp_id = ? and emp_pw = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, pw1);
 			psmt.setString(2, phone);
@@ -237,6 +237,30 @@ public class EmployeeDAO {
 		}
 		return cnt;
 	}
+	
+	// 직원 상태 수정
+	public int updateStatus(String id, String status) {
+		int cnt = 0;
+		
+		try {
+			connect();
+			
+			String sql = "update t_employee set emp_status = ? where emp_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, status);
+			psmt.setString(2, id);
+
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
 	
 	// 직원 정보 삭제
 	public int deleteEmp(String id) {

@@ -6,18 +6,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.Command.Command;
 import com.DAO.AreaDAO;
 
-public class UpdateAreaCon implements Command {
+public class UpdateAreaStCon implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String target_id = request.getParameter("area_u_tid");
-		String id = request.getParameter("area_u_id");
-		String name = request.getParameter("area_u_name");
-
-		AreaDAO dao = new AreaDAO();
-		dao.updateArea(target_id, id, name);
+		String id = request.getParameter("id");
+		String status = request.getParameter("status");
 		
-		return "A_crud.jsp";
+		AreaDAO dao = new AreaDAO();
+		dao.updateStatus(id, status);
+		
+		return "#.jsp";
 	}
 
 }

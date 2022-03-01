@@ -32,10 +32,9 @@ public class A_update extends HttpServlet {
 		AreaVO vo = (AreaVO) session.getAttribute("#");
 		String target_id = request.getParameter("area_u_tid");
 		String id = request.getParameter("area_u_id");
-		String status = request.getParameter("area_u_status");
 		String name = request.getParameter("area_u_name");
 
-		cnt = dao.updateArea(target_id, id, status, name);
+		cnt = dao.updateArea(target_id, id, name);
 		if (cnt > 0) {
 			System.out.println("업데이트 성공");
 			response.sendRedirect("A_crud.jsp");

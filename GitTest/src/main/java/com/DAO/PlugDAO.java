@@ -87,6 +87,29 @@ public class PlugDAO {
 		return cnt;
 	}
 	
+	// 플러그 상태 수정
+	public int updateStatus(int seq, String status) {
+		int cnt = 0;
+		
+		try {
+			connect();
+			
+			String sql = "update t_plug set plug_status = ? where plug_seq = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, status);
+			psmt.setInt(2, seq);
+
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
 	public int deletePlug(int seq) {
 		int cnt = 0;
 		try {
