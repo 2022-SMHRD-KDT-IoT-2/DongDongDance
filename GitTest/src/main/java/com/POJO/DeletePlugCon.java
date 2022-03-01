@@ -4,19 +4,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Command.Command;
-import com.DAO.AreaDAO;
+import com.DAO.PlugDAO;
 
-public class DeleteAreaCon implements Command {
+public class DeletePlugCon implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String id = request.getParameter("area_d_id");
+		int seq = Integer.parseInt(request.getParameter("seq"));
 
-		AreaDAO dao = new AreaDAO();
-		dao.deleteArea(id);
+		PlugDAO dao = new PlugDAO();
+		dao.deletePlug(seq);
 
 		return "main2.jsp";
 	}
-	
 
 }

@@ -162,7 +162,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "insert into t_employee values (?, ?, ?, ?, ?, D, sysdate, ?, ?, ?, ?, ?)";
+			String sql = "insert into t_employee values (?, ?, ?, ?, ?, 'D', sysdate, ?, ?, ?, ?, ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, id);

@@ -2,11 +2,9 @@ package com.POJO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.Command.Command;
 import com.DAO.EmployeeDAO;
-import com.VO.EmployeeVO;
 
 public class RegEmpCon implements Command {
 
