@@ -72,20 +72,42 @@ public class AreaDAO {
 		return cnt;
 	}
 	
-	public int updateArea(String target_id, String id, String status, String name) { // 일단 인자 다넣음 // 추후 수정
+	public int updateArea(String target_id, String id, String name) {
 
 		int cnt = 0;
 		try {
 			conn();
 
-			String sql = "update T_AREA set AREA_ID = ?, AREA_STATUS = ?, AREA_NAME = ? where AREA_ID = ?";
+			String sql = "update T_AREA set AREA_ID = ?, AREA_NAME = ? where AREA_ID = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
-			psmt.setString(2, status);
-			psmt.setString(3, name);
-			psmt.setString(4, target_id);
+			psmt.setString(2, name);
+			psmt.setString(3, target_id);
 
 			// 4. SQL실행
+			cnt = psmt.executeUpdate();
+
+		} catch (
+
+		Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	public int updateStatus(String id, String status) {
+
+		int cnt = 0;
+		try {
+			conn();
+
+			String sql = "update T_AREA set AREA_STATUS = ? where AREA_ID = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, status);
+			psmt.setString(2, id);
+
 			cnt = psmt.executeUpdate();
 
 		} catch (
