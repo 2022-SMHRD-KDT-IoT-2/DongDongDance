@@ -19,6 +19,58 @@
     <!-- Template -->
     <link rel="stylesheet" href="public/graindashboard/css/graindashboard.css">
 
+   <!-- switch -->
+    <style>
+ .switch-button {
+     position: relative; 
+display: inline-block; 
+width: 55px;
+ height: 
+30px; 
+} 
+.switch-button input { 
+opacity: 0; 
+width: 0; 
+height: 0; 
+} 
+.onoff-switch { 
+position: absolute;
+cursor: pointer; 
+top: 0; 
+left: 0;
+right: 0; bottom: 0; 
+border-radius:20px;
+background-color: #ccc;
+box-shadow: inset 1px 5px 1px #999;
+-webkit-transition: .4s; 
+transition: .4s; 
+} 
+.onoff-switch:before
+{ position: absolute; 
+content: "";
+ height: 22px; 
+width: 22px;
+ left: 4px;
+ bottom: 4px; 
+background-color: #fff; 
+-webkit-transition: .5s; 
+transition: .4s; 
+border-radius:20px; 
+} 
+.switch-button input:checked + .onoff-switch { 
+background-color: #F2D522; 
+box-shadow: inset 1px 5px 1px #E3AE56;
+ } 
+.switch-button input:checked + .onoff-switch:before { 
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px); 
+transform: translateX(26px);
+ }
+    
+ li{
+     list-style:none;
+ }
+    </style>
 </head>
 
 <body class="has-sidebar has-fixed-sidebar-and-header">
@@ -265,7 +317,7 @@
     <!-- End Sidebar Nav -->
 
     <div class="content">
-        <div class="py-4 px-3 px-md-4">
+         <div class="py-4 px-3 px-md-4">
             <div class="card mb-3 mb-md-4">
 
                 <div class="card-body">
@@ -280,14 +332,81 @@
                     </nav>
                     <!-- End Breadcrumb -->
 
+                    <div class="col-12">
+
                     <div class="mb-3 mb-md-4 d-flex justify-content-between">
-                        <div class="h3 mb-0">#####</div>
-                    </div>                  
+                        
+                            <h2>조명 제어</h2>
+                        </div>
+                                <!-- 도면 -->
+                                <div class="h3 mb-0"></div>
+                                <div style=float:left;margin-right:30px>
+                                <image src="./public/img/light_drawing.png" width="500px" height="500px"></image>              
+                                </div>
+                                 <div style=float:leftt>
+                                    <ui>
+                                                    <br>
+                                                    <br>
+                                        <li>조명 1 &nbsp; &nbsp;
+                                            <label class="switch-button"> 
+                                                <input type="checkbox"/>
+                                                <span class="onoff-switch"></span> 
+                                                
+                                            </label>
+                                        </li> 
+                                        <br>
+                                        <li>조명 2 &nbsp; &nbsp;
+                                            <label class="switch-button"> 
+                                                <input type="checkbox"/>
+                                                <span class="onoff-switch"></span> 
+                                            </label>
+                                        </li>
+                                        <br>
+                                        <li>조명 3 &nbsp; &nbsp;
+                                            <label class="switch-button"> 
+                                                <input type="checkbox"/>
+                                                <span class="onoff-switch"></span> 
+                                            </label>
+
+                                        </li>
+                                        <br>
+                                        <li>조명 4 &nbsp; &nbsp;
+                                            <label class="switch-button"> 
+                                                <input type="checkbox"/>
+                                                <span class="onoff-switch"></span> 
+                                            </label>
+                                        </li>
+                                        <br>
+                                        <li>조명 5 &nbsp; &nbsp;
+                                            <label class="switch-button"> 
+                                                <input type="checkbox"/>
+                                                <span class="onoff-switch"></span> 
+                                            </label>
+                                        </li>
+                                        <br>
+                                        <li>조명 6 &nbsp; &nbsp;
+                                            <label class="switch-button"> 
+                                                <input type="checkbox"/>
+                                                <span class="onoff-switch"></span> 
+                                            </label>
+                                        </li>
+
+
+                                    </ui>
+                                     </div>
+
+
+                        
+                        </div>
+                    </div>   
+                </div>               
                 </div>
-            </div>
+            
 
 
         </div>
+
+
 
         <!-- Footer -->
         <footer class="small p-3 px-md-4 mt-auto">
