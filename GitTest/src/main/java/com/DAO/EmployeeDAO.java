@@ -245,7 +245,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "update t_employee set emp_status = ? where emp_id = ?";
+			String sql = "update t_employee set emp_status = ? where rfid_uid = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, status);
 			psmt.setString(2, id);
