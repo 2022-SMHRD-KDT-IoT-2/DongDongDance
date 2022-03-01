@@ -39,7 +39,7 @@ public class AirconditionerDAO {
 	}
 	
 	// 냉난방장치 등록
-		public int regAc(String loc, double setting, String status, String id, int plug, String area) {
+		public int regAc(String loc, double setting, String id, int plug, String area) {
 			int cnt = 0;
 			
 			try {
@@ -49,10 +49,9 @@ public class AirconditionerDAO {
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, loc);
 				psmt.setDouble(2, setting);
-				psmt.setString(3, status);
-				psmt.setString(4, id);
-				psmt.setInt(5, plug);
-				psmt.setString(6, area);
+				psmt.setString(3, id);
+				psmt.setInt(4, plug);
+				psmt.setString(5, area);
 				
 				cnt = psmt.executeUpdate();
 				

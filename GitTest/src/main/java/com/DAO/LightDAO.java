@@ -42,7 +42,7 @@ public class LightDAO {
 	}
 	
 	// 조명등록
-	public int regLight(String loc, int setting, String status, String id, int plug, String area) {
+	public int regLight(String loc, int setting, String id, int plug, String area) {
 		int cnt = 0;
 		
 		try {
@@ -52,10 +52,9 @@ public class LightDAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, loc);
 			psmt.setInt(2, setting);
-			psmt.setString(3, status);
-			psmt.setString(4, id);
-			psmt.setInt(5, plug);
-			psmt.setString(6, area);
+			psmt.setString(3, id);
+			psmt.setInt(4, plug);
+			psmt.setString(5, area);
 			
 			cnt = psmt.executeUpdate();
 			
