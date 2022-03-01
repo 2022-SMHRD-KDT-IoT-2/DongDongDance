@@ -8,18 +8,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Command.Command;
+import com.POJO.DeleteAcCon;
+import com.POJO.DeleteAcSenCon;
 import com.POJO.DeleteAreaCon;
 import com.POJO.DeleteEmpCon;
+import com.POJO.DeleteLightCon;
+import com.POJO.DeleteLightSenCon;
 import com.POJO.DeletePlugCon;
+import com.POJO.DeletePlugSenCon;
 import com.POJO.LoginCon;
 import com.POJO.LogoutCon;
+import com.POJO.RegAcCon;
+import com.POJO.RegAcSenCon;
 import com.POJO.RegAreaCon;
 import com.POJO.RegEmpCon;
+import com.POJO.RegLightCon;
+import com.POJO.RegLightSenCon;
 import com.POJO.RegPlugCon;
+import com.POJO.RegPlugSenCon;
+import com.POJO.UpdateAcCon;
+import com.POJO.UpdateAcStCon;
 import com.POJO.UpdateAreaStCon;
 import com.POJO.UpdateEmp1Con;
 import com.POJO.UpdateEmp2Con;
 import com.POJO.UpdateEmpStCon;
+import com.POJO.UpdateLightCon;
+import com.POJO.UpdateLightStCon;
 import com.POJO.UpdatePlugCon;
 import com.POJO.UpdatePlugStCon;
 
@@ -70,6 +84,34 @@ public class FrontController extends HttpServlet {
 			command = new UpdateAreaStCon();
 		}else if(result.equals("UpdateEmpStCon.do")) {
 			command = new UpdateEmpStCon();
+		}else if(result.equals("RegAcCon.do")) {
+			command = new RegAcCon();
+		}else if(result.equals("RegLightCon.do")) {
+			command = new RegLightCon();
+		}else if(result.equals("RegPlugSenCon.do")) {
+			command = new RegPlugSenCon();
+		}else if(result.equals("RegLightSenCon.do")) {
+			command = new RegLightSenCon();
+		}else if(result.equals("RegAcSenCon.do")) {
+			command = new RegAcSenCon();
+		}else if(result.equals("UpdateAcCon.do")) {
+			command = new UpdateAcCon();
+		}else if(result.equals("UpdateAcStCon.do")) {
+			command = new UpdateAcStCon();
+		}else if(result.equals("UpdateLightCon.do")) {
+			command = new UpdateLightCon();
+		}else if(result.equals("UpdateLightStCon.do")) {
+			command = new UpdateLightStCon();
+		}else if(result.equals("DeleteAcCon.do")) {
+			command = new DeleteAcCon();
+		}else if(result.equals("DeleteAcSenCon.do")) {
+			command = new DeleteAcSenCon();
+		}else if(result.equals("DeleteLightCon.do")) {
+			command = new DeleteLightCon();
+		}else if(result.equals("DeleteLightSenCon.do")) {
+			command = new DeleteLightSenCon();
+		}else if(result.equals("DeletePlugSenCon.do")) {
+			command = new DeletePlugSenCon();
 		}
 		
 		String url = command.execute(request, response);

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Title -->
-    <title>Create User | Graindashboard UI Kit</title>
+    <title>Settings | Graindashboard UI Kit</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,13 +21,13 @@
     <nav class="navbar flex-nowrap p-0">
         <div class="navbar-brand-wrapper d-flex align-items-center col-auto">
             <!-- Logo For Mobile View -->
-            <a class="navbar-brand navbar-brand-mobile" href="index.html">
+            <a class="navbar-brand navbar-brand-mobile" href="A_index.html">
                 <img class="img-fluid w-100" src="public/img/logo-mini.png" alt="Graindashboard">
             </a>
             <!-- End Logo For Mobile View -->
 
             <!-- Logo For Desktop View -->
-            <a class="navbar-brand navbar-brand-desktop" href="index.html">
+            <a class="navbar-brand navbar-brand-desktop" href="A_index.html">
                 <img class="side-nav-show-on-closed" src="public/img/logo-mini.png" alt="Graindashboard" style="width: auto; height: 33px;">
                 <img class="side-nav-hide-on-closed" src="public/img/logo.png" alt="Graindashboard" style="width: auto; height: 33px;">
             </a>
@@ -92,18 +92,18 @@
                 <!-- User Avatar -->
                 <div class="dropdown mx-3 dropdown ml-2">
                     <a id="profileMenuInvoker" class="header-complex-invoker" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#profileMenu" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                        <!--img class="avatar rounded-circle mr-md-2" src="#" alt="John Doe"-->
+                        <!--img class="avatar rounded-circle mr-md-2" src="#" alt="John Doe"-->                       
                         <span class="d-none d-md-block">USER NAME</span>
                         <i class="gd-angle-down d-none d-md-block ml-2"></i>
                     </a>
 
                     <ul id="profileMenu" class="unfold unfold-user unfold-light unfold-top unfold-centered position-absolute pt-2 pb-1 mt-4 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="profileMenuInvoker" style="animation-duration: 300ms;">
                         <li class="unfold-item">
-                            <a class="unfold-link d-flex align-items-center text-nowrap" href="profile.html">
+                            <a class="unfold-link d-flex align-items-center text-nowrap" href="A_profile.html">
                     <span class="unfold-item-icon mr-3">
                       <i class="gd-user"></i>
                     </span>
-                                프로필
+                                내 프로필
                             </a>
                         </li>
                         <li class="unfold-item unfold-item-has-divider">
@@ -127,47 +127,23 @@
     <!-- Sidebar Nav -->
     <aside id="sidebar" class="js-custom-scroll side-nav">
         <ul id="sideNav" class="side-nav-menu side-nav-menu-top-level mb-0">
-       <!-- Title -->
-                  <li class="side-nav-menu-item active">
-                <a class="side-nav-menu-link media align-items-center" href="index.html">
+            <!-- Title -->
+            <li class="sidebar-heading h6">관리</li>
+            <!-- End Title -->
+
+             <!-- Dashboard -->
+             <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="A_index.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-home"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">MAIN</span>
-                </a>
-            </li> 
-            <!-- End Title -->
-
-             <li class="sidebar-heading h6">사원페이지</li>
-
-            <!-- Attendance -->
-             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="attendance.html">
-              <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-agenda"></i>
-              </span>
-                    <span class="side-nav-fadeout-on-closed media-body">근태현황</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Main</span>
                 </a>
             </li>
-            <!-- End Attendance -->
-
-            <!-- Monitoring -->
-            <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="monitoring.html">
-              <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-desktop"></i>
-              </span>
-                    <span class="side-nav-fadeout-on-closed media-body">모니터링</span>
-                </a>
-            </li>
-            <!-- End Monitoring -->
-
-            <!-- Title -->
-            <li class="sidebar-heading h6">관리자페이지</li>
-            <!-- End Title -->
+            <!-- End Dashboard -->
 
             <!-- Users -->
-            <li class="side-nav-menu-item side-nav-has-menu active side-nav-opened">
+            <li class="side-nav-menu-item side-nav-has-menu">
                 <a class="side-nav-menu-link media align-items-center" href="#"
                    data-target="#subUsers">
                   <span class="side-nav-menu-icon d-flex mr-3">
@@ -181,12 +157,12 @@
                 </a>
 
                 <!-- Users: subUsers -->
-                <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0" style="display: block;">
+                <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="users.html">모든사원조회</a>
+                        <a class="side-nav-menu-link" href="A_users.html">모든사원조회</a>
                     </li>
-                    <li class="side-nav-menu-item active">
-                        <a class="side-nav-menu-link" href="user-edit.html">사원등록</a>
+                    <li class="side-nav-menu-item">
+                        <a class="side-nav-menu-link" href="A_user-edit.html">사원등록</a>
                     </li>
                 </ul>
                 <!-- End Users: subUsers -->
@@ -210,13 +186,13 @@
                 <!-- Pages: subPages -->
                 <ul id="subPages" class="side-nav-menu side-nav-menu-second-level mb-0">
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="light.html">조명제어</a>
+                        <a class="side-nav-menu-link" href="A_light.html">조명제어</a>
                     </li>
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="aircon.html">냉난방제어</a>
+                        <a class="side-nav-menu-link" href="A_aircon.html">냉난방제어</a>
                     </li>
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="plug.html">콘센트제어</a>
+                        <a class="side-nav-menu-link" href="A_plug.html">콘센트제어</a>
                     </li>
                 </ul>
                 <!-- End Pages: subPages -->
@@ -225,7 +201,7 @@
             
             <!-- Management -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="management.html">
+                <a class="side-nav-menu-link media align-items-center" href="A_management.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-dashboard"></i>
               </span>
@@ -236,7 +212,7 @@
             
             <!-- All Monitoring -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="monitoringAll.html">
+                <a class="side-nav-menu-link media align-items-center" href="A_monitoringAll.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-desktop"></i>
               </span>
@@ -246,8 +222,8 @@
             <!-- End All Monitoring -->
 
             <!-- Settings -->
-            <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="settings.html">
+            <li class="side-nav-menu-item active">
+                <a class="side-nav-menu-link media align-items-center" href="A_settings.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-settings"></i>
               </span>
@@ -266,6 +242,17 @@
                 </a>
             </li>
             <!-- End Static -->
+            
+            <!-- Documentation -->
+            <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="documentation/" target="_blank">
+              <span class="side-nav-menu-icon d-flex mr-3">
+                <i class="gd-file"></i>
+              </span>
+                    <span class="side-nav-fadeout-on-closed media-body">프론트만들때 참고자료</span>
+                </a>
+            </li>
+            <!-- End Documentation -->
 
         </ul>
     </aside>
@@ -280,15 +267,15 @@
                     <nav class="d-none d-md-block" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="#">사원관리</a>
+                                <a href="#">Profile</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">사원등록</li>
+                            <li class="breadcrumb-item active" aria-current="page">Update Settings</li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
 
                     <div class="mb-3 mb-md-4 d-flex justify-content-between">
-                        <div class="h3 mb-0">사원등록</div>
+                        <div class="h3 mb-0">Update Settings</div>
                     </div>
 
 
@@ -306,21 +293,23 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-12 col-md-6">
-                                    <label for="password">Password</label>
+                                <div class="col-12">
+                                    <div class="font-weight-semi-bold h5 mb-3">Change Password</div>
+                                </div>
+                                <div class="form-group col-12 col-md-4">
+                                    <label for="old_password">Current Password</label>
+                                    <input type="password" class="form-control" value="" id="old_password" name="old_password" placeholder="Current Password">
+                                </div>
+                                <div class="form-group col-12 col-md-4">
+                                    <label for="password">New Password</label>
                                     <input type="password" class="form-control" value="" id="password" name="password" placeholder="New Password">
                                 </div>
-                                <div class="form-group col-12 col-md-6">
-                                    <label for="password_confirm">Confirm Password</label>
-                                    <input type="password" class="form-control" value="" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
+                                <div class="form-group col-12 col-md-4">
+                                    <label for="password_confirm">Repeat New Password</label>
+                                    <input type="password" class="form-control" value="" id="password_confirm" name="password_confirm" placeholder="Repeat New Password">
                                 </div>
                             </div>
-                            <div class="custom-control custom-switch mb-2">
-                                <input type="checkbox" class="custom-control-input" id="randomPassword">
-                                <label class="custom-control-label" for="randomPassword">Set Random Password</label>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary float-right">Create</button>
+                            <button type="submit" class="btn btn-primary float-right">Update</button>
                         </form>
                     </div>
                     <!-- End Form -->

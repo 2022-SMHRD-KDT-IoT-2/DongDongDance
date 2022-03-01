@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Title -->
-    <title>aircon | Graindashboard UI Kit</title>
+    <title>Settings | Graindashboard UI Kit</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,14 +11,8 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="public/img/favicon.ico">
 
-
-    <!-- DEMO CHARTS -->
-    <link rel="stylesheet" href="public/demo/chartist.css">
-    <link rel="stylesheet" href="public/demo/chartist-plugin-tooltip.css">
-
     <!-- Template -->
     <link rel="stylesheet" href="public/graindashboard/css/graindashboard.css">
-
 </head>
 
 <body class="has-sidebar has-fixed-sidebar-and-header">
@@ -27,13 +21,13 @@
     <nav class="navbar flex-nowrap p-0">
         <div class="navbar-brand-wrapper d-flex align-items-center col-auto">
             <!-- Logo For Mobile View -->
-            <a class="navbar-brand navbar-brand-mobile" href="index.html">
+            <a class="navbar-brand navbar-brand-mobile" href="A_index.html">
                 <img class="img-fluid w-100" src="public/img/logo-mini.png" alt="Graindashboard">
             </a>
             <!-- End Logo For Mobile View -->
 
             <!-- Logo For Desktop View -->
-            <a class="navbar-brand navbar-brand-desktop" href="index.html">
+            <a class="navbar-brand navbar-brand-desktop" href="A_index.html">
                 <img class="side-nav-show-on-closed" src="public/img/logo-mini.png" alt="Graindashboard" style="width: auto; height: 33px;">
                 <img class="side-nav-hide-on-closed" src="public/img/logo.png" alt="Graindashboard" style="width: auto; height: 33px;">
             </a>
@@ -105,7 +99,7 @@
 
                     <ul id="profileMenu" class="unfold unfold-user unfold-light unfold-top unfold-centered position-absolute pt-2 pb-1 mt-4 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="profileMenuInvoker" style="animation-duration: 300ms;">
                         <li class="unfold-item">
-                            <a class="unfold-link d-flex align-items-center text-nowrap" href="profile.html">
+                            <a class="unfold-link d-flex align-items-center text-nowrap" href="A_profile.html">
                     <span class="unfold-item-icon mr-3">
                       <i class="gd-user"></i>
                     </span>
@@ -133,45 +127,20 @@
     <!-- Sidebar Nav -->
     <aside id="sidebar" class="js-custom-scroll side-nav">
         <ul id="sideNav" class="side-nav-menu side-nav-menu-top-level mb-0">
-        
-   		<!-- Title -->
-                  <li class="side-nav-menu-item active">
-                <a class="side-nav-menu-link media align-items-center" href="index.html">
+            <!-- Title -->
+            <li class="sidebar-heading h6">관리</li>
+            <!-- End Title -->
+
+             <!-- Dashboard -->
+             <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="A_index.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-home"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">MAIN</span>
-                </a>
-            </li> 
-            <!-- End Title -->
-
-             <li class="sidebar-heading h6">사원페이지</li>
-
-            <!-- Attendance -->
-             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="attendance.html">
-              <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-agenda"></i>
-              </span>
-                    <span class="side-nav-fadeout-on-closed media-body">근태현황</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Main</span>
                 </a>
             </li>
-            <!-- End Attendance -->
-
-            <!-- Monitoring -->
-            <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="monitoring.html">
-              <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-desktop"></i>
-              </span>
-                    <span class="side-nav-fadeout-on-closed media-body">모니터링</span>
-                </a>
-            </li>
-            <!-- End Monitoring -->
-
-            <!-- Title -->
-            <li class="sidebar-heading h6">관리자페이지</li>
-            <!-- End Title -->
+            <!-- End Dashboard -->
 
             <!-- Users -->
             <li class="side-nav-menu-item side-nav-has-menu">
@@ -190,10 +159,10 @@
                 <!-- Users: subUsers -->
                 <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="users.html">모든사원조회</a>
+                        <a class="side-nav-menu-link" href="A_users.html">모든사원조회</a>
                     </li>
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="user-edit.html">사원등록</a>
+                        <a class="side-nav-menu-link" href="A_user-edit.html">사원등록</a>
                     </li>
                 </ul>
                 <!-- End Users: subUsers -->
@@ -215,15 +184,15 @@
                 </a>
 
                 <!-- Pages: subPages -->
-                <ul id="subPages" class="side-nav-menu side-nav-menu-second-level mb-0" style="display: block;">
+                <ul id="subPages" class="side-nav-menu side-nav-menu-second-level mb-0">
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="light.html">조명제어</a>
-                    </li>
-                    <li class="side-nav-menu-item active">
-                        <a class="side-nav-menu-link" href="aircon.html">냉난방제어</a>
+                        <a class="side-nav-menu-link" href="A_light.html">조명제어</a>
                     </li>
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" href="plug.html">콘센트제어</a>
+                        <a class="side-nav-menu-link" href="A_aircon.html">냉난방제어</a>
+                    </li>
+                    <li class="side-nav-menu-item">
+                        <a class="side-nav-menu-link" href="A_plug.html">콘센트제어</a>
                     </li>
                 </ul>
                 <!-- End Pages: subPages -->
@@ -232,7 +201,7 @@
             
             <!-- Management -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="management.html">
+                <a class="side-nav-menu-link media align-items-center" href="A_management.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-dashboard"></i>
               </span>
@@ -243,7 +212,7 @@
             
             <!-- All Monitoring -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="monitoringAll.html">
+                <a class="side-nav-menu-link media align-items-center" href="A_monitoringAll.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-desktop"></i>
               </span>
@@ -254,7 +223,7 @@
 
             <!-- Settings -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="settings.html">
+                <a class="side-nav-menu-link media align-items-center" href="A_settings.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-settings"></i>
               </span>
@@ -265,7 +234,7 @@
 
             <!-- Static -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="#">
+                <a class="side-nav-menu-link media align-items-center" href="page.html">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-book"></i>
               </span>
@@ -273,6 +242,17 @@
                 </a>
             </li>
             <!-- End Static -->
+            
+            <!-- Documentation -->
+            <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="documentation/" target="_blank">
+              <span class="side-nav-menu-icon d-flex mr-3">
+                <i class="gd-file"></i>
+              </span>
+                    <span class="side-nav-fadeout-on-closed media-body">프론트만들때 참고자료</span>
+                </a>
+            </li>
+            <!-- End Documentation -->
 
         </ul>
     </aside>
@@ -287,16 +267,25 @@
                     <nav class="d-none d-md-block" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="#">전력제어</a>
+                                <a href="#">Profile</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">냉난방제어</li>
+                            <li class="breadcrumb-item active" aria-current="page">My Profile</li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
 
                     <div class="mb-3 mb-md-4 d-flex justify-content-between">
-                        <div class="h3 mb-0">#####</div>
-                    </div>                  
+                        <div class="h3 mb-0">My Profile</div>
+                    </div>
+
+                    <!-- Form -->
+                    <div>
+                        <form>
+                            <a href="A_settings.html"><button type="button" class="btn btn-soft-primary float-right">프로필 수정하기</button></a>
+                        </form>
+                    </div>
+                    <!-- End Form -->
+
                 </div>
             </div>
 
@@ -332,22 +321,8 @@
 </main>
 
 
-
-
 <script src="public/graindashboard/js/graindashboard.js"></script>
 <script src="public/graindashboard/js/graindashboard.vendor.js"></script>
 
-<!-- DEMO CHARTS -->
-<script src="public/demo/resizeSensor.js"></script>
-<script src="public/demo/chartist.js"></script>
-<script src="public/demo/chartist-plugin-tooltip.js"></script>
-<script src="public/demo/gd.chartist-area.js"></script>
-<script src="public/demo/gd.chartist-bar.js"></script>
-<script src="public/demo/gd.chartist-donut.js"></script>
-<script>
-    $.GDCore.components.GDChartistArea.init('.js-area-chart');
-    $.GDCore.components.GDChartistBar.init('.js-bar-chart');
-    $.GDCore.components.GDChartistDonut.init('.js-donut-chart');
-</script>
 </body>
 </html>
