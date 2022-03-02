@@ -18,10 +18,9 @@ public class UpdateEmp1Con implements Command {
 		String yn = request.getParameter("yn");
 		String rfid = request.getParameter("rfid");
 		String area = request.getParameter("area");
-		int plug = Integer.parseInt(request.getParameter("plug"));
 			
 		EmployeeDAO dao = new EmployeeDAO();
-		dao.updateEmp1(id, name, seat, phone, superid, yn, rfid, area, plug);
+		dao.updateEmp1(id, name, seat, phone, superid, yn, rfid, area);
 	
 		return "main2.jsp";
 }

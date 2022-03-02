@@ -23,12 +23,10 @@ public class EmployeeVO {
     private String rfidUid;
     // 구역 아이디 
     private String areaId;
-    // 플러그 순번 
-    private int plugSeq;
     
     // 전체
     public EmployeeVO(String empId, String empPw, String empName, String empSeatNo, String empPhone, String empStatus,
-			String empJoindate, String empSuperId, String adminYn, String rfidUid, String areaId, int plugSeq) {
+			String empJoindate, String empSuperId, String adminYn, String rfidUid, String areaId) {
 		super();
 		this.empId = empId;
 		this.empPw = empPw;
@@ -41,12 +39,11 @@ public class EmployeeVO {
 		this.adminYn = adminYn;
 		this.rfidUid = rfidUid;
 		this.areaId = areaId;
-		this.plugSeq = plugSeq;
 	}
     
     // 조회용
 	public EmployeeVO(String empId, String empName, String empSeatNo, String empStatus, String empSuperId,
-			String adminYn, String rfidUid, String areaId, int plugSeq) {
+			String adminYn, String rfidUid, String areaId) {
 		super();
 		this.empId = empId;
 		this.empName = empName;
@@ -56,12 +53,11 @@ public class EmployeeVO {
 		this.adminYn = adminYn;
 		this.rfidUid = rfidUid;
 		this.areaId = areaId;
-		this.plugSeq = plugSeq;
 	}
 
 	// 관리자용 회원정보 수정
 	public EmployeeVO(String empId, String empName, String empSeatNo, String empPhone, String empStatus,
-			String empJoindate, String empSuperId, String adminYn, String rfidUid, String areaId, int plugSeq) {
+			String empJoindate, String empSuperId, String adminYn, String rfidUid, String areaId) {
 		super();
 		this.empId = empId;
 		this.empName = empName;
@@ -71,7 +67,6 @@ public class EmployeeVO {
 		this.adminYn = adminYn;
 		this.rfidUid = rfidUid;
 		this.areaId = areaId;
-		this.plugSeq = plugSeq;
 	}
 
 	//직원용 회원정보 수정
@@ -115,8 +110,5 @@ public class EmployeeVO {
     }
     public String getAreaId() {
     	return areaId;
-    }
-    public int getPlugSeq() {
-    	return plugSeq;
     }
 }

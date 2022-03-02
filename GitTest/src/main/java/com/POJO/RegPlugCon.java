@@ -10,13 +10,13 @@ public class RegPlugCon implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String seat = request.getParameter("seat");
+		String id = request.getParameter("id");
 		double power = Double.parseDouble(request.getParameter("power"));
 		String area = request.getParameter("area");
 		String device = request.getParameter("device");
 
 		PlugDAO dao = new PlugDAO();
-		dao.regPlug(seat, power, area, device);
+		dao.regPlug(id, power, area, device);
 		
 		return "main2.jsp";
 		

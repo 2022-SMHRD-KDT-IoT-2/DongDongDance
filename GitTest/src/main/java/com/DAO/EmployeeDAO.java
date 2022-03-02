@@ -69,9 +69,8 @@ public class EmployeeDAO {
 				String getadminyn = rs.getString(9);
 				String getrfid = rs.getString(10);
 				String getarea = rs.getString(11);
-				int getplug = rs.getInt(12);
 			
-			    vo = new EmployeeVO(getid, getname, getseat, getstatus, getsuperid, getadminyn, getrfid, getarea, getplug);
+			    vo = new EmployeeVO(getid, getname, getseat, getstatus, getsuperid, getadminyn, getrfid, getarea);
 			}
 			
 		}catch(Exception e){
@@ -112,7 +111,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "select emp_id, emp_name, emp_seat_no, emp_status, emp_super_id, admin_yn, rfid_uid, area_id, plug_seq from t_employee";
+			String sql = "select emp_id, emp_name, emp_seat_no, emp_status, emp_super_id, admin_yn, rfid_uid, area_id from t_employee";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();	
 			
@@ -125,9 +124,8 @@ public class EmployeeDAO {
 				String getadminyn = rs.getString(6);
 				String getrfid = rs.getString(7);
 				String getarea = rs.getString(8);
-				int getplug = rs.getInt(9);
 				
-				EmployeeVO vo = new EmployeeVO(getid, getname, getseat, getstatus, getsuperid, getadminyn, getrfid, getarea, getplug);
+				EmployeeVO vo = new EmployeeVO(getid, getname, getseat, getstatus, getsuperid, getadminyn, getrfid, getarea);
 				al.add(vo);
 			}		
 						
@@ -146,7 +144,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, emp_joindate, emp_super_id, admin_yn, rfid_uid, area_id, plug_seq from t_employee where emp_id = ?";
+			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, emp_joindate, emp_super_id, admin_yn, rfid_uid, area_id from t_employee where emp_id = ?";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			psmt.setString(1, id);
@@ -164,7 +162,7 @@ public class EmployeeDAO {
 				String getarea = rs.getString(10);
 				int getplug = rs.getInt(11);
 				
-				vo = new EmployeeVO(getid, getname, getseat, getphone, getstatus, getjoindate, getsuperid, getadminyn, getrfid, getarea, getplug);
+				vo = new EmployeeVO(getid, getname, getseat, getphone, getstatus, getjoindate, getsuperid, getadminyn, getrfid, getarea);
 			}		
 						
 		}catch(Exception e){
@@ -179,13 +177,13 @@ public class EmployeeDAO {
 	
 	// 직원 생성 시, 기본 pw는 id와 동일하게 설정(사용자가 직접 pw 수정하게끔)
 	// 직원 생성 시, 상태 값은 D(디폴트)로 설정
-	public int regEmp(String id, String name, String seat, String phone, String superid, String yn, String rfid, String area, int plug) {
+	public int regEmp(String id, String name, String seat, String phone, String superid, String yn, String rfid, String area) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "insert into t_employee values (?, ?, ?, ?, ?, 'D', sysdate, ?, ?, ?, ?, ?)";
+			String sql = "insert into t_employee values (?, ?, ?, ?, ?, 'D', sysdate, ?, ?, ?, ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, id);
@@ -196,7 +194,6 @@ public class EmployeeDAO {
 			psmt.setString(7, yn);
 			psmt.setString(8, rfid);
 			psmt.setString(9, area);
-			psmt.setInt(10, plug);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -209,13 +206,13 @@ public class EmployeeDAO {
 	}
 	
 	//관리자용 직원정보수정
-	public int updateEmp1(String id, String name, String seat, String phone, String superid, String yn, String rfid, String area, int plug) {
+	public int updateEmp1(String id, String name, String seat, String phone, String superid, String yn, String rfid, String area) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "update t_employee set emp_name = ?, emp_seat_no = ?, emp_phone = ?, emp_super_id = ?, admin_yn = ?, rfid_uid = ?, plug_seq = ? where emp_id = ?";
+			String sql = "update t_employee set emp_name = ?, emp_seat_no = ?, emp_phone = ?, emp_super_id = ?, admin_yn = ?, rfid_uid = ? where emp_id = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, name);
 			psmt.setString(2, seat);
@@ -224,8 +221,7 @@ public class EmployeeDAO {
 			psmt.setString(5, yn);
 			psmt.setString(6, rfid);
 			psmt.setString(7, area);
-			psmt.setInt(8, plug);
-			psmt.setString(9, id);
+			psmt.setString(8, id);
 			
 			cnt = psmt.executeUpdate();
 			

@@ -23,10 +23,9 @@ public class RegEmpCon extends HttpServlet {
 		String yn = request.getParameter("yn");
 		String rfid = request.getParameter("rfid");
 		String area = request.getParameter("area");
-		int plug = Integer.parseInt(request.getParameter("plug"));
 		
 		EmployeeDAO dao = new EmployeeDAO();
-		int cnt = dao.regEmp(id, name, seat, phone, superid, yn, rfid, area, plug);
+		int cnt = dao.regEmp(id, name, seat, phone, superid, yn, rfid, area);
 		
 			if(cnt>0) {
 				response.sendRedirect("main2.jsp");
