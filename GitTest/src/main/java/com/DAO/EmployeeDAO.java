@@ -82,6 +82,29 @@ public class EmployeeDAO {
 		return vo;
 	}
 	
+	public boolean idCheck(String id){
+
+		boolean check = false;
+		
+		try {
+			connect();
+			
+			String sql = "select emp_id from t_employee where emp_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			
+			rs = psmt.executeQuery();
+			if(rs.next()){
+				check = true;
+			}			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return check;
+	}
+	
 	public ArrayList<EmployeeVO> selectAll(){
 
 		ArrayList<EmployeeVO> al = new ArrayList<EmployeeVO>();

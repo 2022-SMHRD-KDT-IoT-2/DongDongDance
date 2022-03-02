@@ -1,6 +1,9 @@
 package com.FrontController;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Command.Command;
+import com.POJO.AreaCheckCon;
 import com.POJO.DeleteAcCon;
 import com.POJO.DeleteAcSenCon;
 import com.POJO.DeleteAreaCon;
@@ -16,6 +20,7 @@ import com.POJO.DeleteLightCon;
 import com.POJO.DeleteLightSenCon;
 import com.POJO.DeletePlugCon;
 import com.POJO.DeletePlugSenCon;
+import com.POJO.IdCheckCon;
 import com.POJO.LoginCon;
 import com.POJO.LogoutCon;
 import com.POJO.RegAcCon;
@@ -112,10 +117,24 @@ public class FrontController extends HttpServlet {
 			command = new DeleteLightSenCon();
 		}else if(result.equals("DeletePlugSenCon.do")) {
 			command = new DeletePlugSenCon();
+		}else if(result.equals("IdCheckCon.do")) {
+			command = new IdCheckCon();
+		}else if(result.equals("AreaCheckCon.do")) {
+			command = new AreaCheckCon();
 		}
 		
+		
 		String url = command.execute(request, response);
-		response.sendRedirect(url);
+		
+		if(url.equals("true") || url.equals("false")) {
+			PrintWriter out = response.getWriter();
+			out.print(url);
+		}else if(url.equals("")) {
+			RequestDispatcher dis = request.getRequestDispatcher(url);
+			dis.forward(request, response);
+		}else {			
+			response.sendRedirect(url);
+		}
 	}
 
 }

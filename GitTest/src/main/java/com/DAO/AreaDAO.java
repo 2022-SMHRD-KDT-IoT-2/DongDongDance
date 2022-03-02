@@ -72,6 +72,29 @@ public class AreaDAO {
 		return cnt;
 	}
 	
+	public boolean areaCheck(String area){
+
+		boolean check = false;
+		
+		try {
+			conn();
+			
+			String sql = "select area_id from t_area where area_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, area);
+			
+			rs = psmt.executeQuery();
+			if(rs.next()){
+				check = true;
+			}			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return check;
+	}
+	
 	public int updateArea(String target_id, String id, String name) {
 
 		int cnt = 0;
