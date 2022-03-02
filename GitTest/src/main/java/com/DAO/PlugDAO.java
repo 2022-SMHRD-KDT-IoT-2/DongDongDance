@@ -42,17 +42,18 @@ public class PlugDAO {
 		}
 	}
 	
-	public int regPlug(String seat, double power, String area) {
+	public int regPlug(String seat, double power, String area, String device) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "insert into t_plug values (t_plug_seq.nextval, ?, ?, 'D', sysdate, ?)";
+			String sql = "insert into t_plug values (t_plug_seq.nextval, ?, ?, 'D', sysdate, ?, ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, seat);
 			psmt.setDouble(2, power);
 			psmt.setString(3, area);
+			psmt.setString(4, device);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -64,18 +65,20 @@ public class PlugDAO {
 		return cnt;
 	}
 	
-	public int updatePlug(int seq, String seat, double power, String area) {
+	// 플러그 정보 수정 (관리자용)
+	public int updatePlug(int seq, String seat, double power, String area, String device) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "update t_plug set seat_num = ?, plug_power = ?, area_id = ? where plug_seq = ?";
+			String sql = "update t_plug set seat_num = ?, plug_power = ?, area_id = ?, plug_device = ? where plug_seq = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, seat);
 			psmt.setDouble(2, power);
 			psmt.setString(3, area);
-			psmt.setInt(4, seq);
+			psmt.setString(4, device);
+			psmt.setInt(5, seq);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -97,6 +100,29 @@ public class PlugDAO {
 			String sql = "update t_plug set plug_status = ? where plug_seq = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, status);
+			psmt.setInt(2, seq);
+
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	//플러그 연결장치 수정 (직원용)
+	public int updateDevice(int seq, String device) {
+		int cnt = 0;
+		
+		try {
+			connect();
+			
+			String sql = "update t_plug set plug_device = ? where plug_seq = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, device);
 			psmt.setInt(2, seq);
 
 			
@@ -144,12 +170,13 @@ public class PlugDAO {
 				int getplug = rs.getInt(1);
 				String getseat = rs.getString(2);
 				Double getpower = rs.getDouble(3);
-				String getstatus = rs.getString(3);
-				String getdate = rs.getString(4);
-				String getarea = rs.getString(5);
+				String getstatus = rs.getString(4);
+				String getdate = rs.getString(5);
+				String getarea = rs.getString(6);
+				String getdevice = rs.getString(7);
 
 				
-				PlugVO vo = new PlugVO(getplug, getseat, getpower, getstatus, getdate, getarea);
+				PlugVO vo = new PlugVO(getplug, getseat, getpower, getstatus, getdate, getarea, getdevice);
 				al.add(vo);
 			}		
 						
@@ -177,12 +204,13 @@ public class PlugDAO {
 				int getplug = rs.getInt(1);
 				String getseat = rs.getString(2);
 				Double getpower = rs.getDouble(3);
-				String getstatus = rs.getString(3);
-				String getdate = rs.getString(4);
-				String getarea = rs.getString(5);
+				String getstatus = rs.getString(4);
+				String getdate = rs.getString(5);
+				String getarea = rs.getString(6);
+				String getdevice = rs.getString(7);
 
 				
-				vo = new PlugVO(getplug, getseat, getpower, getstatus, getdate, getarea);
+				vo = new PlugVO(getplug, getseat, getpower, getstatus, getdate, getarea, getdevice);
 			}		
 						
 		}catch(Exception e){

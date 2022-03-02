@@ -13,8 +13,10 @@ public class PlugVO {
     private String plugInsDate;
     // 구역 아이디 
     private String areaId;
+    // 연결장치 종류
+    private String device;
     
-	public PlugVO(int plugSeq, String seatNo, Double plugPower, String plugStatus, String plugInsDate, String areaId) {
+	public PlugVO(int plugSeq, String seatNo, Double plugPower, String plugStatus, String plugInsDate, String areaId, String device) {
 		super();
 		this.plugSeq = plugSeq;
 		this.seatNo = seatNo;
@@ -22,6 +24,7 @@ public class PlugVO {
 		this.plugStatus = plugStatus;
 		this.plugInsDate = plugInsDate;
 		this.areaId = areaId;
+		this.device = device;
 	}
 	public int getPlugSeq() {
 		return plugSeq;
@@ -40,6 +43,9 @@ public class PlugVO {
 	}
 	public String getAreaId() {
 		return areaId;
+	}
+	public String getDevice() {
+		return device;
 	}
 
 }

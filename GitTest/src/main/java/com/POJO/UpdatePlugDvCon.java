@@ -6,20 +6,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.Command.Command;
 import com.DAO.PlugDAO;
 
-public class RegPlugCon implements Command{
+public class UpdatePlugDvCon implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String seat = request.getParameter("seat");
-		double power = Double.parseDouble(request.getParameter("power"));
-		String area = request.getParameter("area");
+		int seq = Integer.parseInt(request.getParameter("seq"));
 		String device = request.getParameter("device");
 
 		PlugDAO dao = new PlugDAO();
-		dao.regPlug(seat, power, area, device);
+		dao.updateDevice(seq, device);
 		
 		return "main2.jsp";
-		
 	}
 
 }

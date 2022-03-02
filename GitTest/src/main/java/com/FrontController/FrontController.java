@@ -28,20 +28,8 @@ import com.POJO.UpdateEmp1Con;
 import com.POJO.UpdateEmp2Con;
 import com.POJO.UpdateEmpStCon;
 import com.POJO.UpdatePlugCon;
+import com.POJO.UpdatePlugDvCon;
 import com.POJO.UpdatePlugStCon;
-
-//import dummy.POJO.DeleteAcCon;
-//import dummy.POJO.DeleteAcSenCon;
-//import dummy.POJO.DeleteLightCon;
-//import dummy.POJO.DeleteLightSenCon;
-//import dummy.POJO.RegAcCon;
-//import dummy.POJO.RegAcSenCon;
-//import dummy.POJO.RegLightCon;
-//import dummy.POJO.RegLightSenCon;
-//import dummy.POJO.UpdateAcCon;
-//import dummy.POJO.UpdateAcStCon;
-//import dummy.POJO.UpdateLightCon;
-//import dummy.POJO.UpdateLightStCon;
 
 
 // 확장자패턴 사용 : 어떤 요청이던 뒤에 .do가 붙어 있으면 이 서블릿에서 받아서 처리
@@ -98,6 +86,8 @@ public class FrontController extends HttpServlet {
 			command = new IdCheckCon();
 		}else if(result.equals("AreaCheckCon.do")) {
 			command = new AreaCheckCon();
+		}else if(result.equals("UpdatePlugDvCon.do")) {
+			command = new UpdatePlugDvCon();
 		}
 		
 		

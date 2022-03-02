@@ -15,9 +15,10 @@ public class UpdatePlugCon implements Command {
 		String seat = request.getParameter("seat");
 		double power = Double.parseDouble(request.getParameter("power"));
 		String area = request.getParameter("area");
+		String device = request.getParameter("device");
 
 		PlugDAO dao = new PlugDAO();
-		dao.updatePlug(seq, seat, power, area);
+		dao.updatePlug(seq, seat, power, area, device);
 		
 		return "main2.jsp";
 	}
