@@ -42,7 +42,7 @@ public class PlugDAO {
 		}
 	}
 	
-	public int regPlug(String seat, double power, String area, String device) {
+	public int regPlug(String id, double power, String area, String device) {
 		int cnt = 0;
 		
 		try {
@@ -50,7 +50,7 @@ public class PlugDAO {
 			
 			String sql = "insert into t_plug values (t_plug_seq.nextval, ?, ?, 'D', sysdate, ?, ?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, seat);
+			psmt.setString(1, id);
 			psmt.setDouble(2, power);
 			psmt.setString(3, area);
 			psmt.setString(4, device);
@@ -66,15 +66,15 @@ public class PlugDAO {
 	}
 	
 	// 플러그 정보 수정 (관리자용)
-	public int updatePlug(int seq, String seat, double power, String area, String device) {
+	public int updatePlug(int seq, String id, double power, String area, String device) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "update t_plug set seat_num = ?, plug_power = ?, area_id = ?, plug_device = ? where plug_seq = ?";
+			String sql = "update t_plug set emp_id = ?, plug_power = ?, area_id = ?, plug_device = ? where plug_seq = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, seat);
+			psmt.setString(1, id);
 			psmt.setDouble(2, power);
 			psmt.setString(3, area);
 			psmt.setString(4, device);
@@ -168,7 +168,7 @@ public class PlugDAO {
 			
 			while(rs.next()){
 				int getplug = rs.getInt(1);
-				String getseat = rs.getString(2);
+				String getid = rs.getString(2);
 				Double getpower = rs.getDouble(3);
 				String getstatus = rs.getString(4);
 				String getdate = rs.getString(5);
@@ -176,7 +176,7 @@ public class PlugDAO {
 				String getdevice = rs.getString(7);
 
 				
-				PlugVO vo = new PlugVO(getplug, getseat, getpower, getstatus, getdate, getarea, getdevice);
+				PlugVO vo = new PlugVO(getplug, getid, getpower, getstatus, getdate, getarea, getdevice);
 				al.add(vo);
 			}		
 						
@@ -189,20 +189,20 @@ public class PlugDAO {
 
 	}
 	
-	public PlugVO selectOne(String seat) {
+	public PlugVO selectOne(String id) {
 		PlugVO vo = null;
 	
 		try {
 			connect();
 			
-			String sql = "select * from t_plug where seat_no = ?";
+			String sql = "select * from t_plug where emp_id = ?";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			psmt.setString(1, seat);
+			psmt.setString(1, id);
 			
 			if(rs.next()){
 				int getplug = rs.getInt(1);
-				String getseat = rs.getString(2);
+				String getid = rs.getString(2);
 				Double getpower = rs.getDouble(3);
 				String getstatus = rs.getString(4);
 				String getdate = rs.getString(5);
@@ -210,7 +210,7 @@ public class PlugDAO {
 				String getdevice = rs.getString(7);
 
 				
-				vo = new PlugVO(getplug, getseat, getpower, getstatus, getdate, getarea, getdevice);
+				vo = new PlugVO(getplug, getid, getpower, getstatus, getdate, getarea, getdevice);
 			}		
 						
 		}catch(Exception e){

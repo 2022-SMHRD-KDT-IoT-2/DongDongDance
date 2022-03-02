@@ -32,7 +32,6 @@ public class UpdateEmp2Con extends HttpServlet {
 		String yn = vo.getAdminYn();
 		String rfid = vo.getRfidUid();
 		String area = vo.getAreaId();
-		int plug = vo.getPlugSeq();
 		
 		EmployeeDAO dao = new EmployeeDAO();
 		int cnt = dao.updateEmp2(pw1, pw2, phone, id);
@@ -40,7 +39,7 @@ public class UpdateEmp2Con extends HttpServlet {
 			if(cnt>0) {
 				response.sendRedirect("main1.jsp");
 				System.out.println("수정성공");
-				vo = new EmployeeVO(id, name, seat, status, superid, yn, rfid, area, plug);
+				vo = new EmployeeVO(id, name, seat, status, superid, yn, rfid, area);
 				session.setAttribute("loginvo", vo);
 			}else {
 				response.sendRedirect("main1.jsp");
