@@ -6,22 +6,26 @@
 -->
 <html>
 	<head>
-		<title>Generic - Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+	<title>Hyperspace by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
 
-		<!-- Sidebar -->
+<body class="is-preload">
+
+	<!-- Sidebar -->
 	<section id="sidebar">
 		<div class="inner">
 			<nav>
-				<ul id="sub_sidebar">
-					<li><a href="index.html">Main</a></li>
-					<li><a href="state.html">근태현황</a></li>
-					<li><a href="monitoring.html">모니터링</a></li>
+				<ul>
+					<li><a href="#">모니터링</a></li>
+
+					<li><a href="index.html">메인으로 돌아가기</a></li>
+
 				</ul>
 			</nav>
 		</div>
@@ -29,26 +33,79 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-		
-			<p>모니터링,조절페이지</p>
+
+		<!-- Intro -->
+		<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<!-- 본문내용 -->
+				<canvas id="myChart" width="400" height="150"></canvas>
+				<!-- 본문애용 끝 -->
+				<ul class="actions">
+					<li><a href="#one" class="button scrolly">연락하기</a></li>
+					
+					<li>제어 
+						<label class="switch-button"> 
+							<input type="checkbox"/>ㅣ
+							<span class="onoff-switch"></span> 
+							
+						</label>
+					</li> 
+
+				</ul>
+			</div>
+		</section>
 	</div>
 
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
-		
-		<p>근태확인페이지</p>
-	</div>
+	<input type="checkbox" id="menuicon">
+<ul>
+	<li>
+		<label for="menuicon">
+			
+		</label>
+	</li>
+	
+</ul>
 
+<div class="sidebar">
+</div>
 
 	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
+		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
+	<script>
+		let renewTime = 3000;
+		let chartId = 'myChart';
+		// 칸 구별
+		let chartLabels = ['1', '2', '3', '4', '5'];
+		let chartDatas = ['10', '15', '20', '25', '30'];
+		let chart = chartInit(
+			chartId,
+			chartLabels,
+			chartDatas
+		);
 
+		setInterval(() => {
+			// 여기에 값 넣으면 된다!! 6은 db에 시간 테이블
+			addData(chart, '6', Math.round((Math.random() * 100)))
+		}, renewTime);
+	</script>
 </body>
 </html>
