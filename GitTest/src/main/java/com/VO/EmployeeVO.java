@@ -77,6 +77,12 @@ public class EmployeeVO {
 		this.empPhone = empPhone;
 
 	}
+	
+	// 재실 구역 추출
+	public EmployeeVO(String areaId) {
+		super();
+		this.areaId = areaId;
+	}
 
 	public String getEmpId() {
     	return empId;

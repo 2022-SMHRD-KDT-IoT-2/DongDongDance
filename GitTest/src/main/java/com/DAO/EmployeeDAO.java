@@ -301,6 +301,39 @@ public class EmployeeDAO {
 		}
 		return cnt;
 	}
+	
+	// 구역내 재실 현황 추출
+	public ArrayList<EmployeeVO> selectArea(String status){
+
+		ArrayList<EmployeeVO> al = new ArrayList<EmployeeVO>();
+		
+		try {
+			connect();
+			
+			String sql = "select area_id from t_employee where emp_status = ?";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			psmt.setString(1, status);
+			
+			while(rs.next()){
+				String getarea = rs.getString(1);
+
+				
+				EmployeeVO vo = new EmployeeVO(getarea);
+				al.add(vo);
+			}		
+						
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return al;
+
+	}
+	
+	
+	
 }
 
 

@@ -15,6 +15,14 @@ public class AreaVO {
 		this.areaName = areaName;
 	}
 	
+	
+	public AreaVO(String areaId) {
+		super();
+		this.areaId = areaId;
+	}
+
+
+
 	public String getAreaId() {
 		return areaId;
 	}

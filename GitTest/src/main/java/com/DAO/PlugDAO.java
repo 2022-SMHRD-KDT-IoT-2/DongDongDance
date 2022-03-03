@@ -189,8 +189,11 @@ public class PlugDAO {
 
 	}
 	
-	public PlugVO selectOne(String id) {
-		PlugVO vo = null;
+	// 상태 변경 플러그 번호 추출 (직원번호가 있는 플러그)
+	
+	public ArrayList<PlugVO> selectList1(String id){
+
+		ArrayList<PlugVO> al = new ArrayList<PlugVO>();
 	
 		try {
 			connect();
@@ -200,7 +203,7 @@ public class PlugDAO {
 			rs = psmt.executeQuery();
 			psmt.setString(1, id);
 			
-			if(rs.next()){
+			while(rs.next()){
 				int getplug = rs.getInt(1);
 				String getid = rs.getString(2);
 				Double getpower = rs.getDouble(3);
@@ -210,18 +213,124 @@ public class PlugDAO {
 				String getdevice = rs.getString(7);
 
 				
-				vo = new PlugVO(getplug, getid, getpower, getstatus, getdate, getarea, getdevice);
-			}		
+				PlugVO vo = new PlugVO(getplug, getid, getpower, getstatus, getdate, getarea, getdevice);
+			    al.add(vo);
+			}
 						
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {
 			close();
 		}
-		return vo;
-
+		return al;
 	}
 	
+	// 상태 변경 플러그 번호 추출 (직원번호가 없는 플러그)
+	
+		public ArrayList<PlugVO> selectList2(String status){
+
+			ArrayList<PlugVO> al = new ArrayList<PlugVO>();
+		
+			try{
+				connect();
+				
+				String sql = "select * from t_plug where emp_id is null and area_id in (select area_id from t_area where status = ?)";
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery();
+				psmt.setString(1, status);
+				
+				while(rs.next()){
+					int getplug = rs.getInt(1);
+					String getid = rs.getString(2);
+					Double getpower = rs.getDouble(3);
+					String getstatus = rs.getString(4);
+					String getdate = rs.getString(5);
+					String getarea = rs.getString(6);
+					String getdevice = rs.getString(7);
+
+					
+					PlugVO vo = new PlugVO(getplug, getid, getpower, getstatus, getdate, getarea, getdevice);
+				    al.add(vo);
+				}
+							
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return al;
+		}
+		
+		// 상태 변경 플러그 번호 추출 (방번호가 일치하는 플러그 중에서 직원번호가 없는 플러그)
+		
+			public ArrayList<PlugVO> selectList3(String room){
+
+				ArrayList<PlugVO> al = new ArrayList<PlugVO>();
+			
+				try{
+					connect();
+					
+					String sql = "select plug_seq from t_plug where emp_id is null and area_id in (select area_id from t_area where area_id like '?%')";
+					psmt = conn.prepareStatement(sql);
+					rs = psmt.executeQuery();
+					psmt.setString(1, room);
+					
+					while(rs.next()){
+						int getplug = rs.getInt(1);
+						String getid = rs.getString(2);
+						Double getpower = rs.getDouble(3);
+						String getstatus = rs.getString(4);
+						String getdate = rs.getString(5);
+						String getarea = rs.getString(6);
+						String getdevice = rs.getString(7);
+
+						
+						PlugVO vo = new PlugVO(getplug, getid, getpower, getstatus, getdate, getarea, getdevice);
+					    al.add(vo);
+					}
+								
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				return al;
+			}
+			
+			// 상태변경 플러그 번호 추출
+			public ArrayList<PlugVO> selectStatus(String status){
+
+				ArrayList<PlugVO> al = new ArrayList<PlugVO>();
+			
+				try{
+					connect();
+					
+					String sql = "select plug_seq from t_plug where status = ?";
+					psmt = conn.prepareStatement(sql);
+					rs = psmt.executeQuery();
+					psmt.setString(1, status);
+					
+					while(rs.next()){
+						int getplug = rs.getInt(1);
+						String getid = rs.getString(2);
+						Double getpower = rs.getDouble(3);
+						String getstatus = rs.getString(4);
+						String getdate = rs.getString(5);
+						String getarea = rs.getString(6);
+						String getdevice = rs.getString(7);
+
+						
+						PlugVO vo = new PlugVO(getplug, getid, getpower, getstatus, getdate, getarea, getdevice);
+					    al.add(vo);
+					}
+								
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				return al;
+			}
 	
 
 }
