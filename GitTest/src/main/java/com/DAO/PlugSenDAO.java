@@ -13,7 +13,7 @@ public class PlugSenDAO {
 	public void connect() {
 		try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 			String dbid = "campus_d_3_0216";
 			String dbpw = "smhrd3";			
 			conn = DriverManager.getConnection(url, dbid, dbpw);
