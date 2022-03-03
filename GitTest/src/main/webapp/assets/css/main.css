@@ -2537,6 +2537,18 @@ input, select, textarea {
 			font-size: 1.25em;
 		}
 		
+		#intro_monitor {
+		background-attachment: fixed;
+		background-color: white;
+		background-position: 10em center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+		#intro_monitor p {
+			font-size: 1.25em;
+		}	
+		
 		/* 차트 css */
 		.highcharts-figure,
 .highcharts-data-table table {
