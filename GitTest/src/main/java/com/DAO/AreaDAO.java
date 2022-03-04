@@ -191,5 +191,31 @@ public class AreaDAO {
 		return cnt;
 	}
 	
-	
+	// 현재 재실한 방번호 추출
+	public ArrayList<AreaVO> getRoom(String status) {
+
+		ArrayList<AreaVO> al = new ArrayList<>();
+		try {
+			conn();
+
+			String sql = "select distinct substr(area_id, 1, 2) from t_area where area_status = ?";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+
+				String id = rs.getString(1);
+
+
+				AreaVO vo = new AreaVO(id);
+				al.add(vo);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return al;
+	}
 }
