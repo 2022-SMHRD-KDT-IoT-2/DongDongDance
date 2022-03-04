@@ -52,3 +52,5 @@ function chartInit(id, labels, datas, options = {
     });
 }
 
+
+
