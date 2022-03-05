@@ -24,7 +24,7 @@
 
 				<!-- Header -->
 				<header id="header">
-					<strong>Monitoring</strong>
+					<strong>모니터링</strong>
 					<ul class="icons">
 						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -38,7 +38,7 @@
 				<!-- Content -->
 				<section>
 					<header class="main">
-						<h2 width="50%" ;>장소: 한수진 방</h2>
+						<p>장소: 한수진 방</p>
 					</header>
 					<!-- 본문 시작! -->
 					<canvas id="myChart" width="1000px" height="350px"></canvas>
@@ -52,7 +52,7 @@
 							</a>
 							<label class="messageButton">
 
-								<img src="assets/image/greenMessage.png" alt="" width="100px" />
+								<img src="/assets/image/greenMessage.png" alt="" width="100px" />
 							</label>
 
 						</li>
@@ -190,11 +190,11 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 	<script src="assets/js/chart.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
@@ -216,27 +216,6 @@
 			// 여기에 값 넣으면 된다!! 6은 db에 시간 테이블
 			addData(chart, '6', Math.round((Math.random() * 100)))
 		}, renewTime);
-	</script>
-	
-	<!-- 오른쪽 서치바 안의 검색기능 -->
-	<!--  text/javascript -->
-	<script>
-		function filter() {
-
-			var Svalue, Sname, Sitem, i;
-
-			Svalue = document.getElementById("Svalue").value.toUpperCase();
-			Sitem = document.getElementsByClassName("Sitem");
-
-			for (i = 0; i < Sitem.length; i++) {
-				Sname = Sitem[i].getElementsByClassName("Sname");
-				if (Sname[0].innerHTML.toUpperCase().indexOf(Svalue) > -1) {
-					Sitem[i].style.display = "flex";
-				} else {
-					Sitem[i].style.display = "none";
-				}
-			}
-		}
 	</script>
 
 </body>
