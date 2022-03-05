@@ -2366,9 +2366,9 @@ button,
 .switch-button {
   position: relative; 
  display: inline-block; 
- width: 100px;
+ width: 40px;
  height: 
- 40px; 
+ 20px; 
  } 
  .switch-button input { 
  opacity: 0; 
@@ -2390,10 +2390,10 @@ button,
  .onoff-switch:before
  { position: absolute; 
  content: "";
- height: 30px; 
- width: 30px;
- left: 4px;
- bottom: 4px; 
+ height: 15px; 
+ width: 15px;
+ left: 3px;
+ bottom: 2px; 
  background-color: #fff; 
  -webkit-transition: .5s; 
  transition: .4s; 
@@ -2404,9 +2404,9 @@ button,
  box-shadow: inset 1px 5px 1px #8FBC95;
  } 
  .switch-button input:checked + .onoff-switch:before { 
- -webkit-transform: translateX(62px);
- -ms-transform: translateX(62px); 
- transform: translateX(62px);
+ -webkit-transform: translateX(20px);
+ -ms-transform: translateX(20px); 
+ transform: translateX(20px);
  }
  
  li{

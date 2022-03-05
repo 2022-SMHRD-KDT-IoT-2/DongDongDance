@@ -14,12 +14,34 @@
 	<style>
 		.swal-button {
 			padding-top: 0;
-			color: white!important;
+			color: white !important;
 			background-color: rgb(197, 197, 197);
 		}
+
 		.swal-button:not([disabled]):hover {
 
 			background-color: rgb(143, 188, 149);
+		}
+
+		.actions li {
+			width: 110px;
+		}
+
+		.actions p {
+			margin: 0;
+			padding: 0;
+		}
+
+		.actions label {
+			margin: 0;
+			padding: 0;
+		}
+
+		.justified {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 37px ;
 		}
 	</style>
 </head>
@@ -49,108 +71,107 @@
 				<!-- Content -->
 				<section>
 					<header class="main">
-						<p>장소: 한수진 방</p>
+						<li>장소: 한수진 방</li>
 					</header>
 					<!-- 본문 시작! -->
 					<canvas id="myChart" width="1000px" height="350px"></canvas>
 
 					<!-- 스위치 -->
-					<ul class="actions" style="display: flex; width: 500px; justify-content: space-between;
-				width: 800px;">
+					<ul class="actions" style="display: flex;  justify-content: space-evenly;
+						 text-align: center; ">
 
-						<li style="display: flex; width: 300px;">
-							<p style="margin-top:30px;">연락하기</p>
-							</a>
+						<li class="justified">
+							<p>연락</p>
 							<label class="messageButton">
-
-								<img src="assets/image/greenMessage.png" alt="" width="100px" />
-
+								<img src="assets/image/greenMessage.png" alt="" width="60px" />
 							</label>
-
 						</li>
 
-						<li style="display :flex">
-							<p style="margin-top:55px;">제어</p>&nbsp
-							<label class="switch-button" style="margin-top:55px;">
+						<li class="justified">
+							<p>제어</p>
+							<label class="switch-button">
 								<input type="checkbox" />
 								<span class="onoff-switch"></span>
 							</label>
 						</li>
-						<!-- 스위치 끝 -->
+					</ul>
 
-						<!-- 서브@@@@@@@@@@@ -->
-						<input type="checkbox" id="menuicon">
-						<ul>
-							<li>
-								<label for="menuicon">
 
-								</label>
-							</li>
+					<!-- 스위치 끝 -->
 
-						</ul>
-						<!-- 서브라이트박스 끝 -->
+					<!-- 서브@@@@@@@@@@@ -->
+					<input type="checkbox" id="menuicon">
+					<ul>
+						<li>
+							<label for="menuicon">
 
-						<!--진짜 서치박스  -->
-						<div class="sidebarRight">
-							<!-- 서치박스 -->
+							</label>
+						</li>
 
-							<div class="searchbox">
-								<div class="Sheader">
-									<h1 id="searchboxname">사원 검색</h1>
-									<input onkeyup="filter()" type="text" id="Svalue" placeholder="Type to Search">
-								</div>
+					</ul>
+					<!-- 서브라이트박스 끝 -->
 
-								<div class="Scontainer">
+					<!--진짜 서치박스  -->
+					<div class="sidebarRight">
+						<!-- 서치박스 -->
 
-									<div class="Sitem">
-										<span class="Sicon">A</span>
-										<span class="Sname">Apple</span>
-									</div>
-
-									<div class="Sitem">
-										<span class="Sicon">O</span>
-										<span class="Sname">Orange</span>
-									</div>
-
-									<div class="Sitem">
-										<span class="Sicon">M</span>
-										<span class="Sname">Mandarin</span>
-									</div>
-
-									<div class="Sitem">
-										<span class="Sicon">H</span>
-										<span class="Sname">한수진</span>
-									</div>
-
-									<div class="Sitem">
-										<span class="Sicon">J</span>
-										<span class="Sname">제동진</span>
-									</div>
-
-									<div class="Sitem">
-										<span class="Sicon">J</span>
-										<span class="Sname">조세정</span>
-									</div>
-
-									<div class="Sitem">
-										<span class="Sicon">Y</span>
-										<span class="Sname">유성준</span>
-									</div>
-
-								</div>
+						<div class="searchbox">
+							<div class="Sheader">
+								<h1 id="searchboxname">사원 검색</h1>
+								<input onkeyup="filter()" type="text" id="Svalue" placeholder="Type to Search">
 							</div>
 
+							<div class="Scontainer">
 
+								<div class="Sitem">
+									<span class="Sicon">A</span>
+									<span class="Sname">Apple</span>
+								</div>
 
+								<div class="Sitem">
+									<span class="Sicon">O</span>
+									<span class="Sname">Orange</span>
+								</div>
 
+								<div class="Sitem">
+									<span class="Sicon">M</span>
+									<span class="Sname">Mandarin</span>
+								</div>
+
+								<div class="Sitem">
+									<span class="Sicon">H</span>
+									<span class="Sname">한수진</span>
+								</div>
+
+								<div class="Sitem">
+									<span class="Sicon">J</span>
+									<span class="Sname">제동진</span>
+								</div>
+
+								<div class="Sitem">
+									<span class="Sicon">J</span>
+									<span class="Sname">조세정</span>
+								</div>
+
+								<div class="Sitem">
+									<span class="Sicon">Y</span>
+									<span class="Sname">유성준</span>
+								</div>
+
+							</div>
 						</div>
-						<!-- 진자서치박스 끝 -->
+
+
+
+
+					</div>
+					<!-- 진자서치박스 끝 -->
 
 
 
 
 
-						<!-- 본문 끝! -->
+					<!-- 본문 끝! -->
 
 				</section>
 
@@ -238,7 +259,7 @@
 
 			swal({
 				title: "전력 이상감지 알림",
-				text: "한수진님에게 알림을 보냈습니다."
+				text: "<<한수진 님에게 알림을 보냈습니다."
 				//    alert()
 			})
 

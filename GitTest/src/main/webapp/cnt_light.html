@@ -12,6 +12,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<!-- 도면때문에 style넣음 그냥.. -->
+	<style>
+		.light-control-borad {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+		}
+
+		.light-control-borad li {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 2px ;
+			width: 120px;
+		}
+
+		.light-control-borad  p {
+			margin: 0;
+			padding: 0;
+		}
+		.light-control-borad label {
+			margin: 0;
+		}
+
+	</style>
 </head>
 
 <body class="is-preload">
@@ -49,49 +73,49 @@
 									<div style="display: flex;">
 										<img src="assets/image/light_drawing.png" alt=""
 											style="width: 500px; height: 500px;" />
-									<ul>
-										<li style="display :flex">
-											<p style="margin-top:30px;">조명 1</p>&nbsp &nbsp
-											<label class="switch-button" style="margin-top:30px;">
+									<ul class="light-control-borad">
+										<li  class="justified_light">
+											<p>조명 1</p>
+											<label class="switch-button">
 												<input type="checkbox" />
 												<span class="onoff-switch"></span>
 											</label>
 										</li>
 										
-										<li style="display :flex">
-											<p style="margin-top:10px;">조명 2</p>&nbsp &nbsp
-											<label class="switch-button" style="margin-top:10px;">
+										<li  class="justified_light">
+											<p>조명 2</p>
+											<label class="switch-button" >
 												<input type="checkbox" />
 												<span class="onoff-switch"></span>
 											</label>
 										</li>
 										
-										<li style="display :flex">
-											<p style="margin-top:10px;">조명 3</p>&nbsp &nbsp
-											<label class="switch-button" style="margin-top:10px;">
+										<li  class="justified_light">
+											<p>조명 3</p>
+											<label class="switch-button" >
 												<input type="checkbox" />
 												<span class="onoff-switch"></span>
 											</label>
 										</li>
 
-										<li style="display :flex">
-											<p style="margin-top:10px;">조명 4</p>&nbsp &nbsp
-											<label class="switch-button" style="margin-top:10px;">
+										<li  class="justified_light">
+											<p>조명 4</p>
+											<label class="switch-button" >
 												<input type="checkbox" />
 												<span class="onoff-switch"></span>
 											</label>
 										</li>
 
-										<li style="display :flex">
-											<p style="margin-top:10px;">조명 5</p>&nbsp &nbsp
-											<label class="switch-button" style="margin-top:10px;">
+										<li  class="justified_light">
+											<p>조명 5</p>
+											<label class="switch-button" >
 												<input type="checkbox" />
 												<span class="onoff-switch"></span>
 											</label>
 										</li>
-										<li style="display :flex">
-											<p style="margin-top:10px;">조명 6</p>&nbsp &nbsp
-											<label class="switch-button" style="margin-top:10px;">
+										<li  class="justified_light">
+											<p>조명 6</p>
+											<label class="switch-button" >
 												<input type="checkbox" />
 												<span class="onoff-switch"></span>
 											</label>
