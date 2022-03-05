@@ -43,6 +43,11 @@ function chartInit(id, labels, datas, options = {
             }],
         },
         options: {
+            plugins: {
+                legend: {
+                    display: false,
+                }
+            },
             scales: {
                 y: {
                     beginAtZero: true
