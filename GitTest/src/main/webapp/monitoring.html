@@ -11,6 +11,12 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+		.swal-button {
+			padding-top: 0;
+			color: white!important;
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -19,7 +25,7 @@
 	<div id="wrapper">
 
 		<!-- Main -->
-		<div id="main">
+		<div id="main" style="width: calc(100vw - 26em);">
 			<div class="inner">
 
 				<!-- Header -->
@@ -47,7 +53,7 @@
 					<ul class="actions" style="display: flex; width: 500px; justify-content: space-between;
 				width: 800px;">
 
-						<li stㅣyle="display: flex; width: 300px;">
+						<li style="display: flex; width: 300px;">
 							<p style="margin-top:30px;">연락하기</p>
 							</a>
 							<label class="messageButton">
@@ -202,7 +208,7 @@
 		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
 
 	<script>
-		let renewTime = 600000;
+		let renewTime = 6000;
 		let chartId = 'myChart';
 		// 칸 구별
 		let chartLabels = ['1', '2', '3', '4', '5', '6', '7', '8'];
@@ -214,6 +220,7 @@
 		);
 
 		setInterval(() => {
+			ㅣ
 			// 여기에 값 넣으면 된다!! 6은 db에 시간 테이블
 			addData(chart, '6', Math.round((Math.random() * 100)))
 		}, renewTime);
