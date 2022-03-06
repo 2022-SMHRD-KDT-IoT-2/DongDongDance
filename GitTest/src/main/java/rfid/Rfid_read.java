@@ -32,7 +32,7 @@ public class Rfid_read extends HttpServlet {
 		R_dao.regLog("1", empid); // (LOG_TYPE = 1) 로 RFID로그 - 테이블에 삽입
 
 		if (empid == null) {
-//			E_dao.updateStatus(uid, "1");
+
 			System.out.println("해당사원이없어요.");
 		}
 		// 1. uid가 찍히면 read하고 직원 status값이 무엇인지 가져와야함.

@@ -1,4 +1,4 @@
-package dummy.controller;
+package com.Controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.DAO.EmployeeDAO;
 
 
-@WebServlet("/UpdateEmp1Con")
-public class UpdateEmp1Con extends HttpServlet {
+@WebServlet("/UpdateEmpCon")
+public class UpdateEmpCon extends HttpServlet {
 
-	// 관리자용 직원정보 수정
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
 		String id = request.getParameter("id");
