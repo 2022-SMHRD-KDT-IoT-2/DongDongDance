@@ -1,4 +1,4 @@
-package dummy.controller;
+package com.Controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
