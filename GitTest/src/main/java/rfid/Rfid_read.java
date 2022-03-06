@@ -9,25 +9,49 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.DAO.EmployeeDAO;
 import com.DAO.RfidDAO;
 
 @WebServlet("/Rfid_read")
 public class Rfid_read extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uid = request.getParameter("uid");
-		System.out.println(uid);
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String uid = request.getParameter("uid"); // 아두이노에서 uid값을 받아온다.
 		PrintWriter out = response.getWriter();
-		out.println(uid);
-		
+		System.out.println(uid); // 출력확인
+		out.println(uid); // 출력확인
+
 //		String uid = "1234";
-		RfidDAO dao = new RfidDAO();
-		
-		String uid2 = dao.select_empid(uid);
-		System.out.println(uid2);
-		
-		dao.regLog("1", uid2);
+		RfidDAO R_dao = new RfidDAO();
+		EmployeeDAO E_dao = new EmployeeDAO();
+
+		String empid = R_dao.select_empid(uid);
+		System.out.println(empid);
+		R_dao.regLog("1", empid); // (LOG_TYPE = 1) 로 RFID로그 - 테이블에 삽입
+
+		if (empid == null) {
+
+			System.out.println("해당사원이없어요.");
+		}
+		// 1. uid가 찍히면 read하고 직원 status값이 무엇인지 가져와야함.
+		// 1-1. 그렇다면 찍혔을 때 확인하고 갱신해야함.
+		// 2. 가져온 status값에 따라 동작이 달라짐.
+
+		else {
+			String status = E_dao.select_status(uid);
+			System.out.println("상태값 : " + status);
+			
+			if (status.equals("0")) {
+				E_dao.updateStatus(uid, "1");
+				System.out.println("상태값이 0");
+			} else {
+				E_dao.updateStatus(uid, "0");
+				System.out.println("상태값이 1");
+			}
+		}
+
 	}
 
 }

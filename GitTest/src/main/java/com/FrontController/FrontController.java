@@ -89,7 +89,6 @@ public class FrontController extends HttpServlet {
 			command = new UpdatePlugDvCon();
 		}
 		
-		
 		String url = command.execute(request, response);
 		
 		if(url.equals("true") || url.equals("false")) {

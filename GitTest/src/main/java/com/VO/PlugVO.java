@@ -26,6 +26,15 @@ public class PlugVO {
 		this.areaId = areaId;
 		this.device = device;
 	}
+	
+	
+	public PlugVO(int plugSeq) {
+		super();
+		this.plugSeq = plugSeq;
+	}
+
+
+
 	public int getPlugSeq() {
 		return plugSeq;
 	}

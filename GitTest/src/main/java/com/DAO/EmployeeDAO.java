@@ -205,14 +205,14 @@ public class EmployeeDAO {
 		return cnt;
 	}
 	
-	//관리자용 직원정보수정
+	//관리자용 직원정보수정(구역정보까지 변경하는 경우)
 	public int updateEmp(String id, String pw, String name, String seat, String phone, String superid, String yn, String rfid, String area) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "update t_employee set emp_pw = ?, emp_name = ?, emp_seat_no = ?, emp_phone = ?, emp_super_id = ?, admin_yn = ?, rfid_uid = ? where emp_id = ?";
+			String sql = "update t_employee set emp_pw = ?, emp_name = ?, emp_seat_no = ?, emp_phone = ?, emp_super_id = ?, admin_yn = ?, rfid_uid = ?, area_id = ? where emp_id = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, pw);
 			psmt.setString(2, name);
@@ -234,7 +234,36 @@ public class EmployeeDAO {
 		return cnt;
 	}
 	
-	//직원용 직원정보수정
+	//관리자용 직원정보수정(구역정보를 수정하지 않는 경우)
+	public int updateEmp(String id, String pw, String name, String seat, String phone, String superid, String yn, String rfid) {
+		int cnt = 0;
+		
+		try {
+			connect();
+			
+			String sql = "update t_employee set emp_pw = ?, emp_name = ?, emp_seat_no = ?, emp_phone = ?, emp_super_id = ?, admin_yn = ?, rfid_uid = ? where emp_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, pw);
+			psmt.setString(2, name);
+			psmt.setString(3, seat);
+			psmt.setString(4, phone);
+			psmt.setString(5, superid);
+			psmt.setString(6, yn);
+			psmt.setString(7, rfid);
+			psmt.setString(8, id);
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	
+	//직원용 직원정보수정(사용안함)
 	public int updateEmp2(String pw1, String pw2, String phone, String id) {
 		int cnt = 0;
 		
@@ -259,7 +288,7 @@ public class EmployeeDAO {
 	}
 	
 	// 직원 상태 수정
-	public int updateStatus(String id, String status) {
+	public int updateStatus(String uid, String status) {
 		int cnt = 0;
 		
 		try {
@@ -268,10 +297,10 @@ public class EmployeeDAO {
 			String sql = "update t_employee set emp_status = ? where rfid_uid = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, status);
-			psmt.setString(2, id);
+			psmt.setString(2, uid);
 
-			
 			cnt = psmt.executeUpdate();
+			
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -333,6 +362,27 @@ public class EmployeeDAO {
 
 	}
 	
+	public String select_status(String uid) {
+
+		try {
+			connect();
+			String sql = "select emp_status from t_employee where rfid_uid = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, uid);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				String getstatus = rs.getString(1);
+				return getstatus;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return null;
+	}
 	
 	
 }
