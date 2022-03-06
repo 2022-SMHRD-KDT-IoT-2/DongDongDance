@@ -97,12 +97,15 @@ public class Rfid_read extends HttpServlet {
 		ArrayList<EmployeeVO> al1 = eDao.selectArea(); //재실자가 있는 구역
 		ArrayList<EmployeeVO> al2 = eDao.selectArea2(); //퇴실구역
 
-		System.out.println(al2.get(0).getAreaId());
-		for(int i = 0; i<al1.size(); i++) {
-			c += aDao.updateStatus(al1.get(i).getAreaId(), "1");
+		if(al1.size() != 0) {
+			for(int i = 0; i<al1.size(); i++) {
+				c += aDao.updateStatus(al1.get(i).getAreaId(), "1");
+			}			
 		}
-		for(int i = 0; i<al2.size(); i++) {
-			d += aDao.updateStatus(al2.get(i).getAreaId(), "0");				
+		if(al2.size() != 0) {			
+			for(int i = 0; i<al2.size(); i++) {
+				d += aDao.updateStatus(al2.get(i).getAreaId(), "0");				
+			}
 		}
 		
 		PlugDAO pDao = new PlugDAO();
