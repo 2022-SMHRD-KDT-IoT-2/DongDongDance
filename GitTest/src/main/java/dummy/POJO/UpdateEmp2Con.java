@@ -1,4 +1,4 @@
-package com.POJO;
+package dummy.POJO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

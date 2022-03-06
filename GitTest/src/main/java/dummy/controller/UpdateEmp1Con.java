@@ -25,16 +25,16 @@ public class UpdateEmp1Con extends HttpServlet {
 		String rfid = request.getParameter("rfid");
 		String area = request.getParameter("area");
 			
-		EmployeeDAO dao = new EmployeeDAO();
-		int cnt = dao.updateEmp1(id, name, seat, phone, superid, yn, rfid, area);
-		
-			if(cnt>0) {
-				response.sendRedirect("main2.jsp");
-				System.out.println("수정성공");;
-			}else {
-				response.sendRedirect("main2.jsp");
-				System.out.println("수정실패");
-			}
+//		EmployeeDAO dao = new EmployeeDAO();
+//		int cnt = dao.updateEmp1(id, name, seat, phone, superid, yn, rfid, area);
+//		
+//			if(cnt>0) {
+//				response.sendRedirect("main2.jsp");
+//				System.out.println("수정성공");;
+//			}else {
+//				response.sendRedirect("main2.jsp");
+//				System.out.println("수정실패");
+//			}
 	}
 
 }
