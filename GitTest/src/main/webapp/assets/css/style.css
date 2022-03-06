@@ -40,7 +40,7 @@ body:before{
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #999;
-    font-size: 18px; color: #fff;
+    font-size: 18px;;
     outline: none;
 }
 .int-area label{
