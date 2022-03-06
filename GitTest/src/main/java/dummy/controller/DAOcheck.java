@@ -1,10 +1,9 @@
-package rfid;
+package dummy.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,45 +19,19 @@ import com.VO.AreaVO;
 import com.VO.EmployeeVO;
 import com.VO.PlugVO;
 
-@WebServlet("/Rfid_read")
-public class Rfid_read extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-//		String uid = request.getParameter("uid"); // 아두이노에서 uid값을 받아온다.
-//		PrintWriter out = response.getWriter();
-//		System.out.println(uid); // 출력확인
-//		out.println(uid); // 출력확인
+@WebServlet("/DAOcheck")
+public class DAOcheck extends HttpServlet {
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
 		String uid = "1234";
 		RfidDAO R_dao = new RfidDAO();
-		EmployeeDAO E_dao = new EmployeeDAO();
 
 		String empid = R_dao.select_empid(uid);
 		System.out.println(empid);
-//		R_dao.regLog("1", empid); // (LOG_TYPE = 1) 로 RFID로그 - 테이블에 삽입
 
-//		if (empid == null) {
-//
-//			System.out.println("해당사원이없어요.");
-//		}
-		// 1. uid가 찍히면 read하고 직원 status값이 무엇인지 가져와야함.
-		// 1-1. 그렇다면 찍혔을 때 확인하고 갱신해야함.
-		// 2. 가져온 status값에 따라 동작이 달라짐.
-
-//		else {
-//			String status = E_dao.select_status(uid);
-//			System.out.println("상태값 : " + status);
-//			
-//			if (status.equals("0")) {
-//				E_dao.updateStatus(uid, "1");
-//				System.out.println("상태값이 0");
-//			} else {
-//				E_dao.updateStatus(uid, "0");
-//				System.out.println("상태값이 1");
-//			}
-//		}
 		
 		String type = "";
 		Date date_now = new Date(System.currentTimeMillis()); // 현재시간을 가져와 Date형으로 저장한다
@@ -97,13 +70,13 @@ public class Rfid_read extends HttpServlet {
 		ArrayList<EmployeeVO> al1 = eDao.selectArea(); //재실자가 있는 구역
 		ArrayList<EmployeeVO> al2 = eDao.selectArea2(); //퇴실구역
 
-		System.out.println(al2.get(0).getAreaId());
-		for(int i = 0; i<al1.size(); i++) {
-			c += aDao.updateStatus(al1.get(i).getAreaId(), "1");
-		}
-		for(int i = 0; i<al2.size(); i++) {
-			d += aDao.updateStatus(al2.get(i).getAreaId(), "0");				
-		}
+		System.out.println(al2.get(0).getAreaId());		
+			for(int i = 0; i<al1.size(); i++) {
+				c += aDao.updateStatus(al1.get(i).getAreaId(), "1");
+			}
+			for(int i = 0; i<al2.size(); i++) {
+				d += aDao.updateStatus(al2.get(i).getAreaId(), "0");				
+			}			
 		
 		PlugDAO pDao = new PlugDAO();
 		ArrayList<PlugVO> al3 = pDao.selectList1(empid);
@@ -145,7 +118,6 @@ public class Rfid_read extends HttpServlet {
 		System.out.println(f);
 		System.out.println(g);
 		System.out.println(h);
-
 	}
 
 }

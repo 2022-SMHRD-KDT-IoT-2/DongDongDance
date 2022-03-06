@@ -22,14 +22,15 @@ public class UpdatePlugStCon extends HttpServlet {
 		PlugDAO dao = new PlugDAO();
 		int cnt = 0;
 		String id = request.getParameter("id");
-		String set = request.getParameter("set");
+		String set = "1";
+		String statusP = "Z";
 	
 		// 상태값이 직접 넘어온 경우(수동제어)
 		int plug = Integer.parseInt(request.getParameter("plug"));
-	    String statusP = request.getParameter("statusP");
+//	    	statusP = request.getParameter("statusP");	    	
 		
 		// 여기서는 플러그 상태 필요
-	    if(statusP.equals("")) {
+	    if(statusP.equals("Z")) {
 			PlugDAO pDao = new PlugDAO();
 			ArrayList<PlugVO> al1 = pDao.selectList1(id);
 			ArrayList<PlugVO> al2 = pDao.selectList2("1");

@@ -200,6 +200,7 @@ public class AreaDAO {
 
 			String sql = "select distinct substr(area_id, 1, 2) from t_area where area_status = ?";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, status);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {

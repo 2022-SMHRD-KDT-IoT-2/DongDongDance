@@ -200,8 +200,8 @@ public class PlugDAO {
 			
 			String sql = "select * from t_plug where emp_id = ?";
 			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
 			psmt.setString(1, id);
+			rs = psmt.executeQuery();
 			
 			while(rs.next()){
 				int getplug = rs.getInt(1);
@@ -236,10 +236,10 @@ public class PlugDAO {
 			try{
 				connect();
 				
-				String sql = "select * from t_plug where emp_id is null and area_id in (select area_id from t_area where status = ?)";
+				String sql = "select * from t_plug where emp_id is null and area_id in (select area_id from t_area where area_status = ?)";
 				psmt = conn.prepareStatement(sql);
-				rs = psmt.executeQuery();
 				psmt.setString(1, status);
+				rs = psmt.executeQuery();
 				
 				while(rs.next()){
 					int getplug = rs.getInt(1);
@@ -273,10 +273,10 @@ public class PlugDAO {
 				try{
 					connect();
 					
-					String sql = "select plug_seq from t_plug where emp_id is null and area_id in (select area_id from t_area where area_id like '?%')";
+					String sql = "select plug_seq from t_plug where emp_id is null and area_id in (select area_id from t_area where area_id like ?)";
 					psmt = conn.prepareStatement(sql);
+					psmt.setString(1, room + "%");
 					rs = psmt.executeQuery();
-					psmt.setString(1, room);
 					
 					while(rs.next()){
 						int getplug = rs.getInt(1);
@@ -310,8 +310,8 @@ public class PlugDAO {
 					
 					String sql = "select plug_seq from t_plug where status = ?";
 					psmt = conn.prepareStatement(sql);
-					rs = psmt.executeQuery();
 					psmt.setString(1, status);
+					rs = psmt.executeQuery();
 					
 					while(rs.next()){
 						int getplug = rs.getInt(1);

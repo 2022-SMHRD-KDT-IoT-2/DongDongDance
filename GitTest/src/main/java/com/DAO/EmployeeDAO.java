@@ -333,24 +333,23 @@ public class EmployeeDAO {
 	}
 	
 	// 구역내 재실 현황 추출
-	public ArrayList<EmployeeVO> selectArea(String status){
+	public ArrayList<EmployeeVO> selectArea(){
 
 		ArrayList<EmployeeVO> al = new ArrayList<EmployeeVO>();
 		
 		try {
 			connect();
 			
-			String sql = "select area_id from t_employee where emp_status = ?";
+			String sql = "select area_id from t_employee where emp_status = '1'";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			psmt.setString(1, status);
 			
 			while(rs.next()){
-				String getarea = rs.getString(1);
+			String getarea = rs.getString(1);
 
 				
-				EmployeeVO vo = new EmployeeVO(getarea);
-				al.add(vo);
+			EmployeeVO vo = new EmployeeVO(getarea);
+			al.add(vo);
 			}		
 						
 		}catch(Exception e){
@@ -361,6 +360,35 @@ public class EmployeeDAO {
 		return al;
 
 	}
+	
+	// 구역내 퇴실 현황 추출
+		public ArrayList<EmployeeVO> selectArea2(){
+
+			ArrayList<EmployeeVO> al = new ArrayList<EmployeeVO>();
+			
+			try {
+				connect();
+				
+				String sql = "select area_id from t_employee where emp_status = '0' and area_id not in (select area_id from t_employee where emp_status = '1')";
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery();
+				
+				while(rs.next()){
+				String getarea = rs.getString(1);
+
+					
+				EmployeeVO vo = new EmployeeVO(getarea);
+				al.add(vo);
+				}		
+							
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return al;
+
+		}
 	
 	public String select_status(String uid) {
 

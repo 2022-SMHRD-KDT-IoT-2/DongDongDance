@@ -48,10 +48,10 @@ public class UpdatePlugStCon2 extends HttpServlet {
 		}
 		
 		if(cnt>0) {
-	    	RequestDispatcher dispatcher = request.getRequestDispatcher("#");
+	    	RequestDispatcher dispatcher = request.getRequestDispatcher("main.html");
 			dispatcher.forward(request, response);
 		}else {
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("main.html");
 		}
 		
 	}
