@@ -129,14 +129,16 @@ public class Rfid_read extends HttpServlet {
 		for(int i = 0; i<al6.size(); i++) {
 			al8.add(pDao.selectList3(al6.get(i).getAreaId()));				
 		}
-		for(int i = 0; i<al7.size(); i++) {
-			for(int j = 0; j<al7.get(i).size(); j++) {				
-				g += pDao.updateStatus(al7.get(i).get(j).getPlugSeq(), "1");
-			}
-		}
 		for(int i = 0; i<al8.size(); i++) {
 			for(int j = 0; j<al8.get(i).size(); j++) {				
 				h += pDao.updateStatus(al8.get(i).get(j).getPlugSeq(), "0");
+				System.out.println("al8:"+al8.get(i).get(j).getPlugSeq());
+			}
+		}
+		for(int i = 0; i<al7.size(); i++) {
+			for(int j = 0; j<al7.get(i).size(); j++) {				
+				g += pDao.updateStatus(al7.get(i).get(j).getPlugSeq(), "1");
+				System.out.println("al7:"+al7.get(i).get(j).getPlugSeq());
 			}
 		}
 		
