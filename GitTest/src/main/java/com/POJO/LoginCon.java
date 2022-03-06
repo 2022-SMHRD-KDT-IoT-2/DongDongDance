@@ -24,9 +24,9 @@ public class LoginCon implements Command {
 		HttpSession session = request.getSession();
 		session.setAttribute("loginvo", vo);
 		if(vo.getAdminYn().equals("Y")) {			
-			url = "main2.jsp";
+			url = "main.html";
 		}else {
-			url = "main1.jsp";			
+			url = "Login.html";
 		}
 	}
 		return url;
