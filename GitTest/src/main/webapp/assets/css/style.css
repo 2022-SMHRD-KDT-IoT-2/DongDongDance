@@ -63,13 +63,13 @@ body:before{
 .int-area input:focus + label,
 .int-area input:valid + label{
     top: -2px;
-    font-size: 13px; color: #d3f8c2;
+    font-size: 13px; color: #9bc986;
 }
 
 .btn-area {margin-top:30px;}
 .btn-area button {
     width: 100%; height: 50px;
-    background:#c1fa9b;
+    background:#98d46c;
     color: #fff;
     font-size: 20px;
     border: none;
