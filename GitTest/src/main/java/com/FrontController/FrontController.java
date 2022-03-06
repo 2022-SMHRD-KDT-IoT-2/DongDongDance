@@ -24,12 +24,13 @@ import com.POJO.RegEmpCon;
 import com.POJO.RegPlugCon;
 import com.POJO.RegPlugSenCon;
 import com.POJO.UpdateAreaStCon;
-import com.POJO.UpdateEmp1Con;
-import com.POJO.UpdateEmp2Con;
+import com.POJO.UpdateEmpCon;
 import com.POJO.UpdateEmpStCon;
 import com.POJO.UpdatePlugCon;
 import com.POJO.UpdatePlugDvCon;
 import com.POJO.UpdatePlugStCon;
+
+import dummy.POJO.UpdateEmp2Con;
 
 
 // 확장자패턴 사용 : 어떤 요청이던 뒤에 .do가 붙어 있으면 이 서블릿에서 받아서 처리
@@ -58,10 +59,8 @@ public class FrontController extends HttpServlet {
 			command = new RegEmpCon();
 		}else if(result.equals("RegAreaCon.do")) {
 			command = new RegAreaCon();
-		}else if(result.equals("UpdateEmp1Con.do")) {
-			command = new UpdateEmp1Con();
-		}else if(result.equals("UpdateEmp2Con.do")) {
-			command = new UpdateEmp2Con();
+		}else if(result.equals("UpdateEmpCon.do")) {
+			command = new UpdateEmpCon();
 		}else if(result.equals("DeleteEmpCon.do")) {
 			command = new DeleteEmpCon();
 		}else if(result.equals("DeleteAreaCon.do")) {

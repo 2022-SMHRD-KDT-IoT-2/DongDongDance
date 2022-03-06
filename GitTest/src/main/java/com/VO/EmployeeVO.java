@@ -55,11 +55,11 @@ public class EmployeeVO {
 		this.areaId = areaId;
 	}
 
-	// 관리자용 회원정보 수정
 	public EmployeeVO(String empId, String empName, String empSeatNo, String empPhone, String empStatus,
 			String empJoindate, String empSuperId, String adminYn, String rfidUid, String areaId) {
 		super();
 		this.empId = empId;
+		this.empPw = empPw;
 		this.empName = empName;
 		this.empSeatNo = empSeatNo;
 		this.empPhone = empPhone;
@@ -70,13 +70,13 @@ public class EmployeeVO {
 	}
 
 	//직원용 회원정보 수정
-	public EmployeeVO(String empId, String empPw, String empPhone) {
-		super();
-		this.empId = empId;
-		this.empPw = empPw;
-		this.empPhone = empPhone;
-
-	}
+//	public EmployeeVO(String empId, String empPw, String empPhone) {
+//		super();
+//		this.empId = empId;
+//		this.empPw = empPw;
+//		this.empPhone = empPhone;
+//
+//	}
 	
 	// 재실 구역 추출
 	public EmployeeVO(String areaId) {

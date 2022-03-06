@@ -50,7 +50,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 
-			String sql = "select * from t_employee where emp_id = ? and emp_pw = ?";
+			String sql = "select * from t_employee where emp_id = ? and emp_pw = ? and admin_yn = 'Y'";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, pw);
@@ -207,22 +207,23 @@ public class EmployeeDAO {
 	}
 	
 	//관리자용 직원정보수정
-	public int updateEmp1(String id, String name, String seat, String phone, String superid, String yn, String rfid, String area) {
+	public int updateEmp(String id, String pw, String name, String seat, String phone, String superid, String yn, String rfid, String area) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "update t_employee set emp_name = ?, emp_seat_no = ?, emp_phone = ?, emp_super_id = ?, admin_yn = ?, rfid_uid = ? where emp_id = ?";
+			String sql = "update t_employee set emp_pw = ?, emp_name = ?, emp_seat_no = ?, emp_phone = ?, emp_super_id = ?, admin_yn = ?, rfid_uid = ? where emp_id = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, name);
-			psmt.setString(2, seat);
-			psmt.setString(3, phone);
-			psmt.setString(4, superid);
-			psmt.setString(5, yn);
-			psmt.setString(6, rfid);
-			psmt.setString(7, area);
-			psmt.setString(8, id);
+			psmt.setString(1, pw);
+			psmt.setString(2, name);
+			psmt.setString(3, seat);
+			psmt.setString(4, phone);
+			psmt.setString(5, superid);
+			psmt.setString(6, yn);
+			psmt.setString(7, rfid);
+			psmt.setString(8, area);
+			psmt.setString(9, id);
 			
 			cnt = psmt.executeUpdate();
 			

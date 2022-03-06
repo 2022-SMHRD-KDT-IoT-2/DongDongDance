@@ -8,9 +8,21 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-* {
-  font-family: 'Noto Sans KR', sans-serif;
+.info > p{
+    margin: 0 0 0 0; 
+}
 
+.name > h5{
+    font-size: 1.9em;
+    color: #3d4449;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0px 0 0em 0;
+}
+
+
+* {
+ font-family: 'Noto Sans KR', sans-serif!important;
 }
 
 html, body, div, span, applet, object,
@@ -1868,7 +1880,7 @@ button,
     margin: 0 auto;
     max-width: 110em; }
     #main > .inner > section {
-      padding: 6em 0 4em 0 ;
+      padding: 3em 0 2em 0 ;
       border-top: solid 2px rgba(210, 215, 217, 0.75); }
       #main > .inner > section:first-of-type {
         border-top: 0 !important; }
@@ -1876,17 +1888,39 @@ button,
     #main > .inner {
       padding: 0 5em 0.1em 5em ; }
       #main > .inner > section {
-        padding: 5em 0 3em 0 ; } }
+        padding: 2.5em 0 2.5em 0 ; } }
   @media screen and (max-width: 1280px) {
     #main > .inner {
       padding: 0 4em 0.1em 4em ; }
       #main > .inner > section {
-        padding: 4em 0 2em 0 ; } }
+        padding: 1.5em 0 1.5em 0 ; } }
   @media screen and (max-width: 736px) {
     #main > .inner {
       padding: 0 2em 0.1em 2em ; }
       #main > .inner > section {
-        padding: 3em 0 1em 0 ; } }
+        padding: 0.5em 0 0.5em 0 ; } }
+
+  /* edit-mainsection*/
+  #main > .inner > .in {
+    padding: 6em 0 4em 0 ;
+    border-top: solid 2px rgba(210, 215, 217, 0.75); }
+    #main > .inner > .in:first-of-type {
+      border-top: 0 !important; }
+@media screen and (max-width: 1680px) {
+  #main > .inner {
+    padding: 0 5em 0.1em 5em ; }
+    #main > .inner > .in {
+      padding: 5em 0 0.4em 0 ; } }
+@media screen and (max-width: 1280px) {
+  #main > .inner {
+    padding: 0 4em 0.1em 4em ; }
+    #main > .inner > .in {
+      padding: 4em 0 0.3em 0 ; } }
+@media screen and (max-width: 736px) {
+  #main > .inner {
+    padding: 0 2em 0.1em 2em ; }
+    #main > .inner > .in {
+      padding: 3em 0 0.2em 0 ; } }      
 
 /* Sidebar */
 #search form {
@@ -2090,7 +2124,7 @@ button,
   display: -ms-flex;
   display: flex;
   border-bottom: solid 5px #8FBC95;
-  padding: 6em 0 1em 0;
+  padding: 6em 0 0.3em 0;
   position: relative; }
   #header > * {
     -moz-flex: 1;
@@ -2199,6 +2233,11 @@ button,
     #banner .image {
       max-height: 35vh; } }
 
+
+
+
+      
+
 /* Footer */
 #footer .copyright {
   color: #9fa3a6;
@@ -2287,7 +2326,7 @@ button,
     padding-top: 0; }
 
 
-    /* ëª¨ë‹ˆí„°ë§ ì°¨íŠ¸ */
+    /* ¸ğ´ÏÅÍ¸µ Â÷Æ® */
 
 		.highcharts-figure,
     .highcharts-data-table table {
@@ -2333,15 +2372,15 @@ button,
     }
 
 
-     /* ìŠ¤ìœ„ì¹˜ ë²„íŠ¼ */
+     /* ½ºÀ§Ä¡ ¹öÆ° */
 
 
 .switch-button {
   position: relative; 
  display: inline-block; 
- width: 100px;
+ width: 40px;
  height: 
- 40px; 
+ 20px; 
  } 
  .switch-button input { 
  opacity: 0; 
@@ -2363,10 +2402,10 @@ button,
  .onoff-switch:before
  { position: absolute; 
  content: "";
- height: 30px; 
- width: 30px;
- left: 4px;
- bottom: 4px; 
+ height: 15px; 
+ width: 15px;
+ left: 3px;
+ bottom: 2px; 
  background-color: #fff; 
  -webkit-transition: .5s; 
  transition: .4s; 
@@ -2377,22 +2416,22 @@ button,
  box-shadow: inset 1px 5px 1px #8FBC95;
  } 
  .switch-button input:checked + .onoff-switch:before { 
- -webkit-transform: translateX(62px);
- -ms-transform: translateX(62px); 
- transform: translateX(62px);
+ -webkit-transform: translateX(20px);
+ -ms-transform: translateX(20px); 
+ transform: translateX(20px);
  }
  
  li{
   list-style:none;
  }
- /* ìŠ¤ìœ„ì¹˜ ë */
+ /* ½ºÀ§Ä¡ ³¡ */
 
-  /* ëª¨ë‹ˆí„°ë§ ì˜¤ë¥¸ìª½ ì‚¬ì´ë“œë°” */
+  /* ¸ğ´ÏÅÍ¸µ ¿À¸¥ÂÊ »çÀÌµå¹Ù */
 
   * {padding:0;margin:0;}
   input[id="menuicon"] {display:none;}
   input[id="menuicon"] + ul {display:block;position:fixed;right:0;top:50%;transform:translateY(-50%);transition:all .35s;text-align:right;}
-  input[id="menuicon"] + ul > li {display:block;width:50px;height:50px;border:1px solid #f1f1f1;position:relative;margin-top:-1px;}
+  input[id="menuicon"] + ul > li {display:block;width:50px;height:50px;border:1px solid #f1f1f1;position:relative;margin-top:-1px;padding:0;}
   input[id="menuicon"] + ul > li > a {display:block;width:auto;height:50px;overflow:hidden;transition:all .35s;}
   input[id="menuicon"] + ul > li > label {display:block;cursor:pointer;width:auto;height:50px;background:#dadada;}
   
@@ -2407,10 +2446,10 @@ button,
   input:-moz-input-placeholder {color:#b6b7ff}
   input[id="menuicon"]:checked + ul + div {right:0;}
 
-  /* ëª¨ë‹ˆí„°ë§ ì˜¤ë¥¸ìª½ ì‚¬ì´ë“œë°” ë*/
+  /* ¸ğ´ÏÅÍ¸µ ¿À¸¥ÂÊ »çÀÌµå¹Ù ³¡*/
 
-  /* ì„œì¹˜ë°•ìŠ¤ ì•ˆ css */
-  /* ì˜¤ë¥¸ìª½ì„œì¹˜ë°” ì•ˆ ê²€ìƒ‰ì°½ */
+  /* ¼­Ä¡¹Ú½º ¾È css */
+  /* ¿À¸¥ÂÊ¼­Ä¡¹Ù ¾È °Ë»öÃ¢ */
 
   .searchbox{
     width: 90%;
@@ -2464,4 +2503,4 @@ button,
     font-weight: 470;
     color: #333;
     }
-    /* ì„œì¹˜ë°•ìŠ¤ ì•ˆ css ë */
+    /* ¼­Ä¡¹Ú½º ¾È css ³¡ */
