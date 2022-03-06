@@ -27,7 +27,6 @@ public class Rfid_read extends HttpServlet {
 		EmployeeDAO E_dao = new EmployeeDAO();
 		
 		String empid = R_dao.select_empid(uid);
-		System.out.println(uid2);
 		
 		R_dao.regLog("1", empid);
 		
