@@ -1,5 +1,6 @@
 package com.DAO;
 
+import java.nio.file.spi.FileSystemProvider;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -258,7 +259,7 @@ public class EmployeeDAO {
 	}
 	
 	// 직원 상태 수정
-	public int updateStatus(String id, String status) {
+	public int updateStatus(String uid, String status) {
 		int cnt = 0;
 		
 		try {
@@ -267,10 +268,10 @@ public class EmployeeDAO {
 			String sql = "update t_employee set emp_status = ? where rfid_uid = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, status);
-			psmt.setString(2, id);
+			psmt.setString(2, uid);
 
-			
 			cnt = psmt.executeUpdate();
+			
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -332,6 +333,27 @@ public class EmployeeDAO {
 
 	}
 	
+	public String select_status(String uid) {
+
+		try {
+			connect();
+			String sql = "select emp_status from t_employee where rfid_uid = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, uid);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				String getstatus = rs.getString(1);
+				return getstatus;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return null;
+	}
 	
 	
 }
