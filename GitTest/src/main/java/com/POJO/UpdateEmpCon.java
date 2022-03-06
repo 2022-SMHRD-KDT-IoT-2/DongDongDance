@@ -20,12 +20,12 @@ public class UpdateEmpCon implements Command {
 		String superid = request.getParameter("superid");
 		String yn = request.getParameter("yn");
 		String rfid = request.getParameter("rfid");
-		String area = request.getParameter("area");
 		
 		HttpSession session = request.getSession();
 		EmployeeVO vo = (EmployeeVO)session.getAttribute("loginvo");
 		String id2 = vo.getEmpId();
 		String status = vo.getEmpStatus();
+		String area = vo.getAreaId();
 		
 		EmployeeDAO dao = new EmployeeDAO();
 		int cnt = 0;
@@ -34,7 +34,7 @@ public class UpdateEmpCon implements Command {
 			if((id.equals(id2)) && superid.equals("")) {
 				yn = "Y";
 			}
-			cnt = dao.updateEmp(id, pw, name, seat, phone, superid, yn, rfid, area);
+			cnt = dao.updateEmp(id, pw, name, seat, phone, superid, yn, rfid);
 		}
 		
 		if((cnt > 0) && (id.equals(id2))) {

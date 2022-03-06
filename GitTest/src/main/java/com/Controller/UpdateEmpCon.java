@@ -15,9 +15,9 @@ import com.VO.EmployeeVO;
 @WebServlet("/UpdateEmpCon")
 public class UpdateEmpCon extends HttpServlet {
 
-	// 직원정보 수정에서 구역번호까지 수정한 경우(-> 플러그 제어와 연결)
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
+		// 직원정보 수정에서 구역번호까지 수정한 경우(-> 플러그 제어와 연결)
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");

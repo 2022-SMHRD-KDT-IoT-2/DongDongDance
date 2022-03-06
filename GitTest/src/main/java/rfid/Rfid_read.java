@@ -2,7 +2,10 @@ package rfid;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,28 +32,54 @@ public class Rfid_read extends HttpServlet {
 
 		String empid = R_dao.select_empid(uid);
 		System.out.println(empid);
-		R_dao.regLog("1", empid); // (LOG_TYPE = 1) 로 RFID로그 - 테이블에 삽입
+//		R_dao.regLog("1", empid); // (LOG_TYPE = 1) 로 RFID로그 - 테이블에 삽입
 
-		if (empid == null) {
-
-			System.out.println("해당사원이없어요.");
-		}
+//		if (empid == null) {
+//
+//			System.out.println("해당사원이없어요.");
+//		}
 		// 1. uid가 찍히면 read하고 직원 status값이 무엇인지 가져와야함.
 		// 1-1. 그렇다면 찍혔을 때 확인하고 갱신해야함.
 		// 2. 가져온 status값에 따라 동작이 달라짐.
 
-		else {
-			String status = E_dao.select_status(uid);
-			System.out.println("상태값 : " + status);
-			
-			if (status.equals("0")) {
-				E_dao.updateStatus(uid, "1");
-				System.out.println("상태값이 0");
-			} else {
-				E_dao.updateStatus(uid, "0");
-				System.out.println("상태값이 1");
-			}
+//		else {
+//			String status = E_dao.select_status(uid);
+//			System.out.println("상태값 : " + status);
+//			
+//			if (status.equals("0")) {
+//				E_dao.updateStatus(uid, "1");
+//				System.out.println("상태값이 0");
+//			} else {
+//				E_dao.updateStatus(uid, "0");
+//				System.out.println("상태값이 1");
+//			}
+//		}
+		
+		String type = "";
+		Date date_now = new Date(System.currentTimeMillis()); // 현재시간을 가져와 Date형으로 저장한다
+		SimpleDateFormat fourteen_format = new SimpleDateFormat("HHmm");  // 포맷
+		int time =  Integer.parseInt(fourteen_format.format(date_now));
+		System.out.println(time); // 시간, 분만 나오게함.
+		
+		// 조건식은 바꿀 것(지각 구분)
+		if(time >= 0600 && time <= 1800) {
+			System.out.println("정상출근");
+			type = "1";
 		}
+		else {
+			System.out.println("정상퇴근");
+			type = "0";
+		}
+		
+		if(!empid.equals("")) {			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("RegLogCon");
+			request.setAttribute("type", type);
+			request.setAttribute("id", empid);
+			dispatcher.forward(request, response);
+		}else {
+			System.out.println("작동이 안됐습니다.");
+		}
+
 
 	}
 

@@ -265,8 +265,9 @@ public class PlugDAO {
 		
 		// 상태 변경 플러그 번호 추출 (방번호가 일치하는 플러그 중에서 직원번호가 없는 플러그)
 		
-			public PlugVO selectList3(String room){
+			public ArrayList<PlugVO> selectList3(String room){
 
+				ArrayList<PlugVO> al = new ArrayList<PlugVO>();
 				PlugVO vo = null;
 			
 				try{
@@ -288,7 +289,7 @@ public class PlugDAO {
 //
 //						
 						vo = new PlugVO(getplug);
-//					    al.add(getplug);
+					    al.add(vo);
 					}
 								
 				}catch(Exception e){
@@ -296,7 +297,7 @@ public class PlugDAO {
 				}finally {
 					close();
 				}
-				return vo;
+				return al;
 			}
 			
 			// 상태변경 플러그 번호 추출
