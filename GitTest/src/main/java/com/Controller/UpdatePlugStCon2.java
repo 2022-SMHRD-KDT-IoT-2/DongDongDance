@@ -3,6 +3,7 @@ package com.Controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,8 +27,8 @@ public class UpdatePlugStCon2 extends HttpServlet {
 		AreaDAO aDao = new AreaDAO();
 		ArrayList<AreaVO> al1 = aDao.getRoom("1");
 		ArrayList<AreaVO> al2 = aDao.getRoom("0");
-		ArrayList<PlugVO> al3 = null;
-		ArrayList<PlugVO> al4 = null;
+		ArrayList<ArrayList<PlugVO>> al3 = new ArrayList<ArrayList<PlugVO>>();
+		ArrayList<ArrayList<PlugVO>> al4 = new ArrayList<ArrayList<PlugVO>>();
 
 		for(int i = 0; i<al1.size(); i++) {
 			al3.add(dao.selectList3(al1.get(i).getAreaId()));
@@ -36,10 +37,21 @@ public class UpdatePlugStCon2 extends HttpServlet {
 			al4.add(dao.selectList3(al2.get(i).getAreaId()));				
 		}
 		for(int i = 0; i<al3.size(); i++) {
-			cnt = dao.updateStatus(al3.get(i).getPlugSeq(), "1");
+			for(int j = 0; j<al3.get(i).size(); j++) {				
+				cnt = dao.updateStatus(al3.get(i).get(j).getPlugSeq(), "1");
+			}
 		}
 		for(int i = 0; i<al4.size(); i++) {
-			cnt = dao.updateStatus(al4.get(i).getPlugSeq(), "0");
+			for(int j = 0; j<al4.get(i).size(); j++) {				
+				cnt = dao.updateStatus(al4.get(i).get(j).getPlugSeq(), "0");
+			}
+		}
+		
+		if(cnt>0) {
+	    	RequestDispatcher dispatcher = request.getRequestDispatcher("#");
+			dispatcher.forward(request, response);
+		}else {
+			response.sendRedirect("main.jsp");
 		}
 		
 	}
