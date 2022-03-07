@@ -35,7 +35,7 @@ public class Rfid_read extends HttpServlet {
 		
 		
 		
-		String uid = "1234";
+		String uid = "811904038";
 		RfidDAO R_dao = new RfidDAO();
 		EmployeeDAO E_dao = new EmployeeDAO();
 
@@ -76,15 +76,58 @@ public class Rfid_read extends HttpServlet {
 		System.out.println(time); // 시간, 분만 나오게함.
 		
 		// 조건식은 바꿀 것(지각 구분)
-		if(time >= 0600 && time <= 1000) {
-						
-				System.out.println("정상출근");
-				type = "1";
+		if(time > 0600 && time <= 1000) {
+				if(status.equals("0")) {
+					System.out.println("정상출근");
+					type = "1";					
+				}else {
+					System.out.println("출근취소");
+					type = "6";										
+				}
 		
-		}else {
-			System.out.println("정상퇴근");
-			type = "0";
+		}else if(time > 1000 && time <= 1200) {
+			if(status.equals("0")) {
+				System.out.println("지각");
+				type = "2";					
+			}else {
+				System.out.println("조퇴");
+				type = "3";										
+			}
+		}else if(time > 1200 && time <= 1300) {
+			if(status.equals("0")) {
+				System.out.println("복귀");
+				type = "9";					
+			}else {
+				System.out.println("점심");
+				type = "8";										
+			}
+		}else if(time > 1300 && time <= 1900) {
+			if(status.equals("0")) {
+				System.out.println("추가");
+				type = "A";					
+			}else {
+				System.out.println("조퇴");
+				type = "3";										
+			}
+		}else if(time > 1900 && time <= 0600) {
+			if(status.equals("0")) {
+				System.out.println("추가");
+				type = "A";					
+			}else {
+				System.out.println("퇴근");
+				type = "0";										
+			}
 		}
+		// 주말의 경우 주말출근, 주말퇴근로 설정
+		
+		if(type.equals("1") || type.equals("2") || type.equals("4") || type.equals("9") || type.equals("A")) {
+			status = "1";
+			con = "0";
+		}else {
+			status = "0";
+			con = "0";
+		}
+		
 		
 		RfidDAO rDao = new RfidDAO();
 		rDao.regLog(type, empid);
@@ -111,10 +154,10 @@ public class Rfid_read extends HttpServlet {
 		ArrayList<PlugVO> al3 = pDao.selectList1(empid);
 		ArrayList<PlugVO> al4 = pDao.selectList2("1");
 		for(int i = 0; i<al3.size(); i++) {
-			pDao.updateStatus(al3.get(i).getPlugSeq(), "1");
+			pDao.updateStatus(al3.get(i).getPlugSeq(), status);
 		}
 		for(int i = 0; i<al4.size(); i++) {
-			pDao.updateStatus(al4.get(i).getPlugSeq(), "1");				
+			pDao.updateStatus(al4.get(i).getPlugSeq(), status);				
 		}
 		
 		ArrayList<AreaVO> al5 = aDao.getRoom("1");
