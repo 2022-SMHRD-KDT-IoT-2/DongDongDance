@@ -236,8 +236,6 @@ public class Rfid_read extends HttpServlet {
 			System.out.println("al12:"+al12.get(i).getPlugSeq());
 		}
 		
-
-
 	}
 
 }

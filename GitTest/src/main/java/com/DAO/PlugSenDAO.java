@@ -99,7 +99,7 @@ public class PlugSenDAO {
 		} finally {
 			close();
 		}
-		return ps_value;
+		return ps_value*220;
 	}
 
 	public double selectone(int seq) { // 플러그 번호대상으로 반환
@@ -122,7 +122,7 @@ public class PlugSenDAO {
 		} finally {
 			close();
 		}
-		return ps_value;
+		return ps_value*220;
 	}
 
 }
