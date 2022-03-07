@@ -36,9 +36,16 @@
 										<header>
 											<h1>Hi, 동동댄스님<br/>
 											환영합니다</h1>
-											<p>A free and fully responsive site template</p>
+											
 										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+										<p style="color: rgba(186, 185, 184, 0.844);">Building Energy Management Systems (BEMS) are computer-based systems that aid in managing, controlling, and monitoring the building technical services and energy consumption by equipment used in the building. 
+											The effectiveness of BEMS is dependent upon numerous factors, 
+											among which the operational characteristics of the building and the BEMS control parameters also play an essential role. 
+											This research develops a user-driven simulation tool where users can input the building parameters and BEMS controls to determine the effectiveness of their BEMS. 
+											The simulation tool gives the user the flexibility to understand the potential energy savings by employing specific BEMS control and help in making intelligent decisions. 
+
+
+										</p>
 									</div>
 									<span class="image object">
 										<img src="assets/image/Mainimage.jpg" alt="" />
