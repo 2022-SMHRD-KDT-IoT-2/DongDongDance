@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="UTF-8"%>
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Generic - Editorial by HTML5 UP</title>
-	<meta charset="utf-8" />
+	<meta charset="euc-kr" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<style>
@@ -56,7 +56,7 @@
 
 				<!-- Header -->
 				<header id="header">
-					<strong>ëª¨ë‹ˆí„°ë§</strong>
+					<strong>¸ð´ÏÅÍ¸µ</strong>
 					<ul class="icons">
 						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -71,25 +71,25 @@
 				<section>
 					<header class="main">
 						<div class="location">
-						<li>ìž¥ì†Œ: í•œìˆ˜ì§„ ë°©</li>
+						<li>Àå¼Ò: ÇÑ¼öÁø ¹æ</li>
 						</div>
 					</header>
-					<!-- ë³¸ë¬¸ ì‹œìž‘! -->
+					<!-- º»¹® ½ÃÀÛ! -->
 					<canvas id="myChart" width="1000px" height="350px"></canvas>
 
-					<!-- ìŠ¤ìœ„ì¹˜ -->
+					<!-- ½ºÀ§Ä¡ -->
 					<ul class="actions" style="display: flex;  justify-content: space-evenly;
 						 text-align: center; ">
 
 						<li class="justified">
-							<p>ì—°ë½</p>
+							<p>¿¬¶ô</p>
 							<label class="messageButton">
 								<img src="assets/image/greenMessage.png" alt="" width="60px" />
 							</label>
 						</li>
 
 						<li class="justified">
-							<p>ì œì–´</p>
+							<p>Á¦¾î</p>
 							<label class="switch-button">
 								<input type="checkbox" />
 								<span class="onoff-switch"></span>
@@ -98,9 +98,9 @@
 					</ul>
 
 
-					<!-- ìŠ¤ìœ„ì¹˜ ë -->
+					<!-- ½ºÀ§Ä¡ ³¡ -->
 
-					<!-- ì„œë¸Œ@@@@@@@@@@@ -->
+					<!-- ¼­ºê@@@@@@@@@@@ -->
 					<input type="checkbox" id="menuicon">
 					<ul>
 						<li>
@@ -110,15 +110,15 @@
 						</li>
 
 					</ul>
-					<!-- ì„œë¸Œë¼ì´íŠ¸ë°•ìŠ¤ ë -->
+					<!-- ¼­ºê¶óÀÌÆ®¹Ú½º ³¡ -->
 
-					<!--ì§„ì§œ ì„œì¹˜ë°•ìŠ¤  -->
+					<!--ÁøÂ¥ ¼­Ä¡¹Ú½º  -->
 					<div class="sidebarRight">
-						<!-- ì„œì¹˜ë°•ìŠ¤ -->
+						<!-- ¼­Ä¡¹Ú½º -->
 
 						<div class="searchbox">
 							<div class="Sheader">
-								<h1 id="searchboxname">ì‚¬ì› ê²€ìƒ‰</h1>
+								<h1 id="searchboxname">»ç¿ø °Ë»ö</h1>
 								<input onkeyup="filter()" type="text" id="Svalue" placeholder="Type to Search">
 							</div>
 
@@ -141,22 +141,22 @@
 
 								<div class="Sitem">
 									<span class="Sicon">H</span>
-									<span class="Sname">í•œìˆ˜ì§„</span>
+									<span class="Sname">ÇÑ¼öÁø</span>
 								</div>
 
 								<div class="Sitem">
 									<span class="Sicon">J</span>
-									<span class="Sname">ì œë™ì§„</span>
+									<span class="Sname">Á¦µ¿Áø</span>
 								</div>
 
 								<div class="Sitem">
 									<span class="Sicon">J</span>
-									<span class="Sname">ì¡°ì„¸ì •</span>
+									<span class="Sname">Á¶¼¼Á¤</span>
 								</div>
 
 								<div class="Sitem">
 									<span class="Sicon">Y</span>
-									<span class="Sname">ìœ ì„±ì¤€</span>
+									<span class="Sname">À¯¼ºÁØ</span>
 								</div>
 
 							</div>
@@ -166,13 +166,13 @@
 
 
 					</div>
-					<!-- ì§„ìžì„œì¹˜ë°•ìŠ¤ ë -->
+					<!-- ÁøÀÚ¼­Ä¡¹Ú½º ³¡ -->
 
 
 
 
 
-					<!-- ë³¸ë¬¸ ë! -->
+					<!-- º»¹® ³¡! -->
 
 				</section>
 
@@ -197,11 +197,11 @@
 					</header>
 					<ul>
 						<li><a href="main.jsp">Home</a></li>
-						<li><a href="state.jsp">ê·¼íƒœí™•ì¸</a></li>
-						<li><a href="monitoring.jsp">ëª¨ë‹ˆí„°ë§</a></li>
-						<li><a href="cnt_light.jsp">ì¡°ëª…ê´€ë¦¬</a></li>
-						<li><a href="mng_emp.jsp">ì‚¬ì›ê´€ë¦¬</a></li>
-						<li><a href="ck_elec.jsp">ì „ê¸°ì‚¬ìš©ëŸ‰</a></li>
+						<li><a href="state.jsp">±ÙÅÂÈ®ÀÎ</a></li>
+						<li><a href="monitoring.jsp">¸ð´ÏÅÍ¸µ</a></li>
+						<li><a href="cnt_light.jsp">Á¶¸í°ü¸®</a></li>
+						<li><a href="mng_emp.jsp">»ç¿ø°ü¸®</a></li>
+						<li><a href="ck_elec.jsp">Àü±â»ç¿ë·®</a></li>
 					</ul>
 				</nav>
 
@@ -235,10 +235,10 @@
 		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
 
 	<script>
-		let renewTime = 6000;
+		let renewTime = 1000;
 		let chartId = 'myChart';
-		// ì¹¸ êµ¬ë³„
-		let chartLabels = ['1', '2', '3', '4', '5', '6', '7', '8'];
+		// Ä­ ±¸º°
+		let chartLabels = ['1', '2', '3', '4', '5'];
 		let chartDatas = ['10', '15', '20', '25', '30'];
 		let chart = chartInit(
 			chartId,
@@ -246,26 +246,31 @@
 			chartDatas
 		);
 
-		setInterval(() => {
-			ã…£
-			// ì—¬ê¸°ì— ê°’ ë„£ìœ¼ë©´ ëœë‹¤!! 6ì€ dbì— ì‹œê°„ í…Œì´ë¸”
-			addData(chart, '6', Math.round((Math.random() * 100)))
+		setInterval(() => {			
+			// ¿©±â¿¡ °ª ³ÖÀ¸¸é µÈ´Ù!! 6Àº db¿¡ ½Ã°£ Å×ÀÌºí
+			fetch('/GitTest/Api').then(response => {
+				return response.json();
+			}).then(json => {
+				addData(chart, json.min, json.value);			
+			});
+
 		}, renewTime);
 	</script>
 
-	<!-- ì•Œë¦¼ì°½ -->
+	<!-- ¾Ë¸²Ã¢ -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script>
 		document.getElementsByClassName('messageButton')[0].onclick = () => {
 
 			swal({
-				title: "ì „ë ¥ ì´ìƒê°ì§€ ì•Œë¦¼",
-				text: "<<í•œìˆ˜ì§„ ë‹˜ì—ê²Œ ì•Œë¦¼ì„ ë³´ëƒˆìŠµë‹ˆë‹¤."
+				title: "Àü·Â ÀÌ»ó°¨Áö ¾Ë¸²",
+				text: "<<ÇÑ¼öÁø ´Ô¿¡°Ô ¾Ë¸²À» º¸³Â½À´Ï´Ù."
 				//    alert()
 			})
 
 		}
 	</script>
-
+	<script>
+	</script>
 </body>
 </html>

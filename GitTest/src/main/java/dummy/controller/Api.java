@@ -22,13 +22,14 @@ public class Api extends HttpServlet {
 		
 		Gson gson = new Gson();
 		JsonObject jsonObject = new JsonObject();
-		jsonObject.addProperty("name", "anna");
-		jsonObject.addProperty("id", 1);
+		jsonObject.addProperty("min", 1);
+		jsonObject.addProperty("value", 30);		
 		// JsonObject를 Json 문자열로 변환
 		String jsonStr = gson.toJson(jsonObject);
 		// 생성된 Json 문자열 출력
 		
 		response.setStatus(200);
+		response.setCharacterEncoding("euc-kr");				
 		response.setContentType("application/json");
 		response.getWriter().write(jsonStr);
 	}

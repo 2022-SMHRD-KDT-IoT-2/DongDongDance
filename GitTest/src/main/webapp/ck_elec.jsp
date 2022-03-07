@@ -94,6 +94,7 @@
 	<script src="assets/js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
 		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
+	<script src="assets/js/chart.js"></script>
 	<script>
 		const ctx = document.getElementById('monthly-power-usage-chart').getContext('2d');
 		const myChart = new Chart(ctx, {
@@ -129,7 +130,19 @@
 				}
 			}
 		});
+	
+		let renewTime = 1000;
+		
+		setInterval(() => {			
+			fetch('/GitTest/Api2').then(response => {
+				return response.json();
+			}).then(json => {
+				changeLastData(myChart, json.value);			
+			});
 
+		}, renewTime);
+		
+		
 	</script>
 </body>
 </html>
