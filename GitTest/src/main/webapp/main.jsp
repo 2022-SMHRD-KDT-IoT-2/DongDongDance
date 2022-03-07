@@ -1,17 +1,14 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Generic - Editorial by HTML5 UP</title>
+<head>
+		<title>Main</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+</head>
+<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -22,41 +19,30 @@
 
 							<!-- Header -->
 								<header id="header">
-									<strong>근태확인</strong>
+									<strong>Main</strong>
 									<ul class="icons">
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+										</li>
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
 									</ul>
 								</header>
 
 							<!-- Content -->
-								<sectio class="in">
-									<header class="main">
-
-									</header>
-								
-
-									<!-- 본문 시작 -->
-									
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>#</th>
-													<th>States</th>
-													<th>Date</th>
-													<th>ID</th>
-													<th>Memo</th>
-													<th>Location</th>
-												</tr>
-											</thead>
-										</table>
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>Hi, 동동댄스님<br/>
+											환영합니다</h1>
+											<p>A free and fully responsive site template</p>
+										</header>
+										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
 									</div>
-									<!-- 본문 끝 -->
-									
+									<span class="image object">
+										<img src="assets/image/Mainimage.jpg" alt="" />
+									</span>
 								</section>
 
 						</div>

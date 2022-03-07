@@ -1,15 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+<head>
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
-    <section class="login-form">
+<section class="login-form">
         <h1>LOGO DESIGN</h1>
         <form action="LoginCon.do" method="post">
             <div class="int-area">
@@ -50,5 +54,6 @@
             }
         })
     </script>
+
 </body>
 </html>
