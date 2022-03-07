@@ -23,10 +23,9 @@ public class SyncCon implements Command {
 		SimpleDateFormat fourteen_format = new SimpleDateFormat("HHmm");  // 포맷
 		int time =  Integer.parseInt(fourteen_format.format(date_now));
 		
-		EmployeeDAO eDao = new EmployeeDAO();
 		PlugDAO pDao = new PlugDAO();
 		AreaDAO aDao = new AreaDAO();
-		
+		boolean check = true;
 		// 방별 제어(기본 업무시간)
 		if(time > 0600 && time <= 2000) {
 				ArrayList<AreaVO> al5 = aDao.getRoom("1");
@@ -103,7 +102,7 @@ public class SyncCon implements Command {
 				for(int i = 0; i<al12.size(); i++) {
 					System.out.println("al12:"+al12.get(i).getPlugSeq());
 				}
-		return "main.jsp";
+		return String.valueOf(check);
 	}
 
 }

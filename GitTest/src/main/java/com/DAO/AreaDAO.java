@@ -56,7 +56,7 @@ public class AreaDAO {
 			conn();
 
 			// 3. SQL¡ÿ∫Ò
-			String sql = "insert into T_AREA values (?,'N',?)";
+			String sql = "insert into T_AREA values (?,'0',?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, name);

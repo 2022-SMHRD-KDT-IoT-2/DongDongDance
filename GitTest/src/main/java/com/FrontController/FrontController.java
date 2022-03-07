@@ -30,7 +30,6 @@ import com.POJO.UpdatePlugCon;
 import com.POJO.UpdatePlugDvCon;
 import com.POJO.UpdatePlugFxCon;
 
-import dummy.POJO.UpdateEmp2Con;
 
 
 // 확장자패턴 사용 : 어떤 요청이던 뒤에 .do가 붙어 있으면 이 서블릿에서 받아서 처리
