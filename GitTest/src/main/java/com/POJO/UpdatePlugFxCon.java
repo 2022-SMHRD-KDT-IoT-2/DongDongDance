@@ -6,17 +6,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.Command.Command;
 import com.DAO.PlugDAO;
 
-public class UpdatePlugStCon implements Command {
+public class UpdatePlugFxCon implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		int plug = Integer.parseInt(request.getParameter("plug"));
-		String status = request.getParameter("status");
+		String fixed = request.getParameter("fixed");
 		
 		PlugDAO dao = new PlugDAO();
-		dao.updateStatus(plug, status);
+		dao.updateStatus(plug, fixed);
 		
-		return "#.jsp";
+		return "main.jsp";
 	}
 
 }

@@ -14,13 +14,12 @@ public class UpdatePlugCon implements Command {
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		String id = request.getParameter("id");
 		double power = Double.parseDouble(request.getParameter("power"));
-		String area = request.getParameter("area");
 		String device = request.getParameter("device");
 
 		PlugDAO dao = new PlugDAO();
-		dao.updatePlug(seq, id, power, area, device);
+		dao.updatePlug(seq, id, power, device);
 		
-		return "main2.jsp";
+		return "main.jsp";
 	}
 	
 

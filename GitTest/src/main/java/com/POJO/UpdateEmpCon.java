@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.Command.Command;
 import com.DAO.EmployeeDAO;
+import com.DAO.PlugDAO;
 import com.VO.EmployeeVO;
 
 public class UpdateEmpCon implements Command {
@@ -20,21 +21,24 @@ public class UpdateEmpCon implements Command {
 		String superid = request.getParameter("superid");
 		String yn = request.getParameter("yn");
 		String rfid = request.getParameter("rfid");
+		String area = request.getParameter("area");
 		
 		HttpSession session = request.getSession();
 		EmployeeVO vo = (EmployeeVO)session.getAttribute("loginvo");
 		String id2 = vo.getEmpId();
 		String status = vo.getEmpStatus();
-		String area = vo.getAreaId();
 		
-		EmployeeDAO dao = new EmployeeDAO();
+		EmployeeDAO eDao = new EmployeeDAO();
+		PlugDAO pDao = new PlugDAO();
+
 		int cnt = 0;
 		
 		if((id.equals(id2) || yn.equals("N")) || superid.equals("")) {
 			if((id.equals(id2)) && superid.equals("")) {
 				yn = "Y";
 			}
-			cnt = dao.updateEmp(id, pw, name, seat, phone, superid, yn, rfid);
+			cnt = eDao.updateEmp(id, pw, name, seat, phone, superid, yn, rfid, area);
+			pDao.updatePlugArea(id, area);
 		}
 		
 		if((cnt > 0) && (id.equals(id2))) {
@@ -42,6 +46,6 @@ public class UpdateEmpCon implements Command {
 			session.setAttribute("loginvo", vo);
 		}
 	
-		return "main2.jsp";
+		return "main.jsp";
 }
 }

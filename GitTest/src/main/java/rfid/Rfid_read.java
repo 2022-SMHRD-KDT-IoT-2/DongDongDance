@@ -131,7 +131,7 @@ public class Rfid_read extends HttpServlet {
 		RfidDAO rDao = new RfidDAO();
 		rDao.regLog(type, empid);
 		
-		eDao.updateStatus(uid, status);
+		eDao.updateStatus(empid, status);
 		
 		AreaDAO aDao = new AreaDAO();
 		ArrayList<EmployeeVO> al1 = eDao.selectArea(); //재실자가 있는 구역

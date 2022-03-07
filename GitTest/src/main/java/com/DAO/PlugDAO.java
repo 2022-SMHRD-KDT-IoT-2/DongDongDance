@@ -65,20 +65,19 @@ public class PlugDAO {
 		return cnt;
 	}
 	
-	// 플러그 정보 수정 (관리자용)
-	public int updatePlug(int seq, String id, double power, String area, String device) {
+	// 플러그 정보 수정 (관리자용, 구역정보 제외)
+	public int updatePlug(int seq, String id, double power, String device) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "update t_plug set emp_id = ?, plug_power = ?, area_id = ?, plug_device = ? where plug_seq = ?";
+			String sql = "update t_plug set emp_id = ?, plug_power = ?, plug_device = ? where plug_seq = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setDouble(2, power);
-			psmt.setString(3, area);
-			psmt.setString(4, device);
-			psmt.setInt(5, seq);
+			psmt.setString(3, device);
+			psmt.setInt(4, seq);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -90,6 +89,28 @@ public class PlugDAO {
 		return cnt;
 	}
 	
+	// 플러그 정보 수정 (해당 아이디에 속하는 플러그의 구역정보만 수정)
+		public int updatePlugArea(String id, String area) {
+			int cnt = 0;
+			
+			try {
+				connect();
+				
+				String sql = "update t_plug set area_id = ? where emp_id = ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, area);
+				psmt.setString(2, id);
+				
+				cnt = psmt.executeUpdate();
+				
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return cnt;
+		}
+	
 	// 플러그 상태 수정
 	public int updateStatus(int seq, String status) {
 		int cnt = 0;
@@ -100,6 +121,29 @@ public class PlugDAO {
 			String sql = "update t_plug set plug_status = ? where plug_seq = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, status);
+			psmt.setInt(2, seq);
+
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	//플러그 고정값 입력
+	public int updateFixed(int seq, String fixed) {
+		int cnt = 0;
+		
+		try {
+			connect();
+			
+			String sql = "update t_plug set plug_fixed = ? where plug_seq = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, fixed);
 			psmt.setInt(2, seq);
 
 			
@@ -366,6 +410,8 @@ public class PlugDAO {
 				}
 				return al;
 			}
+			
+			
 
 
 }

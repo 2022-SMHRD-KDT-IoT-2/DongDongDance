@@ -28,7 +28,7 @@ import com.POJO.UpdateEmpCon;
 import com.POJO.UpdateEmpStCon;
 import com.POJO.UpdatePlugCon;
 import com.POJO.UpdatePlugDvCon;
-import com.POJO.UpdatePlugStCon;
+import com.POJO.UpdatePlugFxCon;
 
 import dummy.POJO.UpdateEmp2Con;
 
@@ -71,8 +71,8 @@ public class FrontController extends HttpServlet {
 			command = new UpdatePlugCon();
 		}else if(result.equals("DeletePlugCon.do")) {
 			command = new DeletePlugCon();
-		}else if(result.equals("UpdatePlugStCon.do")) {
-			command = new UpdatePlugStCon();
+		}else if(result.equals("UpdatePlugFxCon.do")) {
+			command = new UpdatePlugFxCon();
 		}else if(result.equals("UpdateAreaStCon.do")) {
 			command = new UpdateAreaStCon();
 		}else if(result.equals("UpdateEmpStCon.do")) {

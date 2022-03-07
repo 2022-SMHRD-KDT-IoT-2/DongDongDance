@@ -176,14 +176,14 @@ public class EmployeeDAO {
 		
 	
 	// 직원 생성 시, 기본 pw는 id와 동일하게 설정(사용자가 직접 pw 수정하게끔)
-	// 직원 생성 시, 상태 값은 D(디폴트)로 설정
+	// 직원 생성 시, 상태 값은 0(디폴트)으로 설정
 	public int regEmp(String id, String name, String seat, String phone, String superid, String yn, String rfid, String area) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "insert into t_employee values (?, ?, ?, ?, ?, 'D', sysdate, ?, ?, ?, ?)";
+			String sql = "insert into t_employee values (?, ?, ?, ?, ?, '0', sysdate, ?, ?, ?, ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, id);
@@ -205,7 +205,8 @@ public class EmployeeDAO {
 		return cnt;
 	}
 	
-	//관리자용 직원정보수정(구역정보까지 변경하는 경우)
+
+	//관리자용 직원정보수정(구역정보를 수정하지 않는 경우)
 	public int updateEmp(String id, String pw, String name, String seat, String phone, String superid, String yn, String rfid, String area) {
 		int cnt = 0;
 		
@@ -223,34 +224,6 @@ public class EmployeeDAO {
 			psmt.setString(7, rfid);
 			psmt.setString(8, area);
 			psmt.setString(9, id);
-			
-			cnt = psmt.executeUpdate();
-			
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		return cnt;
-	}
-	
-	//관리자용 직원정보수정(구역정보를 수정하지 않는 경우)
-	public int updateEmp(String id, String pw, String name, String seat, String phone, String superid, String yn, String rfid) {
-		int cnt = 0;
-		
-		try {
-			connect();
-			
-			String sql = "update t_employee set emp_pw = ?, emp_name = ?, emp_seat_no = ?, emp_phone = ?, emp_super_id = ?, admin_yn = ?, rfid_uid = ? where emp_id = ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, pw);
-			psmt.setString(2, name);
-			psmt.setString(3, seat);
-			psmt.setString(4, phone);
-			psmt.setString(5, superid);
-			psmt.setString(6, yn);
-			psmt.setString(7, rfid);
-			psmt.setString(8, id);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -287,17 +260,17 @@ public class EmployeeDAO {
 		return cnt;
 	}
 	
-	// 직원 상태 수정
-	public int updateStatus(String uid, String status) {
+	// 직원 상태 수정 (emp_id 입력)
+	public int updateStatus(String id, String status) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "update t_employee set emp_status = ? where rfid_uid = ?";
+			String sql = "update t_employee set emp_status = ? where emp_id = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, status);
-			psmt.setString(2, uid);
+			psmt.setString(2, id);
 
 			cnt = psmt.executeUpdate();
 			
