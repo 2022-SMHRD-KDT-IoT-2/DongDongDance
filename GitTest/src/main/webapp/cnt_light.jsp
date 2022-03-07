@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<!-- 도면때문에 style넣음 그냥.. -->
-	
 	<style>
 		.light-control-borad {
 			display: flex;
@@ -20,28 +19,43 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			margin-top: 2px ;
+			margin-top: 2px;
 			width: 120px;
 		}
 
-		.light-control-borad  p {
+		.light-control-borad p {
 			margin: 0;
 			padding: 0;
-			
+
 		}
+
 		.light-control-borad label {
 			margin: 0;
 		}
 
-		.imgroom{
-			margin-left: 100px ; 
-		}
-		.dep{
-			margin-left:320px
+		.imgroom {
+			margin-left: 100px;
 		}
 
+		.dep {
+			margin-left: 320px
+		}
+
+		.light {
+			position: absolute;
+			background: rgba(255, 255, 0, 0.5);
+			border-radius: 100%;
+			width: 6%;
+			height: 6%;
+
+		}
+
+		.light-off {
+			display: none;
+		}
 	</style>
 </head>
+
 <body class="is-preload">
 
 	<!-- Wrapper -->
@@ -69,66 +83,109 @@
 					<header class="main">
 					</header>
 					<!-- 본문 시작 -->
-					<section >
+					<section>
 						<div class="content">
 							<header>
-								
+
 								<span class="image object">
 									<div class="dep">
-									<li >A 부서</li>
+										<li>A 부서</li>
 									</div>
 									<div class="imgroom" style="display: flex;">
-										
-										<img src="assets/image/light_drawing.png" alt=""
-											style="width: 500px; height: 500px;" />
-									 <ul class="light-control-borad">
-										<li  class="justified_light">
-											<p>조명 1</p>
-											<label class="switch-button">
-												<input type="checkbox" />
-												<span class="onoff-switch"></span>
-											</label>
-										</li>
-										
-										<li  class="justified_light">
-											<p>조명 2</p>
-											<label class="switch-button" >
-												<input type="checkbox" />
-												<span class="onoff-switch"></span>
-											</label>
-										</li>
-										
-										<li  class="justified_light">
-											<p>조명 3</p>
-											<label class="switch-button" >
-												<input type="checkbox" />
-												<span class="onoff-switch"></span>
-											</label>
-										</li>
 
-										<li  class="justified_light">
-											<p>조명 4</p>
-											<label class="switch-button" >
-												<input type="checkbox" />
-												<span class="onoff-switch"></span>
-											</label>
-										</li>
+										<!-- 조명 켜지는 작업 -->
+										<div style="position:sticky">
 
-										<li  class="justified_light">
-											<p>조명 5</p>
-											<label class="switch-button" >
-												<input type="checkbox" />
-												<span class="onoff-switch"></span>
-											</label>
-										</li>
-										<li  class="justified_light">
-											<p>조명 6</p>
-											<label class="switch-button" >
-												<input type="checkbox" />
-												<span class="onoff-switch"></span>
-											</label>
-										</li>
-									</ul>
+											<img src="assets/image/light_drawing.png" alt=""
+												style="width: 500px; height: 500px;" />
+
+
+											<div id="light-1" class="light light-off" style="
+												top: 7.4%;
+												left: 27%;">
+											</div>
+
+											<div id="light-2" class="light light-off" style="
+											top: 36%;
+											left: 12.5%;">
+											</div>
+
+											<div id="light-3" class="light light-off" style="
+											top: 36%;
+											left: 40%;">
+											</div>
+
+
+											<div id="light-4" class="light light-off" style="
+											top: 73%;
+											left: 22%">
+											</div>
+
+											<div id="light-5" class="light light-off" style="
+											top: 72%;
+											left: 55%">
+											</div>
+
+											<div id="light-6" class="light light-off" style="
+											top: 21%;
+											left: 55.4%;">
+											</div>
+
+
+
+
+
+											<!-- 조명 켜지는 작업 끝 -->
+										</div>
+
+										<ul class="light-control-borad">
+											<li class="justified_light">
+												<p>조명 1</p>
+												<label class="switch-button">
+													<input type="checkbox" />
+													<span class="onoff-switch" data-light-id="light-1"></span>
+												</label>
+											</li>
+
+											<li class="justified_light">
+												<p>조명 2</p>
+												<label class="switch-button">
+													<input type="checkbox" />
+													<span class="onoff-switch" data-light-id="light-2"></span>
+												</label>
+											</li>
+
+											<li class="justified_light">
+												<p>조명 3</p>
+												<label class="switch-button">
+													<input type="checkbox" />
+													<span class="onoff-switch" data-light-id="light-3"></span>
+												</label>
+											</li>
+
+											<li class="justified_light">
+												<p>조명 4</p>
+												<label class="switch-button">
+													<input type="checkbox" />
+													<span class="onoff-switch" data-light-id="light-4"></span>
+												</label>
+											</li>
+
+											<li class="justified_light">
+												<p>조명 5</p>
+												<label class="switch-button">
+													<input type="checkbox" />
+													<span class="onoff-switch" data-light-id="light-5"></span>
+												</label>
+											</li>
+											<li class="justified_light">
+												<p>조명 6</p>
+												<label class="switch-button">
+													<input type="checkbox" />
+													<span class="onoff-switch" data-light-id="light-6"></span>
+												</label>
+											</li>
+										</ul>
 									</div>
 								</span>
 
@@ -141,57 +198,57 @@
 
 					</section>
 
-											<!-- 서브@@@@@@@@@@@ -->
-											<input type="checkbox" id="menuicon">
-											<ul>
-												<li>
-													<label for="menuicon">
-					
-													</label>
-												</li>
-					
-											</ul>
-											<!-- 서브라이트박스 끝 -->
-					
-											<!--진짜 서치박스  -->
-											<div class="sidebarRight">
-											
-					
-												<div class="searchbox">
-													<div class="Sheader">
-														<h1 id="searchboxname">장소 검색</h1>
-														<input onkeyup="filter()" type="text" id="Svalue" placeholder="Type to Search">
-													</div>
-					
-													<div class="Scontainer">
-					
-														<div class="Sitem">
-															<span class="Sicon">A</span>
-															<span class="Sname">A부서</span>
-														</div>
+					<!-- 서브@@@@@@@@@@@ -->
+					<input type="checkbox" id="menuicon">
+					<ul>
+						<li>
+							<label for="menuicon">
 
-														<div class="Sitem">
-															<span class="Sicon">B</span>
-															<span class="Sname">B부서</span>
-														</div>
+							</label>
+						</li>
 
-														<div class="Sitem">
-															<span class="Sicon">C</span>
-															<span class="Sname">C부서</span>
-														</div>
-					
+					</ul>
+					<!-- 서브라이트박스 끝 -->
 
-												</div>
-					
-					
-					
-					
-											</div>
-											<!-- 진자서치박스 끝 -->
-					
+					<!--진짜 서치박스  -->
+					<div class="sidebarRight">
 
 
-					<!-- 본문 끝 -->
+						<div class="searchbox">
+							<div class="Sheader">
+								<h1 id="searchboxname">장소 검색</h1>
+								<input onkeyup="filter()" type="text" id="Svalue" placeholder="Type to Search">
+							</div>
+
+							<div class="Scontainer">
+
+								<div class="Sitem">
+									<span class="Sicon">A</span>
+									<span class="Sname">A부서</span>
+								</div>
+
+								<div class="Sitem">
+									<span class="Sicon">B</span>
+									<span class="Sname">B부서</span>
+								</div>
+
+								<div class="Sitem">
+									<span class="Sicon">C</span>
+									<span class="Sname">C부서</span>
+								</div>
+
+
+							</div>
+
+
+
+
+						</div>
+						<!-- 진자서치박스 끝 -->
+
+
+
+						<!-- 본문 끝 -->
 
 				</section>
 
@@ -248,6 +305,20 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<script>
+		Array.from(document.getElementsByClassName('onoff-switch')).forEach(item => {
+			item.onclick = (evt) => {
+				const lightId = evt.target.dataset.lightId;
+				const light = document.getElementById(lightId);
+				if (light.classList.contains("light-off")) {
+					light.classList.remove("light-off");
+				} else {
+					light.classList.add("light-off");
+				}
+			}
+		})
+	</script>
 
 </body>
 

@@ -11,13 +11,15 @@
 	<style>
 		.container {
 			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			grid-gap: 10px;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 30px;
 			grid-auto-rows: minmax(100px, auto);
 			justify-items: center;
 		}
+
 	</style>
 </head>
+
 <body class="is-preload">
 
 	<!-- Wrapper -->
@@ -43,16 +45,39 @@
 				<!-- Content -->
 				<section class="py-5">
 					<div class="container">
-						<div>
+
+						<div >
 							<div>
 								<!-- Product image-->
-								<img src="assets/image/Jin.jpeg" alt="..." height="250px" width="250px">
+								<img src="assets/emp_img/emp1.png" alt="..." height="250px" width="250px">
 								<!-- Product details-->
 								<div>
 									<div>
 										<!--name-->
 										<div class="name">
-											<h5>이름 : 김 석진</h5>
+											<h5>이름</h5>
+										</div>
+										<!--info-->
+										<div class="info">
+											<p>연락처: 010-0000-0000</p>
+											<p>생년월일: 1900.00.000</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div>
+							<div>
+								<!-- Product image-->
+								<img src="assets/emp_img/emp2.png" alt="..." height="250px" width="250px">
+								<!-- Product details-->
+								<div>
+									<div>
+										<!--name-->
+										<div class="name">
+											<h5>이름 : 김석진</h5>
 										</div>
 										<!--info-->
 										<div class="info">
@@ -63,10 +88,11 @@
 								</div>
 							</div>
 						</div>
+
 						<div>
 							<div>
 								<!-- Product image-->
-								<img src="assets/image/Jin.jpeg" alt="..." height="250px" width="250px">
+								<img src="assets/emp_img/emp3.png" alt="..." height="250px" width="250px">
 								<!-- Product details-->
 								<div>
 									<div>
@@ -83,10 +109,11 @@
 								</div>
 							</div>
 						</div>
+
 						<div>
 							<div>
 								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
+								<img src="assets/emp_img/emp4.png" alt="..." height="250px" width="250px">
 								<!-- Product details-->
 								<div>
 									<div>
@@ -103,10 +130,11 @@
 								</div>
 							</div>
 						</div>
+
 						<div>
 							<div>
 								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
+								<img src="assets/emp_img/emp5.png" alt="..." height="250px" width="250px">
 								<!-- Product details-->
 								<div>
 									<div>
@@ -123,10 +151,11 @@
 								</div>
 							</div>
 						</div>
+
 						<div>
 							<div>
 								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
+								<img src="assets/emp_img/emp6.png" alt="..." height="250px" width="250px">
 								<!-- Product details-->
 								<div>
 									<div>
@@ -143,10 +172,11 @@
 								</div>
 							</div>
 						</div>
+
 						<div>
 							<div>
 								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
+								<img src="assets/emp_img/emp7.png" alt="..." height="250px" width="250px">
 								<!-- Product details-->
 								<div>
 									<div>
@@ -163,10 +193,11 @@
 								</div>
 							</div>
 						</div>
+
 						<div>
 							<div>
 								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
+								<img src="assets/emp_img/emp8.png" alt="..." height="250px" width="250px">
 								<!-- Product details-->
 								<div>
 									<div>
@@ -183,10 +214,11 @@
 								</div>
 							</div>
 						</div>
+
 						<div>
 							<div>
 								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
+								<img src="assets/emp_img/emp9.png" alt="..." height="250px" width="250px">
 								<!-- Product details-->
 								<div>
 									<div>
@@ -203,86 +235,9 @@
 								</div>
 							</div>
 						</div>
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="https://dummyimage.com/250x250/dee2e6/6c757d.jpg" alt="...">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+
+				
+
 				</section>
 
 			</div>
