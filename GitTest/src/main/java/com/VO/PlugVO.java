@@ -15,8 +15,10 @@ public class PlugVO {
     private String areaId;
     // 연결장치 종류
     private String device;
+    // 플러그 고정값(수동제어용)
+    private String fixed;
     
-	public PlugVO(int plugSeq, String id, Double plugPower, String plugStatus, String plugInsDate, String areaId, String device) {
+	public PlugVO(int plugSeq, String id, Double plugPower, String plugStatus, String plugInsDate, String areaId, String device, String fixed) {
 		super();
 		this.plugSeq = plugSeq;
 		this.id = id;
@@ -25,6 +27,7 @@ public class PlugVO {
 		this.plugInsDate = plugInsDate;
 		this.areaId = areaId;
 		this.device = device;
+		this.fixed = fixed;
 	}
 	
 	
@@ -55,6 +58,9 @@ public class PlugVO {
 	}
 	public String getDevice() {
 		return device;
+	}
+	public String getFixed() {
+		return fixed;
 	}
 
 }
