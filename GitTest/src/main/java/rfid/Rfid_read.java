@@ -160,7 +160,7 @@ public class Rfid_read extends HttpServlet {
 		}
 		
 		// 방별 제어(기본 업무시간)
-		if(time > 0600 && time <= 1000) {
+		if(time > 0600 && time <= 2000) {
 			ArrayList<AreaVO> al5 = aDao.getRoom("1");
 			ArrayList<AreaVO> al6 = aDao.getRoom("0");
 			ArrayList<ArrayList<PlugVO>> al7 = new ArrayList<ArrayList<PlugVO>>();
