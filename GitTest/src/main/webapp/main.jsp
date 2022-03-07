@@ -1,17 +1,14 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<title>Main</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+</head>
+<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -39,9 +36,16 @@
 										<header>
 											<h1>Hi, 동동댄스님<br/>
 											환영합니다</h1>
-											<p>A free and fully responsive site template</p>
+											
 										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+										<p style="color: rgba(186, 185, 184, 0.844);">Building Energy Management Systems (BEMS) are computer-based systems that aid in managing, controlling, and monitoring the building technical services and energy consumption by equipment used in the building. 
+											The effectiveness of BEMS is dependent upon numerous factors, 
+											among which the operational characteristics of the building and the BEMS control parameters also play an essential role. 
+											This research develops a user-driven simulation tool where users can input the building parameters and BEMS controls to determine the effectiveness of their BEMS. 
+											The simulation tool gives the user the flexibility to understand the potential energy savings by employing specific BEMS control and help in making intelligent decisions. 
+
+
+										</p>
 									</div>
 									<span class="image object">
 										<img src="assets/image/Mainimage.jpg" alt="" />
@@ -68,12 +72,12 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="main.html">Home</a></li>
-										<li><a href="state.html">근태확인</a></li>
-										<li><a href="monitoring.html">모니터링</a></li>
-										<li><a href="cnt_light.html">조명관리</a></li>
-										<li><a href="mng_emp.html">사원관리</a></li>
-										<li><a href="ck_elec.html">전기사용량</a></li>
+										<li><a href="main.jsp">Home</a></li>
+										<li><a href="state.jsp">근태확인</a></li>
+										<li><a href="monitoring.jsp">모니터링</a></li>
+										<li><a href="cnt_light.jsp">조명관리</a></li>
+										<li><a href="mng_emp.jsp">사원관리</a></li>
+										<li><a href="ck_elec.jsp">전기사용량</a></li>
 									</ul>
 								</nav>
 

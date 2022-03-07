@@ -1,17 +1,14 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-
 <head>
 	<title>Generic - Editorial by HTML5 UP</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<!-- 도면때문에 style넣음 그냥.. -->
+	
 	<style>
 		.light-control-borad {
 			display: flex;
@@ -45,7 +42,6 @@
 
 	</style>
 </head>
-
 <body class="is-preload">
 
 	<!-- Wrapper -->
@@ -219,12 +215,12 @@
 						<h2>Menu</h2>
 					</header>
 					<ul>
-						<li><a href="main.html">Home</a></li>
-						<li><a href="state.html">근태확인</a></li>
-						<li><a href="monitoring.html">모니터링</a></li>
-						<li><a href="cnt_light.html">조명관리</a></li>
-						<li><a href="mng_emp.html">사원관리</a></li>
-						<li><a href="ck_elec.html">전기사용량</a></li>
+						<li><a href="main.jsp">Home</a></li>
+						<li><a href="state.jsp">근태확인</a></li>
+						<li><a href="monitoring.jsp">모니터링</a></li>
+						<li><a href="cnt_light.jsp">조명관리</a></li>
+						<li><a href="mng_emp.jsp">사원관리</a></li>
+						<li><a href="ck_elec.jsp">전기사용량</a></li>
 					</ul>
 				</nav>
 

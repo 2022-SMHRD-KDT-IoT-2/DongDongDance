@@ -41,6 +41,7 @@ public class Rfid_read extends HttpServlet {
 
 		String empid = R_dao.select_empid(uid);
 		String status = R_dao.select_status(uid); // rfid 찍기 직전 직원 상태
+
 		System.out.println(empid);
 		System.out.println(status);
 //		R_dao.regLog("1", empid); // (LOG_TYPE = 1) 로 RFID로그 - 테이블에 삽입
