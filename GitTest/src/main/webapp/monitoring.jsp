@@ -235,11 +235,11 @@
 		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
 
 	<script>
-		let renewTime = 1000;
+		let renewTime = 3000;
 		let chartId = 'myChart';
 		// Ä­ ±¸º°
 		let chartLabels = ['1', '2', '3', '4', '5'];
-		let chartDatas = ['10', '15', '20', '25', '30'];
+		let chartDatas = ['0.5', '1', '1.5', '2', '2.5'];
 		let chart = chartInit(
 			chartId,
 			chartLabels,
