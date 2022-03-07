@@ -191,14 +191,14 @@ public class AreaDAO {
 		return cnt;
 	}
 	
-	// 현재 재실한 방번호 추출
-	public ArrayList<AreaVO> getRoom(String status) {
+	// 현재 재실한 구역번호 추출
+	public ArrayList<AreaVO> getArea(String status) {
 
 		ArrayList<AreaVO> al = new ArrayList<>();
 		try {
 			conn();
 
-			String sql = "select distinct substr(area_id, 1, 2) from t_area where area_status = ?";
+			String sql = "select area_id from t_area where area_status = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, status);
 			rs = psmt.executeQuery();
@@ -206,7 +206,6 @@ public class AreaDAO {
 			while (rs.next()) {
 
 				String id = rs.getString(1);
-
 
 				AreaVO vo = new AreaVO(id);
 				al.add(vo);
@@ -219,5 +218,34 @@ public class AreaDAO {
 		}
 		return al;
 	}
+	
+	// 현재 재실한 방번호 추출
+		public ArrayList<AreaVO> getRoom(String status) {
+
+			ArrayList<AreaVO> al = new ArrayList<>();
+			try {
+				conn();
+
+				String sql = "select distinct substr(area_id, 1, 2) from t_area where area_status = ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, status);
+				rs = psmt.executeQuery();
+
+				while (rs.next()) {
+
+					String id = rs.getString(1);
+
+
+					AreaVO vo = new AreaVO(id);
+					al.add(vo);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return al;
+		}
 	
 }
