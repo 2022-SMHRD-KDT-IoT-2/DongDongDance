@@ -21,9 +21,12 @@ public class UpdateEmpStCon implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
-		String status = request.getParameter("status");
+		
+		EmployeeDAO eDao = new EmployeeDAO();
+		EmployeeVO eVo = eDao.selectOne(id);
 		
         String type = "";
+        String status = eVo.getEmpStatus();
 		
 		Date date_now = new Date(System.currentTimeMillis()); // 현재시간을 가져와 Date형으로 저장한다
 		SimpleDateFormat fourteen_format = new SimpleDateFormat("HHmm");  // 포맷
@@ -82,7 +85,6 @@ public class UpdateEmpStCon implements Command {
 		}
 		
 		
-		EmployeeDAO eDao = new EmployeeDAO();
 		PlugDAO pDao = new PlugDAO();
 		RfidDAO rDao = new RfidDAO();
 		rDao.regLog(type, id);

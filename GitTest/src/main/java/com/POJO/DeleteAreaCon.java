@@ -10,7 +10,7 @@ public class DeleteAreaCon implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String id = request.getParameter("area_d_id");
+		String id = request.getParameter("aid");
 
 		AreaDAO dao = new AreaDAO();
 		dao.deleteArea(id);

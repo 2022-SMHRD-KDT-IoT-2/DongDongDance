@@ -10,8 +10,8 @@ public class RegAreaCon implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String id = request.getParameter("area_i_id");
-		String name = request.getParameter("area_i_name");
+		String id = request.getParameter("aid");
+		String name = request.getParameter("aname");
 
 		AreaDAO dao = new AreaDAO();
 		dao.regArea(id, name);
