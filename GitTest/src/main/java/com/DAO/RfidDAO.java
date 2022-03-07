@@ -123,5 +123,27 @@ public class RfidDAO {
 		}
 		return null;
 	}
+	
+	public String select_status(String uid) {
+
+		try {
+			connect();
+			String sql = "select emp_status from t_employee where rfid_uid = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, uid);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				String getstatus = rs.getString(1);
+				return getstatus;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return null;
+	}
 
 }

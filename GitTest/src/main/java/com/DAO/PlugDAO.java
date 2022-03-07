@@ -311,9 +311,37 @@ public class PlugDAO {
 				try{
 					connect();
 					
-					String sql = "select plug_seq from t_plug where status = ?";
+					String sql = "select plug_seq from t_plug where plug_status = ?";
 					psmt = conn.prepareStatement(sql);
 					psmt.setString(1, status);
+					rs = psmt.executeQuery();
+					
+					while(rs.next()){
+						int getplug = rs.getInt(1);
+						
+						PlugVO vo = new PlugVO(getplug);
+					    al.add(vo);
+					}
+								
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				return al;
+			}
+			
+			// 상태 변경 플러그 번호 추출 (고정값이 있는 플러그)
+			public ArrayList<PlugVO> selectFixed(String fixed){
+
+				ArrayList<PlugVO> al = new ArrayList<PlugVO>();
+			
+				try {
+					connect();
+					
+					String sql = "select * from t_plug where plug_fixed = ?";
+					psmt = conn.prepareStatement(sql);
+					psmt.setString(1, fixed);
 					rs = psmt.executeQuery();
 					
 					while(rs.next()){

@@ -31,12 +31,18 @@ public class Rfid_read extends HttpServlet {
 //		System.out.println(uid); // 출력확인
 //		out.println(uid); // 출력확인
 
+		
+		
+		
+		
 		String uid = "1234";
 		RfidDAO R_dao = new RfidDAO();
 		EmployeeDAO E_dao = new EmployeeDAO();
 
 		String empid = R_dao.select_empid(uid);
+		String status = R_dao.select_status(uid); // rfid 찍기 직전 직원 상태
 		System.out.println(empid);
+		System.out.println(status);
 //		R_dao.regLog("1", empid); // (LOG_TYPE = 1) 로 RFID로그 - 테이블에 삽입
 
 //		if (empid == null) {
@@ -61,37 +67,29 @@ public class Rfid_read extends HttpServlet {
 //		}
 		
 		String type = "";
+		String con = "";
+		
 		Date date_now = new Date(System.currentTimeMillis()); // 현재시간을 가져와 Date형으로 저장한다
 		SimpleDateFormat fourteen_format = new SimpleDateFormat("HHmm");  // 포맷
 		int time =  Integer.parseInt(fourteen_format.format(date_now));
 		System.out.println(time); // 시간, 분만 나오게함.
 		
 		// 조건식은 바꿀 것(지각 구분)
-		if(time >= 0600 && time <= 1800) {
-			System.out.println("정상출근");
-			type = "1";
-		}
-		else {
+		if(time >= 0600 && time <= 1000) {
+						
+				System.out.println("정상출근");
+				type = "1";
+		
+		}else {
 			System.out.println("정상퇴근");
-			type = "3";
+			type = "0";
 		}
-		
-		int a = 0;
-		int b = 0;
-		int c = 0;
-		int d = 0;
-		int e = 0;
-		int f = 0;
-		int g = 0;
-		int h = 0;
-		
 		
 		RfidDAO rDao = new RfidDAO();
-		a = rDao.regLog(type, empid);
+		rDao.regLog(type, empid);
 		
 		EmployeeDAO eDao = new EmployeeDAO();
-		String status = "1";
-		b = eDao.updateStatus(uid, status);
+		eDao.updateStatus(uid, status);
 		
 		AreaDAO aDao = new AreaDAO();
 		ArrayList<EmployeeVO> al1 = eDao.selectArea(); //재실자가 있는 구역
@@ -99,12 +97,12 @@ public class Rfid_read extends HttpServlet {
 
 		if(al1.size() != 0) {
 			for(int i = 0; i<al1.size(); i++) {
-				c += aDao.updateStatus(al1.get(i).getAreaId(), "1");
+				aDao.updateStatus(al1.get(i).getAreaId(), "1");
 			}			
 		}
 		if(al2.size() != 0) {			
 			for(int i = 0; i<al2.size(); i++) {
-				d += aDao.updateStatus(al2.get(i).getAreaId(), "0");				
+				aDao.updateStatus(al2.get(i).getAreaId(), "0");				
 			}
 		}
 		
@@ -112,16 +110,18 @@ public class Rfid_read extends HttpServlet {
 		ArrayList<PlugVO> al3 = pDao.selectList1(empid);
 		ArrayList<PlugVO> al4 = pDao.selectList2("1");
 		for(int i = 0; i<al3.size(); i++) {
-			e += pDao.updateStatus(al3.get(i).getPlugSeq(), "1");
+			pDao.updateStatus(al3.get(i).getPlugSeq(), "1");
 		}
 		for(int i = 0; i<al4.size(); i++) {
-			f += pDao.updateStatus(al4.get(i).getPlugSeq(), "1");				
+			pDao.updateStatus(al4.get(i).getPlugSeq(), "1");				
 		}
 		
 		ArrayList<AreaVO> al5 = aDao.getRoom("1");
 		ArrayList<AreaVO> al6 = aDao.getRoom("0");
 		ArrayList<ArrayList<PlugVO>> al7 = new ArrayList<ArrayList<PlugVO>>();
 		ArrayList<ArrayList<PlugVO>> al8 = new ArrayList<ArrayList<PlugVO>>();
+		ArrayList<PlugVO> al9 = pDao.selectFixed("1");
+		ArrayList<PlugVO> al10 = pDao.selectFixed("2");
 
 		for(int i = 0; i<al5.size(); i++) {
 			al7.add(pDao.selectList3(al5.get(i).getAreaId()));
@@ -131,25 +131,34 @@ public class Rfid_read extends HttpServlet {
 		}
 		for(int i = 0; i<al8.size(); i++) {
 			for(int j = 0; j<al8.get(i).size(); j++) {				
-				h += pDao.updateStatus(al8.get(i).get(j).getPlugSeq(), "0");
+				pDao.updateStatus(al8.get(i).get(j).getPlugSeq(), "0");
 				System.out.println("al8:"+al8.get(i).get(j).getPlugSeq());
 			}
 		}
 		for(int i = 0; i<al7.size(); i++) {
 			for(int j = 0; j<al7.get(i).size(); j++) {				
-				g += pDao.updateStatus(al7.get(i).get(j).getPlugSeq(), "1");
+				pDao.updateStatus(al7.get(i).get(j).getPlugSeq(), "1");
 				System.out.println("al7:"+al7.get(i).get(j).getPlugSeq());
 			}
 		}
+		for(int i = 0; i<al9.size(); i++) {
+			pDao.updateStatus(al9.get(i).getPlugSeq(), "1");
+		}
+		for(int i = 0; i<al10.size(); i++) {
+			pDao.updateStatus(al10.get(i).getPlugSeq(), "0");
+		}
 		
-		System.out.println(a);
-		System.out.println(b);
-		System.out.println(c);
-		System.out.println(d);
-		System.out.println(e);
-		System.out.println(f);
-		System.out.println(g);
-		System.out.println(h);
+		ArrayList<PlugVO> al11 = pDao.selectStatus("1");
+		ArrayList<PlugVO> al12 = pDao.selectStatus("0");
+		
+		for(int i = 0; i<al11.size(); i++) {
+			System.out.println("al11:"+al11.get(i).getPlugSeq());
+		}
+		for(int i = 0; i<al12.size(); i++) {
+			System.out.println("al12:"+al12.get(i).getPlugSeq());
+		}
+		
+
 
 	}
 
