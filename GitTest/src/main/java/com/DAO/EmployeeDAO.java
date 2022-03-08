@@ -146,10 +146,10 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, emp_joindate, emp_super_id, admin_yn, rfid_uid, area_id from t_employee where emp_id = ?";
+			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, substr(emp_joindate, 1, 10), emp_super_id, admin_yn, rfid_uid, area_id from t_employee where emp_id = ?";
 			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
 			psmt.setString(1, id);
+			rs = psmt.executeQuery();
 			
 			if(rs.next()){
 				String getid = rs.getString(1);
@@ -162,7 +162,12 @@ public class EmployeeDAO {
 				String getadminyn = rs.getString(8);
 				String getrfid = rs.getString(9);
 				String getarea = rs.getString(10);
-				int getplug = rs.getInt(11);
+				
+				if(getstatus.equals("1")) {
+					getstatus = "ΐη½Η";
+				}else {
+					getstatus = "Επ½Η";
+				}
 				
 				vo = new EmployeeVO(getid, getname, getseat, getphone, getstatus, getjoindate, getsuperid, getadminyn, getrfid, getarea);
 			}		

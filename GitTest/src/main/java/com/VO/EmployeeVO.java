@@ -62,6 +62,7 @@ public class EmployeeVO {
 		this.empJoindate = empJoindate;
 		this.empName = empName;
 		this.empSeatNo = empSeatNo;
+		this.empStatus = empStatus;
 		this.empPhone = empPhone;
 		this.empSuperId = empSuperId;
 		this.adminYn = adminYn;
