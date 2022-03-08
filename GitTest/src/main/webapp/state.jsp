@@ -12,6 +12,13 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="assets/css/main.css" />
+           <style>
+         #sectionid {
+            background-color: #e9f0f7;
+         }
+      </style>
+      
+      
    </head>
    <body class="is-preload">
    <%
@@ -54,13 +61,15 @@
                            <div class="table-wrapper">
                               <table>
                                  <thead>
-                                    <tr>
-                                       <th>ID</th>
-                                       <th>NAME</th>
-                                       <th>State</th>
-                                       <th>Date</th>
-                                       <th>Position</th>
-                                       <th>Location</th>
+                                    
+ 					<tr id="sectionid" >
+                                 <th>ID</th>
+                                 <th>NAME</th>
+                                 <th>State</th>
+                                 <th>Date</th>
+                                 <th>Position</th>
+                                 <th>Location</th>
+                               </tr >
                                        
                                        <%
             
