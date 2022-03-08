@@ -151,8 +151,8 @@
                     
                 <br>
                 <ul class="actions">
-                    <li><a href="Create.html" class="button primary">Create</a></li>
-                    <li><a href="Update.html" class="button primary">Update</a></li>
+                    <li><a href="Create.jsp" class="button primary">Create</a></li>
+                    <li><a href="Update.jsp" class="button primary">Update</a></li>
                     <li><a href="#" class="button">Delete</a></li>
                 </ul>
                 </div>
