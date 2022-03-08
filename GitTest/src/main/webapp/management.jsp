@@ -128,7 +128,7 @@
                     </div>
                     <br>
                     <ul class="actions">
-                        <li><a href="Create.jsp" class="button primary">Create</a></li>
+                        <li><a href="reg_plug.jsp" class="button primary">Ãß°¡</a></li>
                         <li><a href="Update.jsp" class="button primary">Update</a></li>
                         <li><a href="#" class="button">Delete</a></li>
                     </ul> 
