@@ -113,7 +113,7 @@
 					    </form>
 					    
 					    <div>
-					                            <form action="UpdateEmpStCon.do" method="post" style="display:inline;margin-left:100px;">
+					                            <form action="UpdateEmpStCon.do" method="post" style="display:inline;margin-left:500px;">
 									<input id="id" type="hidden" name="id"  value="<%=vo.getEmpId() %>">
 									<input type="submit" value="수정">
 					    </form>
