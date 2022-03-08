@@ -69,7 +69,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <textarea name="memo" id="memo" placeholder="특이 사항을 입력하세요. 이전기록 : <%=vo.getLogMemo() %>" rows="6"></textarea>
+                                <textarea name="memo" id="memo" placeholder="특이 사항을 입력하세요.(특이사항이 없을 경우 n차 수정이라는 값을 입력하셔야 합니다.) 이전기록 : <%=vo.getLogMemo() %>" rows="6"></textarea>
                             </div>
                             <div class="col-12">
                                 <ul class="actions">
