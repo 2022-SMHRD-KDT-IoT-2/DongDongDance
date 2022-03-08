@@ -46,7 +46,8 @@ ArrayList<EmployeeVO> al = eDao.selectAll();
 				
 					<div style="display: flex; align-items: center;">
 						<strong>사원관리</strong> 
-						<img src="/assets/image/plus_icon.png" height="30px" width="30px" style="margin-left: 10px;">
+						<img src="assets/image/plus_icon.png" height="30px" width="30px" style="margin-left: 10px;">
+						
 					</div>
 					
 					<ul class="icons">
