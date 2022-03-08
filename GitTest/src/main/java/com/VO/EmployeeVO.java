@@ -69,6 +69,12 @@ public class EmployeeVO {
 		this.rfidUid = rfidUid;
 		this.areaId = areaId;
 	}
+	
+	public EmployeeVO(String empId, String empName) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+	}
 
 	//직원용 회원정보 수정
 //	public EmployeeVO(String empId, String empPw, String empPhone) {

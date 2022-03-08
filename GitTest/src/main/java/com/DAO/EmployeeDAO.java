@@ -111,7 +111,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, substr(emp_joindate, 1, 10), emp_super_id, admin_yn, rfid_uid, area_id, emp_phone from t_employee";
+			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, substr(emp_joindate, 1, 10), emp_super_id, admin_yn, rfid_uid, area_id, emp_phone from t_employee order by emp_joindate";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();	
 			
@@ -352,6 +352,36 @@ public class EmployeeDAO {
 
 					
 				EmployeeVO vo = new EmployeeVO(getarea);
+				al.add(vo);
+				}		
+							
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return al;
+
+		}
+		
+		// 관리자 명단 추출
+		public ArrayList<EmployeeVO> selectSuper(){
+
+			ArrayList<EmployeeVO> al = new ArrayList<EmployeeVO>();
+			
+			try {
+				connect();
+				
+				String sql = "select emp_id, emp_name from t_employee where admin_yn = 'Y'";
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery();
+				
+				while(rs.next()){
+				String getid = rs.getString(1);
+				String getname = rs.getString(2);
+
+					
+				EmployeeVO vo = new EmployeeVO(getid, getname);
 				al.add(vo);
 				}		
 							
