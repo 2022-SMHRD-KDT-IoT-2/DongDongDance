@@ -79,7 +79,7 @@
 
                 <!-- Tab links -->
                 <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'London')">사원</button>
+                    <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'London')">사원</button>
                     <button class="tablinks" onclick="openCity(event, 'Paris')">플러그</button>
                     <button class="tablinks" onclick="openCity(event, 'Tokyo')">좌석</button>
                 </div>
@@ -228,6 +228,9 @@
           document.getElementById(cityName).style.display = "block";
           evt.currentTarget.className += " active";
         }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
         </script>
 
 
