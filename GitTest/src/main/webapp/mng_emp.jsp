@@ -45,8 +45,17 @@ ArrayList<EmployeeVO> al = eDao.selectAll();
 				<header id="header">
 				
 					<div style="display: flex; align-items: center;">
+<<<<<<< HEAD
 						<strong>사원관리</strong>
+=======
+						<strong>사원관리</strong> 
+<<<<<<< HEAD
+						<img src="assets/image/plus_icon.png" height="30px" width="30px" style="margin-left: 10px;">
+						
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-IoT-2/-1.git
 						<img src="assets/image/plus_icon.png" height="25px" width="30px" style="margin-left: 10px;">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-IoT-2/-1.git
 					</div>
 					
 					<ul class="icons">
