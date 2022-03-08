@@ -108,7 +108,7 @@ public class Rfid_read extends HttpServlet {
 				System.out.println("Á¶Åð");
 				type = "3";										
 			}
-		}else if(time > 1900 && time <= 0600) {
+		}else{
 			if(status.equals("0")) {
 				System.out.println("Ãß°¡");
 				type = "A";					
