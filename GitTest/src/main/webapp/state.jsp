@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title>Generic - Editorial by HTML5 UP</title>
+      <title>State</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="assets/css/main.css" />
@@ -105,12 +105,13 @@
                               <h2>Menu</h2>
                            </header>
                            <ul>
-                              <li><a href="main.jsp">Home</a></li>
-                              <li><a href="state.jsp">근태확인</a></li>
-                              <li><a href="monitoring.jsp">모니터링</a></li>
-                              <li><a href="cnt_light.jsp">조명관리</a></li>
-                              <li><a href="mng_emp.jsp">사원관리</a></li>
-                              <li><a href="ck_elec.jsp">전기사용량</a></li>
+                        <li><a href="main.jsp">Home</a></li>
+                        <li><a href="state.jsp">근태확인</a></li>
+                        <li><a href="monitoring.jsp">모니터링</a></li>
+                        <li><a href="cnt_light.jsp">조명관리</a></li>
+                        <li><a href="mng_emp.jsp">사원관리</a></li>
+                        <li><a href="management.jsp">기능관리</a></li>
+                        <li><a href="ck_elec.jsp">전기사용량</a></li>
                            </ul>
                         </nav>
 
