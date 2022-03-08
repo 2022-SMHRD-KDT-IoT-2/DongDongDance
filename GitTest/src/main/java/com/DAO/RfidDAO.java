@@ -145,5 +145,75 @@ public class RfidDAO {
 		}
 		return null;
 	}
+	
+	public String selectType(String id) {
+	      
+	      String ts = "";
+	      try {
+	         connect();
+	         String sql = "select log_type from t_rfid_log where emp_id = ? order by log_time";
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, id);
+	         rs = psmt.executeQuery();
+
+	         if (rs.next()) {
+	            String gettype = rs.getString(1);
+	            
+	            if(gettype.equals("0")) {
+	               ts = "퇴근";
+	            }else if(gettype.equals("1")) {
+	               ts = "출근";
+	            }else if(gettype.equals("2")) {
+	               ts = "지각";
+	            }else if(gettype.equals("3")) {
+	               ts = "조퇴";
+	            }else if(gettype.equals("4")) {
+	               ts = "주말출근";
+	            }else if(gettype.equals("5")) {
+	               ts = "주말퇴근";
+	            }else if(gettype.equals("6")) {
+	               ts = "출근취소";
+	            }else if(gettype.equals("7")) {
+	               ts = "결근";
+	            }else if(gettype.equals("8")) {
+	               ts = "점심";
+	            }else if(gettype.equals("9")) {
+	               ts = "복귀";
+	            }else if(gettype.equals("A")) {
+	               ts = "추가";
+	            }
+	         }
+
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close();
+	      }
+	      return ts;
+	   }
+	   
+	    public String selectDate(String id) {
+	      
+	      String ts = "";
+	      try {
+	         connect();
+	         String sql = "select log_time from t_rfid_log where emp_id = ? order by log_time";
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, id);
+	         rs = psmt.executeQuery();
+
+	         if (rs.next()) {
+	            String gettime = rs.getString(1);
+	            
+	            ts = gettime;
+	         }
+
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close();
+	      }
+	      return ts;
+	   }
 
 }

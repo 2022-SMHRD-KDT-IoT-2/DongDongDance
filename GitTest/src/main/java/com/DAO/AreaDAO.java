@@ -247,5 +247,31 @@ public class AreaDAO {
 			}
 			return al;
 		}
+		
+		// πÊ ¿Ã∏ß
+	      public String selectName(String id) {
+	         
+	         String ts = "";
+	         try {
+	            conn();
+	            String sql = "select area_name from t_area where area_id = ?";
+	            psmt = conn.prepareStatement(sql);
+	            psmt.setString(1, id);
+	            rs = psmt.executeQuery();
+
+	            if (rs.next()) {
+	               String getname = rs.getString(1);
+	               
+	               ts = getname;
+	            }
+
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         } finally {
+	            close();
+	         }
+	         return ts;
+	      }
+
 	
 }
