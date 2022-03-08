@@ -65,7 +65,7 @@
             
                                           for(int i=0; i<al.size(); i++){
                                              out.print("<tr>");
-                                             out.print("<td>"+al.get(i).getLogSeq()+"</td>");
+                                             out.print("<td><a href='log_update.jsp?seq="+al.get(i).getLogSeq()+"'>"+al.get(i).getLogSeq()+"</td>");
                                              out.print("<td>"+al.get(i).getLogType()+"</td>");
                                              out.print("<td>"+al.get(i).getLogTime()+"</td>");
                                              out.print("<td>"+al.get(i).getLogMemo()+"</td>");
