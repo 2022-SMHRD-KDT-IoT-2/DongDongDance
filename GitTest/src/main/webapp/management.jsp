@@ -22,6 +22,7 @@
 
                 <!-- Header -->
                 <header id="header">
+                <strong>기능관리</strong>
                     <ul class="icons">
                         <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
                         <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
