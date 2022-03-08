@@ -53,6 +53,8 @@
 
 <body class="is-preload">
 
+    
+
     <!-- Wrapper -->
     <div id="wrapper">
 
@@ -178,7 +180,7 @@
             </div>
         </div>
 
-    </div>
+    
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
