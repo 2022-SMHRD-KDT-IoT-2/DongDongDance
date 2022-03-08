@@ -48,7 +48,7 @@ public class RfidDAO {
 		try {
 			connect();
 
-			String sql = "insert into t_rfid_log values (t_rfid_log_seq.nextval, ?, sysdate, ?, null)";
+			String sql = "insert into t_rfid_log values (t_rfid_log_seq.nextval, ?, sysdate + 9/24, ?, null)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, type);
 			psmt.setString(2, id);
@@ -69,7 +69,7 @@ public class RfidDAO {
 		try {
 			connect();
 
-			String sql = "update t_rfid_log set log_type = ?, emp_id = ? where log_seq = ?";
+			String sql = "update t_rfid_log set log_type = ?, log_memo = ? where log_seq = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, type);
 			psmt.setString(2, memo);
@@ -272,6 +272,61 @@ public class RfidDAO {
 				close();
 			}
 			return al;
+
+		}
+	    
+	    public RfidVO selectLog(int seq){
+
+			RfidVO vo = null;
+			
+			try {
+				connect();
+				
+				String sql = "select log_type, log_memo from t_rfid_log where log_seq = ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setInt(1, seq);
+				rs = psmt.executeQuery();
+				
+				while(rs.next()){
+					String gettype = rs.getString(1);
+					String getmemo = rs.getString(2);
+
+					String ts = "";
+					
+					if(gettype.equals("0")) {
+			               ts = "퇴근";
+			            }else if(gettype.equals("1")) {
+			               ts = "출근";
+			            }else if(gettype.equals("2")) {
+			               ts = "지각";
+			            }else if(gettype.equals("3")) {
+			               ts = "조퇴";
+			            }else if(gettype.equals("4")) {
+			               ts = "주말출근";
+			            }else if(gettype.equals("5")) {
+			               ts = "주말퇴근";
+			            }else if(gettype.equals("6")) {
+			               ts = "출근취소";
+			            }else if(gettype.equals("7")) {
+			               ts = "결근";
+			            }else if(gettype.equals("8")) {
+			               ts = "점심";
+			            }else if(gettype.equals("9")) {
+			               ts = "복귀";
+			            }else if(gettype.equals("A")) {
+			               ts = "추가근무";
+			            }
+					
+					vo = new RfidVO(ts, getmemo);
+					
+				}		
+							
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return vo;
 
 		}
 

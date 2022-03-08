@@ -18,7 +18,7 @@ public class UpdateLogCon implements Command {
 		RfidDAO dao = new RfidDAO();
 		dao.updateLog(seq, type, memo);
 		
-		return "#.jsp";
+		return "state.jsp";
 	}
 
 }

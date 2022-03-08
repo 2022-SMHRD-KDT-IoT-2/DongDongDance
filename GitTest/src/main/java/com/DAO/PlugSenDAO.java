@@ -45,7 +45,7 @@ public class PlugSenDAO {
 		try {
 			connect();
 
-			String sql = "insert into t_plug_sensing values (t_plug_sensing_seq.nextval, ?, ?, sysdate)";
+			String sql = "insert into t_plug_sensing values (t_plug_sensing_seq.nextval, ?, ?, sysdate + 9/24)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, plug);
 			psmt.setDouble(2, value);
