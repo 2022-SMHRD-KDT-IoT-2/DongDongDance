@@ -53,6 +53,8 @@
 
 <body class="is-preload">
 
+    
+
     <!-- Wrapper -->
     <div id="wrapper">
 
@@ -79,37 +81,11 @@
 
                 <!-- Tab links -->
                 <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'London')">사원</button>
-                    <button class="tablinks" onclick="openCity(event, 'Paris')">플러그</button>
-                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">좌석</button>
-                </div>
-
-                <!-- Tab content -->
-                <div id="London" class="tabcontent">
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Seat</th>
-                                    <th>Tel</th>
-                                    <th>Address</th>
-                                    <th>Area</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    
-                <br>
-                <ul class="actions">
-                    <li><a href="Create.html" class="button primary">Create</a></li>
-                    <li><a href="Update.html" class="button primary">Update</a></li>
-                    <li><a href="#" class="button">Delete</a></li>
-                </ul>
-                </div>
-
-                <div id="Paris" class="tabcontent">
+                    <button class="tablinks" onclick="openMng(event, 'Plug')" id="defaultOpen">플러그</button>
+                    <button class="tablinks" onclick="openMng(event, 'Area')">구역</button>
+                  </div>
+                  
+                  <div id="Plug" class="tabcontent">
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -124,21 +100,20 @@
                             </thead>
                         </table>
                     </div>
-                    
-                <br>
-                <ul class="actions">
-                    <li><a href="Create.html" class="button primary">Create</a></li>
-                    <li><a href="Update.html" class="button primary">Update</a></li>
-                    <li><a href="#" class="button">Delete</a></li>
-                </ul>
-                </div>
-
-                <div id="Tokyo" class="tabcontent">
+                    <br>
+                    <ul class="actions">
+                        <li><a href="Create.jsp" class="button primary">Create</a></li>
+                        <li><a href="Update.jsp" class="button primary">Update</a></li>
+                        <li><a href="#" class="button">Delete</a></li>
+                    </ul> 
+                  </div>
+                  
+                  <div id="Area" class="tabcontent">
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Seat</th>
+                                    <th>Area</th>
                                     <th>#</th>
                                     <th>#</th>
                                     <th>#</th>
@@ -148,18 +123,17 @@
                             </thead>
                         </table>
                     </div>
-                    
-                <br>
-                <ul class="actions">
-                    <li><a href="Create.jsp" class="button primary">Create</a></li>
-                    <li><a href="Update.jsp" class="button primary">Update</a></li>
-                    <li><a href="#" class="button">Delete</a></li>
-                </ul>
+                    <br>
+                    <ul class="actions">
+                        <li><a href="Create.jsp" class="button primary">Create</a></li>
+                        <li><a href="Update.jsp" class="button primary">Update</a></li>
+                        <li><a href="#" class="button">Delete</a></li>
+                    </ul>
+                  </div>
+
                 </div>
 
                 <!-- 본문 끝 -->
-
-
 
             </div>
         </div>
@@ -205,9 +179,8 @@
 
             </div>
         </div>
-
-    </div>
-
+     
+     
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -215,7 +188,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        function openCity(evt, cityName) {
+        function openMng(evt, mngName) {
           var i, tabcontent, tablinks;
           tabcontent = document.getElementsByClassName("tabcontent");
           for (i = 0; i < tabcontent.length; i++) {
@@ -225,9 +198,12 @@
           for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
           }
-          document.getElementById(cityName).style.display = "block";
+          document.getElementById(mngName).style.display = "block";
           evt.currentTarget.className += " active";
         }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
         </script>
 
 
