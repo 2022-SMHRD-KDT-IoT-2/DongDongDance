@@ -13,6 +13,5 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/tkroa/Downloads/json-simple-1.1.1 (1).jar"/>
-	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
 </classpath>

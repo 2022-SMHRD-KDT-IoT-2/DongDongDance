@@ -151,7 +151,7 @@ public class RfidDAO {
 	      String ts = "";
 	      try {
 	         connect();
-	         String sql = "select log_type from t_rfid_log where emp_id = ? order by log_time";
+	         String sql = "select log_type from t_rfid_log where emp_id = ? order by log_time desc";
 	         psmt = conn.prepareStatement(sql);
 	         psmt.setString(1, id);
 	         rs = psmt.executeQuery();
@@ -197,7 +197,7 @@ public class RfidDAO {
 	      String ts = "";
 	      try {
 	         connect();
-	         String sql = "select log_time from t_rfid_log where emp_id = ? order by log_time";
+	         String sql = "select log_time from t_rfid_log where emp_id = ? order by log_time desc";
 	         psmt = conn.prepareStatement(sql);
 	         psmt.setString(1, id);
 	         rs = psmt.executeQuery();

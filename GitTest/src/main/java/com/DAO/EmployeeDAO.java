@@ -388,7 +388,7 @@ public class EmployeeDAO {
 	// 직급 표시
     public String selectPo(String id) {
       
-      String ts = "";
+      String ts = "최고관리자";
       try {
          connect();
          String sql = "select admin_yn, emp_super_id from t_employee where emp_id = ?";
@@ -398,16 +398,15 @@ public class EmployeeDAO {
 
          if (rs.next()) {
             String getyn = rs.getString(1);
-            String getsuper = rs.getString(1);
-            
-            if(getyn.equals("Y") && getsuper.equals("")) {
-               ts = "최고관리자";
-            }else if(getyn.equals("Y")){
+            String getsuper = rs.getString(2);
+           
+            if(getyn.equals("Y") && getsuper.equals("admin")) {
                ts = "일반관리자";
             }else {
                ts = "일반직원";
             }
          }
+         
 
       } catch (Exception e) {
          e.printStackTrace();
