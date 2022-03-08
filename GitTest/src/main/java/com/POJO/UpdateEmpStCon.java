@@ -191,7 +191,7 @@ public class UpdateEmpStCon implements Command {
 			System.out.println("al12:"+al12.get(i).getPlugSeq());
 		}
 		
-		return "main.jsp";
+		return "mng_emp.jsp";
 		
 	}
 
