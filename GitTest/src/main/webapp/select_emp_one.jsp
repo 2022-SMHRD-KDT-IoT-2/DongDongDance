@@ -115,13 +115,13 @@
 					    <div>
 					                            <form action="UpdateEmpStCon.do" method="post" style="display:inline;margin-left:500px;">
 									<input id="id" type="hidden" name="id"  value="<%=vo.getEmpId() %>">
-									<input type="submit" value="출퇴근 처리">
+									<input type="submit" value="수정">
 					    </form>
 					    
 					    
 					                            <form action="UpdateEmpStCon.do" method="post" style="display:inline">
 									<input id="id" type="hidden" name="id"  value="<%=vo.getEmpId() %>">
-									<input type="submit" value="출퇴근 처리">
+									<input type="submit" value="삭제">
 					    </form>
 					    </div>
 					    
