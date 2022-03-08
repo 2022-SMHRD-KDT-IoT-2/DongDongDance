@@ -48,7 +48,7 @@ public class RfidDAO {
 		try {
 			connect();
 
-			String sql = "insert into t_rfid_log values (t_rfid_log_seq.nextval, ?, sysdate, ?, null)";
+			String sql = "insert into t_rfid_log values (t_rfid_log_seq.nextval, ?, sysdate + 9/24, ?, null)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, type);
 			psmt.setString(2, id);

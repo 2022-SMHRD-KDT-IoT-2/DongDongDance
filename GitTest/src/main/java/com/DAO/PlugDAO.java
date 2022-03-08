@@ -48,7 +48,7 @@ public class PlugDAO {
 		try {
 			connect();
 			
-			String sql = "insert into t_plug values (t_plug_seq.nextval, ?, ?, '0', sysdate, ?, ?, '0')";
+			String sql = "insert into t_plug values (t_plug_seq.nextval, ?, ?, '0', sysdate + 9/24, ?, ?, '0')";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setDouble(2, power);
