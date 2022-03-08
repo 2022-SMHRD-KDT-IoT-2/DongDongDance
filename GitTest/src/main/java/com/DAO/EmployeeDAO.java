@@ -403,7 +403,7 @@ public class EmployeeDAO {
             if(getyn.equals("Y") && getsuper.equals("admin")) {
                ts = "老馆包府磊";
             }else {
-               ts = "老馆流盔";
+               ts = "流盔";
             }
          }
          
