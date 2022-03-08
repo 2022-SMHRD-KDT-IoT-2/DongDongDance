@@ -111,7 +111,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, emp_joindate, emp_super_id, admin_yn, rfid_uid, area_id, emp_phone from t_employee";
+			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, substr(emp_joindate, 1, 10), emp_super_id, admin_yn, rfid_uid, area_id, emp_phone from t_employee";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();	
 			
