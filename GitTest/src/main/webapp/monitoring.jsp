@@ -1,3 +1,8 @@
+<%@page import="com.VO.EmployeeVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.AreaDAO"%>
+<%@page import="com.DAO.RfidDAO"%>
+<%@page import="com.DAO.EmployeeDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -46,7 +51,14 @@
 </head>
 
 <body class="is-preload">
-
+<%
+   
+   EmployeeDAO eDao = new EmployeeDAO();
+   RfidDAO rDao = new RfidDAO();
+   AreaDAO aDao = new AreaDAO();
+   
+   ArrayList<EmployeeVO> al = eDao.selectAll();
+   %>
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -123,41 +135,15 @@
 							</div>
 
 							<div class="Scontainer">
+							
+							<%  for(int i=0; i<al.size(); i++){
+                                             out.print("<div class='Sitem'>");
+                                             out.print("<span class='Sicon'>"+al.get(i).getEmpName()+"</span>");
+                                             out.print("<span class='Sname'>"+al.get(i).getEmpName()+"</span>");
+                                             out.print("</div>");
+                                  }
 
-								<div class="Sitem">
-									<span class="Sicon">A</span>
-									<span class="Sname">Apple</span>
-								</div>
-
-								<div class="Sitem">
-									<span class="Sicon">O</span>
-									<span class="Sname">Orange</span>
-								</div>
-
-								<div class="Sitem">
-									<span class="Sicon">M</span>
-									<span class="Sname">Mandarin</span>
-								</div>
-
-								<div class="Sitem">
-									<span class="Sicon">H</span>
-									<span class="Sname">한수진</span>
-								</div>
-
-								<div class="Sitem">
-									<span class="Sicon">J</span>
-									<span class="Sname">제동진</span>
-								</div>
-
-								<div class="Sitem">
-									<span class="Sicon">J</span>
-									<span class="Sname">조세정</span>
-								</div>
-
-								<div class="Sitem">
-									<span class="Sicon">Y</span>
-									<span class="Sname">유성준</span>
-								</div>
+                            %>
 
 							</div>
 						</div>
