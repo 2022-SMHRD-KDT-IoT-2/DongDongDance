@@ -257,7 +257,24 @@
 
 		}
 	</script>
-	<script>
-	</script>
+<script type="text/javascript">
+   function filter(){
+
+     var Svalue, Sname, Sitem, i;
+
+     Svalue = document.getElementById("Svalue").value.toUpperCase();
+     Sitem = document.getElementsByClassName("Sitem");
+
+     for(i=0;i<Sitem.length;i++){
+      Sname = Sitem[i].getElementsByClassName("Sname");
+      if(Sname[0].innerHTML.toUpperCase().indexOf(Svalue) > -1){
+        Sitem[i].style.display = "flex";
+      }else{
+        Sitem[i].style.display = "none";
+      }
+     }
+   }
+</script>
+
 </body>
 </html>
