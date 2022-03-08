@@ -182,7 +182,7 @@ public class RfidDAO {
 	            }else if(gettype.equals("9")) {
 	               ts = "복귀";
 	            }else if(gettype.equals("A")) {
-	               ts = "추가";
+	               ts = "추가근무";
 	            }
 	         }
 
@@ -259,7 +259,7 @@ public class RfidDAO {
 			            }else if(gettype.equals("9")) {
 			               ts = "복귀";
 			            }else if(gettype.equals("A")) {
-			               ts = "추가";
+			               ts = "추가근무";
 			            }
 					
 					RfidVO vo = new RfidVO(getseq, ts, gettime, getmemo);

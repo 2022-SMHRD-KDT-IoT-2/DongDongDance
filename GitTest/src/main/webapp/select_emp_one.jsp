@@ -22,6 +22,10 @@
    AreaDAO aDao = new AreaDAO();
    
    EmployeeVO vo = eDao.selectOne(id);
+   String a = "퇴실";
+   if(vo.getEmpStatus().equals("1")){
+	   a = "재실";
+   }
    %>
 
       <!-- Wrapper -->
@@ -73,7 +77,7 @@
                                     </tr>
                                     <tr>
                                        <th>STATUS</th>
-                                       <td><%=vo.getEmpStatus() %></td>
+                                       <td><%=a %></td>
                                     </tr>
                                     <tr>
                                        <th>JOINDATE</th>
@@ -101,6 +105,10 @@
                            <!-- 본문 끝 -->
                            
                         </section>
+                        <form action="UpdateEmpStCon.do" method="post">
+									<input id="id" type="hidden" name="id"  value="<%=vo.getEmpId() %>">
+									<input type="submit" value="출퇴근 처리">
+					    </form>
 
                   </div>
                </div>

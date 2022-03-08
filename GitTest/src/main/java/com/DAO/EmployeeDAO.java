@@ -163,12 +163,6 @@ public class EmployeeDAO {
 				String getrfid = rs.getString(9);
 				String getarea = rs.getString(10);
 				
-				if(getstatus.equals("1")) {
-					getstatus = "ΐη½Η";
-				}else {
-					getstatus = "Επ½Η";
-				}
-				
 				vo = new EmployeeVO(getid, getname, getseat, getphone, getstatus, getjoindate, getsuperid, getadminyn, getrfid, getarea);
 			}		
 						
