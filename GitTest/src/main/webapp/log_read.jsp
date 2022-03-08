@@ -1,3 +1,4 @@
+<%@page import="com.VO.RfidVO"%>
 <%@page import="com.DAO.AreaDAO"%>
 <%@page import="com.DAO.RfidDAO"%>
 <%@page import="com.VO.EmployeeVO"%>
@@ -15,12 +16,12 @@
    </head>
    <body class="is-preload">
    <%
-   
+   String id = request.getParameter("id");
    EmployeeDAO eDao = new EmployeeDAO();
    RfidDAO rDao = new RfidDAO();
    AreaDAO aDao = new AreaDAO();
    
-   ArrayList<EmployeeVO> al = eDao.selectAll();
+   ArrayList<RfidVO> al = rDao.selectAll(id);
    %>
 
       <!-- Wrapper -->
@@ -32,7 +33,7 @@
 
                      <!-- Header -->
                         <header id="header">
-                           <strong>근태확인</strong>
+                           <strong>직원별 근태 세부이력 : (id) <%=id %></strong>
                            <ul class="icons">
                               <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
                               <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -55,23 +56,19 @@
                               <table>
                                  <thead>
                                     <tr>
-                                       <th>ID</th>
-                                       <th>NAME</th>
-                                       <th>State</th>
-                                       <th>Date</th>
-                                       <th>Position</th>
-                                       <th>Location</th>
+                                       <th>SEQ</th>
+                                       <th>TYPE</th>
+                                       <th>LOG_TIME</th>
+                                       <th>MEMO</th>
                                        
                                        <%
             
                                           for(int i=0; i<al.size(); i++){
                                              out.print("<tr>");
-                                             out.print("<td><a href='log_read.jsp?id="+al.get(i).getEmpId()+"'>"+al.get(i).getEmpId()+"</a></td>");
-                                             out.print("<td>"+al.get(i).getEmpName()+"</td>");
-                                             out.print("<td>"+rDao.selectType(al.get(i).getEmpId())+"</td>");
-                                             out.print("<td>"+rDao.selectDate(al.get(i).getEmpId())+"</td>");
-                                             out.print("<td>"+eDao.selectPo(al.get(i).getEmpId())+"</td>");
-                                             out.print("<td>"+aDao.selectName(al.get(i).getAreaId())+"</td>");
+                                             out.print("<td>"+al.get(i).getLogSeq()+"</td>");
+                                             out.print("<td>"+al.get(i).getLogType()+"</td>");
+                                             out.print("<td>"+al.get(i).getLogTime()+"</td>");
+                                             out.print("<td>"+al.get(i).getLogMemo()+"</td>");
                                              out.print("</tr>");
                                           }
 

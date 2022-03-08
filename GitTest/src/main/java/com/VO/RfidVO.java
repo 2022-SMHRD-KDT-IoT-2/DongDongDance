@@ -12,6 +12,15 @@ public class RfidVO {
     // 로그 메모 
     private String logMemo;
     
+    
+	public RfidVO(int logSeq, String logType, String logTime, String logMemo) {
+		super();
+		this.logSeq = logSeq;
+		this.logType = logType;
+		this.logTime = logTime;
+		this.logMemo = logMemo;
+	}
+	
 	public int getLogSeq() {
 		return logSeq;
 	}
