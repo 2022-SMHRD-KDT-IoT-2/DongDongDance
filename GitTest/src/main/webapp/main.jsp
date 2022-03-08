@@ -72,12 +72,13 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="main.jsp">Home</a></li>
-										<li><a href="state.jsp">근태확인</a></li>
-										<li><a href="monitoring.jsp">모니터링</a></li>
-										<li><a href="cnt_light.jsp">조명관리</a></li>
-										<li><a href="mng_emp.jsp">사원관리</a></li>
-										<li><a href="ck_elec.jsp">전기사용량</a></li>
+                        <li><a href="main.jsp">Home</a></li>
+                        <li><a href="state.jsp">근태확인</a></li>
+                        <li><a href="monitoring.jsp">모니터링</a></li>
+                        <li><a href="cnt_light.jsp">조명관리</a></li>
+                        <li><a href="mng_emp.jsp">사원관리</a></li>
+                        <li><a href="management.jsp">기능관리</a></li>
+                        <li><a href="ck_elec.jsp">전기사용량</a></li>
 									</ul>
 								</nav>
 
