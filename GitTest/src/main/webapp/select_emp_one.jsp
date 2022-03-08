@@ -109,7 +109,7 @@
                      
                         <form action="UpdateEmpStCon.do" method="post" style="display:inline">
 									<input id="id" type="hidden" name="id"  value="<%=vo.getEmpId() %>">
-									<input type="submit" value="출퇴근 처리">
+									<input type="submit" value="출퇴근 처리"> 
 					    </form>
 					    
 					    <div>
