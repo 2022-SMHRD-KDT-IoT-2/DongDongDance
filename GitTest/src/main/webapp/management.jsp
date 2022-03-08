@@ -1,3 +1,8 @@
+<%@page import="com.VO.AreaVO"%>
+<%@page import="com.VO.PlugVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.PlugDAO"%>
+<%@page import="com.DAO.AreaDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -53,7 +58,12 @@
 
 <body class="is-preload">
 
-    
+    <%
+    PlugDAO pDao = new PlugDAO();
+    AreaDAO aDao = new AreaDAO();
+    ArrayList<PlugVO> al1 = pDao.selectAll();
+    ArrayList<AreaVO> al2 = aDao.getList();
+    %>
 
     <!-- Wrapper -->
     <div id="wrapper">
@@ -90,13 +100,29 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Plug</th>
-                                    <th>#</th>
-                                    <th>#</th>
-                                    <th>#</th>
-                                    <th>#</th>
-                                    <th>#</th>
+                                    <th>SEQ</th>
+                                    <th>EMP_ID</th>
+                                    <th>STATUS</th>
+                                    <th>DATE</th>
+                                    <th>AREA</th>
+                                    <th>DEVICE</th>
+                                    <th>FIXED</th>
                                 </tr>
+                                <%
+            
+                                          for(int i=0; i<al1.size(); i++){
+                                             out.print("<tr>");
+                                             out.print("<td>"+al1.get(i).getPlugSeq()+"</td>");
+                                             out.print("<td>"+al1.get(i).getId()+"</td>");
+                                             out.print("<td>"+al1.get(i).getPlugStatus()+"</td>");
+                                             out.print("<td>"+al1.get(i).getPlugInsDate()+"</td>");
+                                             out.print("<td>"+al1.get(i).getAreaId()+"</td>");
+                                             out.print("<td>"+al1.get(i).getDevice()+"</td>");
+                                             out.print("<td>"+al1.get(i).getFixed()+"</td>");
+                                             out.print("</tr>");
+                                          }
+
+                                          %>
                             </thead>
                         </table>
                     </div>
@@ -113,13 +139,21 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Area</th>
-                                    <th>#</th>
-                                    <th>#</th>
-                                    <th>#</th>
-                                    <th>#</th>
-                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>STATUS</th>
+                                    <th>NAME</th>
                                 </tr>
+                                 <%
+            
+                                          for(int i=0; i<al2.size(); i++){
+                                             out.print("<tr>");
+                                             out.print("<td>"+al2.get(i).getAreaId()+"</td>");
+                                             out.print("<td>"+al2.get(i).getAreaStatus()+"</td>");
+                                             out.print("<td>"+al2.get(i).getAreaName()+"</td>");
+                                             out.print("</tr>");
+                                          }
+
+                                          %>
                             </thead>
                         </table>
                     </div>
