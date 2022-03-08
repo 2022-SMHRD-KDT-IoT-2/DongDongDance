@@ -14,11 +14,11 @@ public class RegPlugCon implements Command{
 		double power = Double.parseDouble(request.getParameter("power"));
 		String area = request.getParameter("area");
 		String device = request.getParameter("device");
-
+		System.out.println(area);
 		PlugDAO dao = new PlugDAO();
 		dao.regPlug(id, power, area, device);
 		
-		return "main2.jsp";
+		return "management.jsp";
 		
 	}
 

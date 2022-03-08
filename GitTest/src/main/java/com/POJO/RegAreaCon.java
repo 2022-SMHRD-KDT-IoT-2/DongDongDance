@@ -16,7 +16,7 @@ public class RegAreaCon implements Command {
 		AreaDAO dao = new AreaDAO();
 		dao.regArea(id, name);
 		
-		return "A_crud.jsp";
+		return "management.jsp";
 	}
 
 }

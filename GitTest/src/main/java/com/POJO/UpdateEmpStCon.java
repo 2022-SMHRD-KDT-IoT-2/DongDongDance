@@ -67,7 +67,7 @@ public class UpdateEmpStCon implements Command {
 				System.out.println("조퇴");
 				type = "3";										
 			}
-		}else if(time > 1900 && time <= 0600) {
+		}else{
 			if(status.equals("0")) {
 				System.out.println("추가");
 				type = "A";					
@@ -76,6 +76,7 @@ public class UpdateEmpStCon implements Command {
 				type = "0";										
 			}
 		}
+		System.out.println(type);
 		// 주말의 경우 주말출근, 주말퇴근로 설정
 		
 		if(type.equals("1") || type.equals("2") || type.equals("4") || type.equals("9") || type.equals("A")) {
