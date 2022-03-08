@@ -1,3 +1,8 @@
+<%@page import="com.VO.EmployeeVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.AreaDAO"%>
+<%@page import="com.DAO.RfidDAO"%>
+<%@page import="com.DAO.EmployeeDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,7 +26,14 @@
 </head>
 
 <body class="is-preload">
+<%
+EmployeeDAO eDao = new EmployeeDAO();
+RfidDAO rDao = new RfidDAO();
+AreaDAO aDao = new AreaDAO();
 
+ArrayList<EmployeeVO> al = eDao.selectAll();
+
+%>
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -46,197 +58,31 @@
 				<section class="py-5">
 					<div class="container">
 
-						<div >
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp1.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
 
-						</div>
+                                        <%
+            
+                                          for(int i=0; i<al.size(); i++){
+                                             out.print("<div>");
+                                             out.print("<div>");
+                                             out.print("<img src=\"assets/emp_img/emp"+(i+1)+".png\" alt=\"...\" height=\"250px\" width=\"250px\">");
+                                             out.print("<div>");
+                                             out.print("<div>");
+                                             out.print("<div class=\"name\">");
+                                             out.print("<h5>"+al.get(i).getEmpName()+"</h5>");
+                                             out.print("</div>");
+                                             out.print("<div class=\"info\">");
+                                             out.print("<p> 연락처 : "+al.get(i).getEmpPhone()+"</p>");
+                                             out.print("<p> 직급 : "+eDao.selectPo(al.get(i).getEmpId())+"</p>");
+                                             out.print("<p> 입사일 : "+al.get(i).getEmpJoindate()+"</p>");
+                                             out.print("<p> 현재상태 : "+rDao.selectType(al.get(i).getEmpId())+"</p>");
+                                             out.print("</div>");
+                                             out.print("</div>");
+                                             out.print("</div>");
+                                             out.print("</div>");     
+                                             out.print("</div>");     
+                                          }
 
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp2.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름 : 김석진</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1992.12.04</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp3.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp4.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp5.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp6.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp7.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp8.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<!-- Product image-->
-								<img src="assets/emp_img/emp9.png" alt="..." height="250px" width="250px">
-								<!-- Product details-->
-								<div>
-									<div>
-										<!--name-->
-										<div class="name">
-											<h5>이름</h5>
-										</div>
-										<!--info-->
-										<div class="info">
-											<p>연락처: 010-0000-0000</p>
-											<p>생년월일: 1900.00.000</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-				
+                                          %>
 
 				</section>
 

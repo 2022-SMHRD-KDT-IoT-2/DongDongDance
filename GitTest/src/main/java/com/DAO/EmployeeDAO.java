@@ -111,7 +111,7 @@ public class EmployeeDAO {
 		try {
 			connect();
 			
-			String sql = "select emp_id, emp_name, emp_seat_no, emp_status, emp_super_id, admin_yn, rfid_uid, area_id from t_employee";
+			String sql = "select emp_id, emp_name, emp_seat_no, emp_phone, emp_status, emp_joindate, emp_super_id, admin_yn, rfid_uid, area_id, emp_phone from t_employee";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();	
 			
@@ -119,13 +119,15 @@ public class EmployeeDAO {
 				String getid = rs.getString(1);
 				String getname = rs.getString(2);
 				String getseat = rs.getString(3);
-				String getstatus = rs.getString(4);
-				String getsuperid = rs.getString(5);
-				String getadminyn = rs.getString(6);
-				String getrfid = rs.getString(7);
-				String getarea = rs.getString(8);
+				String getphone = rs.getString(4);
+				String getstatus = rs.getString(5);
+				String getdate = rs.getString(6);
+				String getsuperid = rs.getString(7);
+				String getadminyn = rs.getString(8);
+				String getrfid = rs.getString(9);
+				String getarea = rs.getString(10);
 				
-				EmployeeVO vo = new EmployeeVO(getid, getname, getseat, getstatus, getsuperid, getadminyn, getrfid, getarea);
+				EmployeeVO vo = new EmployeeVO(getid, getname, getseat, getphone, getstatus, getdate, getsuperid, getadminyn, getrfid, getarea);
 				al.add(vo);
 			}		
 						

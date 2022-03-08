@@ -59,7 +59,7 @@ public class EmployeeVO {
 			String empJoindate, String empSuperId, String adminYn, String rfidUid, String areaId) {
 		super();
 		this.empId = empId;
-		this.empPw = empPw;
+		this.empJoindate = empJoindate;
 		this.empName = empName;
 		this.empSeatNo = empSeatNo;
 		this.empPhone = empPhone;
