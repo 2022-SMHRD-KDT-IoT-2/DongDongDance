@@ -16,7 +16,7 @@ public class UpdatePlugFxCon implements Command {
 		PlugDAO dao = new PlugDAO();
 		dao.updateStatus(plug, fixed);
 		
-		return "main.jsp";
+		return "management.jsp";
 	}
 
 }

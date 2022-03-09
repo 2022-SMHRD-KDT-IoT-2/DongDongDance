@@ -16,7 +16,7 @@ public class UpdatePlugDvCon implements Command {
 		PlugDAO dao = new PlugDAO();
 		dao.updateDevice(seq, device);
 		
-		return "main2.jsp";
+		return "management.jsp";
 	}
 
 }
