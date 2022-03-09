@@ -79,6 +79,26 @@ public class PlugSenDAO {
 		}
 		return cnt;
 	}
+	
+	// 해당 플러그 기록 전부 삭제
+		public int deletePlug(int plug) {
+			int cnt = 0;
+			try {
+				connect();
+
+				String sql = "delete from t_plug_sensing where plug_seq = ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setInt(1, plug);
+
+				cnt = psmt.executeUpdate();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return cnt;
+		}
 
 	public double selectall() { // 일단 전체값 중 최근 갱신된 1행의 ps_value 반환
 		double ps_value = 0;
