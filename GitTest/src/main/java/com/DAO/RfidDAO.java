@@ -90,9 +90,29 @@ public class RfidDAO {
 		try {
 			connect();
 
-			String sql = "delete from t_rfid where log_seq = ?";
+			String sql = "delete from t_rfid_log where log_seq = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, seq);
+
+			cnt = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	// 특정 id의 log기록 전부 삭제
+	public int deleteId(String id) {
+		int cnt = 0;
+		try {
+			connect();
+
+			String sql = "delete from t_rfid_log where emp_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
 
 			cnt = psmt.executeUpdate();
 
