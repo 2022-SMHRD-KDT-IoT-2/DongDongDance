@@ -55,8 +55,7 @@ ArrayList<EmployeeVO> al = eDao.selectAll();
                   <strong>사원관리</strong>
                   <div style = "margin-top: 5px;">
                    
-                            <form style="display:inline">
-                           <input id="id" type="hidden" name="emp_plus">
+                            <form style="display:inline" action="reg_emp.jsp">
                            <input type="submit" value="추가" style="padding: 0 0.5em; color: #7f888f !important;  box-shadow: none; font-size: 0.4em">
                            </form>
                   </div>
