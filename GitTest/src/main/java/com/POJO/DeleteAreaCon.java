@@ -15,7 +15,7 @@ public class DeleteAreaCon implements Command {
 		AreaDAO dao = new AreaDAO();
 		dao.deleteArea(id);
 
-		return "main2.jsp";
+		return "management.jsp";
 	}
 	
 

@@ -15,6 +15,6 @@ public class DeleteEmpCon implements Command {
 		EmployeeDAO dao = new EmployeeDAO();
 		dao.deleteEmp(id);
 
-		return "main2.jsp";
+		return "mng_emp.jsp";
 }
 }

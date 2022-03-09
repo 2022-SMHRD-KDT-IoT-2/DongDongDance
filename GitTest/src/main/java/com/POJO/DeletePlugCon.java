@@ -15,7 +15,7 @@ public class DeletePlugCon implements Command {
 		PlugDAO dao = new PlugDAO();
 		dao.deletePlug(seq);
 
-		return "main2.jsp";
+		return "management.jsp";
 	}
 
 }

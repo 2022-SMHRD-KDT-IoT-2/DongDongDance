@@ -15,7 +15,7 @@ public class DeleteLogCon implements Command {
 		RfidDAO dao = new RfidDAO();
 		dao.deleteLog(seq);
 		
-		return "#.jsp";
+		return "log_read.jsp";
 	}
 
 }
