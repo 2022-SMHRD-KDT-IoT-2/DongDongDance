@@ -21,8 +21,7 @@
 
 <body class="is-preload">
  <%
- // int seq = Integer.parseInt(request.getParameter("seq"));
-int seq = 3;
+ int seq = Integer.parseInt(request.getParameter("seq"));
  PlugDAO pDAO = new PlugDAO();
  EmployeeDAO eDAO = new EmployeeDAO();
  AreaDAO aDAO = new AreaDAO();

@@ -25,8 +25,13 @@ public class UpdateEmpCon implements Command {
 		
 		HttpSession session = request.getSession();
 		EmployeeVO vo = (EmployeeVO)session.getAttribute("loginvo");
-		String id2 = vo.getEmpId();
-		String status = vo.getEmpStatus();
+		String id2 = "";
+		String status = "";
+		
+		if(vo != null) {			
+			id2 = vo.getEmpId();
+			status = vo.getEmpStatus();
+		}
 		
 		EmployeeDAO eDao = new EmployeeDAO();
 		PlugDAO pDao = new PlugDAO();
@@ -46,6 +51,6 @@ public class UpdateEmpCon implements Command {
 			session.setAttribute("loginvo", vo);
 		}
 	
-		return "main.jsp";
+		return "mng_emp.jsp";
 }
 }
