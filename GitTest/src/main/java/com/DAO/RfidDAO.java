@@ -245,7 +245,7 @@ public class RfidDAO {
 			try {
 				connect();
 				
-				String sql = "select log_seq, log_type, log_time, substr(log_memo, 1, 5) from t_rfid_log where emp_id = ? order by log_seq desc";
+				String sql = "select log_seq, log_type, log_time, substr(log_memo, 1, 6) from t_rfid_log where emp_id = ? order by log_seq desc";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, id);
 				rs = psmt.executeQuery();
