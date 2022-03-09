@@ -3,9 +3,9 @@
 #include <ArduinoJson.h>
 #include <HttpClient.h>
 
-const char* ssid = "Hotspot";    //wift 아이디
-const char* password =  "12121212";    // wifi 비번
-const char* serverName = "http://192.168.0.121:8080/"; // 웹서버주소
+const char* ssid = "wift 아이디";    //wifi 아이디
+const char* password =  "wifi 비번";    // wifi 비번
+const char* serverName = "웹서버주소"; // 웹서버주소
 
 IPAddress hostIp(192, 168, 0, 121);  //웹서버의 ip 주소
 int SERVER_PORT = 8080;  // 웹서버 포트 번호
@@ -31,7 +31,7 @@ void loop() {
     const char *pch = ab.c_str();
     strcpy(str, pch);
 
-    if (pch[0] == 's') {
+    if (pch[0] == 's') { // 시작 문장 1번째 문자가 s일 때만 웹서버로 송신 -> 통신이 꼬여서 가끔 잘못된 값이 들어올 수 있다.
       String* nums = sub_string(ab); // 전류값 문자열 받음
 //      for (int i = 0; i < 4; i++) Serial.println(nums[i]);
       if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
@@ -76,7 +76,7 @@ String* sub_string(String input)
   arr[1] = str2;
   String str3 = input.substring(second + 1, third);
   arr[2] = str3;
-  String str4 = input.substring(third + 1, length - 1);
+  String str4 = input.substring(third + 1, length - 1); 
   arr[3] = str4;
 
   return arr;
