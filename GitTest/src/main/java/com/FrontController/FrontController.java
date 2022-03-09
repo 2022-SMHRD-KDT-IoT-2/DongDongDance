@@ -23,6 +23,7 @@ import com.POJO.RegAreaCon;
 import com.POJO.RegEmpCon;
 import com.POJO.RegPlugCon;
 import com.POJO.RegPlugSenCon;
+import com.POJO.UpdateAreaCon;
 import com.POJO.UpdateAreaStCon;
 import com.POJO.UpdateEmpCon;
 import com.POJO.UpdateEmpStCon;
@@ -89,6 +90,8 @@ public class FrontController extends HttpServlet {
 			command = new UpdatePlugDvCon();
 		}else if(result.equals("UpdateLogCon.do")) {
 			command = new UpdateLogCon();
+		}else if(result.equals("UpdateAreaCon.do")) {
+			command = new UpdateAreaCon();
 		}
 		
 		String url = command.execute(request, response);

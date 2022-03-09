@@ -248,6 +248,37 @@ public class AreaDAO {
 			return al;
 		}
 		
+		// 현재 수정할 방정보 추출
+				public AreaVO getOne(String id) {
+
+					AreaVO vo = null;
+					try {
+						conn();
+
+						String sql = "select * from t_area where area_id = ?";
+						psmt = conn.prepareStatement(sql);
+						psmt.setString(1, id);
+						rs = psmt.executeQuery();
+
+						if (rs.next()) {
+
+							String getid = rs.getString(1);
+							String getstatus = rs.getString(2);
+							String getname = rs.getString(3);
+
+
+							vo = new AreaVO(getid, getstatus, getname);
+
+						}
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						close();
+					}
+					return vo;
+				}
+		
 		// 방 이름
 	      public String selectName(String id) {
 	         

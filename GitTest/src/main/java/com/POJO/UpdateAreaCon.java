@@ -14,10 +14,11 @@ public class UpdateAreaCon implements Command {
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 
+		System.out.println(id);
 		AreaDAO dao = new AreaDAO();
 		dao.updateArea(target_id, id, name);
 		
-		return "A_crud.jsp";
+		return "management.jsp";
 	}
 
 }
