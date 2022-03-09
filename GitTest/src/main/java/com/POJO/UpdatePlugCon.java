@@ -17,7 +17,11 @@ public class UpdatePlugCon implements Command {
 		double power = Double.parseDouble(request.getParameter("power"));
 		String device = request.getParameter("device");
 		String area = request.getParameter("area");
-
+		
+		if(id.equals("null")) {
+			id = "";
+		}
+		
 		EmployeeDAO edao = new EmployeeDAO();
 		if(!id.equals("")) {
 			EmployeeVO vo = edao.selectOne(id); 

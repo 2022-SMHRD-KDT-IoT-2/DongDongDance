@@ -1,6 +1,3 @@
-/area_json/
 /com/
-/dummy/
 /elec/
-/rfid/
-/timeinfo/
+/relay_write/

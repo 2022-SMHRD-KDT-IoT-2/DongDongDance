@@ -58,8 +58,17 @@
                     <form method="post" action="UpdatePlugCon.do">
                         <div class="row gtr-uniform">
                             
-                            <div class="col-6 col-12-xsmall">
-                                <input type="text" name="power" id="power" value="<%=vo.getPlugPower()%>" placeholder="플러그의 사용전력(*숫자 데이터 입력) (현재값 : <%=vo.getPlugPower() %>)" />
+                            <div class="col-6">
+                                <span style="font-size:0.75em;">□ 플러그의 사용전력 수정 (현재값 : <%=vo.getPlugPower() %>)</span>
+                                <select name="power" id="power">
+                                    <option value="<%=vo.getPlugPower()%>">사용전력 선택</option>
+                                    <option value="0.5">0.5</option>
+                                    <option value="1.0">1.0</option>
+                                    <option value="1.5">1.5</option>
+                                    <option value="2.0">2.0</option>
+                                    <option value="2.5">2.5</option>
+                                    <option value="3.0">3.0</option>
+                                </select>
                             </div>
                             
                              <div class="col-6 col-12-xsmall">
@@ -67,8 +76,9 @@
                             </div>
                             
                             <div class="col-6">
+                                <span style="font-size:0.75em;">□ 소속직원 수정 (현재값 : <%=vo.getId()%>)</span>
                                 <select name="id" id="id">
-                                    <option value="<%=vo.getId()%>">소속직원 선택 (현재값 : <%=vo.getId() %>)</option>
+                                    <option value="<%=vo.getId()%>">소속직원 선택</option>
                                     <option value="">없음</option>
                                     <%
                                     for(int i = 0; i<al1.size(); i++){
@@ -79,8 +89,9 @@
                             </div>
                             
                             <div class="col-6">
+                                <span style="font-size:0.75em;">□ 소속구역 수정 (현재값 : <%=vo.getAreaId() %>)</span>
                                 <select name="area" id="area">
-                                    <option value="<%=vo.getAreaId()%>">소속구역 선택 (현재값 : <%=vo.getAreaId() %>)</option>
+                                    <option value="<%=vo.getAreaId()%>">소속구역 선택</option>
                                     <%
                                     for(int i = 0; i<al2.size(); i++){
                                     	out.print("<option value="+al2.get(i).getAreaId()+">"+al2.get(i).getAreaName()+"("+al2.get(i).getAreaId()+")</option>");

@@ -56,36 +56,43 @@
                         <div class="row gtr-uniform">
                             
                             <div class="col-6 col-12-xsmall">
+                                <span style="font-size:0.75em;">□ 사원 패스워드 수정</span>
                                 <input type="password" name="pw" id="pw" value="<%=vo.getEmpPw()%>" placeholder="사원 패스워드 수정" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
-                                <input type="text" name="name" id="name" value="<%=vo.getEmpName()%>" placeholder="사원 이름 수정(현재 이름 : <%=vo.getEmpName() %>)" />
+                                <span style="font-size:0.75em;">□ 사원 이름 수정(현재 이름 : <%=vo.getEmpName() %>)</span>
+                                <input type="text" name="name" id="name" value="<%=vo.getEmpName()%>" placeholder="사원 이름 수정" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
-                                <input type="text" name="seat" id="seat" value="<%=vo.getEmpSeatNo()%>" placeholder="사원 좌석번호 수정(현재 이름 : <%=vo.getEmpSeatNo() %>)" />
+                                <span style="font-size:0.75em;">□ 사원 좌석번호 수정(현재 이름 : <%=vo.getEmpSeatNo() %>)</span>
+                                <input type="text" name="seat" id="seat" value="<%=vo.getEmpSeatNo()%>" placeholder="사원 좌석번호 수정" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
-                                <input type="text" name="phone" id="phone" value="<%=vo.getEmpPhone()%>" placeholder="사원 전화번호 수정(현재 이름 : <%=vo.getEmpPhone() %>)" />
+                                 <span style="font-size:0.75em;">□ 사원 전화번호 수정(현재 이름 : <%=vo.getEmpPhone() %>)</span>
+                                <input type="text" name="phone" id="phone" value="<%=vo.getEmpPhone()%>" placeholder="사원 전화번호 수정" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
-                                <input type="text" name="rfid" id="rfid" value="<%=vo.getRfidUid()%>" placeholder="RFID UID 수정(현재 이름 : <%=vo.getRfidUid() %>)" />
+                                <span style="font-size:0.75em;">□ RFID UID 수정(현재 이름 : <%=vo.getRfidUid() %>)</span>
+                                <input type="text" name="rfid" id="rfid" value="<%=vo.getRfidUid()%>" placeholder="RFID UID 수정" />
                             </div>
                             
                             <div class="col-6">
+                                <span style="font-size:0.75em;">□ 관리자 여부 수정(현재 : <%=vo.getAdminYn()%>)</span>
                                 <select name="yn" id="yn">
-                                    <option value="<%=vo.getAdminYn()%>">관리자 여부(현재 : <%=vo.getAdminYn()%>)</option>
+                                    <option value="<%=vo.getAdminYn()%>">관리자 여부</option>
                                     <option value="Y">관리자</option>
                                     <option value="N">일반사원</option>
                                 </select>
                             </div>
                             
                             <div class="col-6">
+                                <span style="font-size:0.75em;">□ 직속상관 선택(현재 : <%=vo.getEmpSuperId()%>)</span>
                                 <select name="superid" id="superid">
-                                    <option value="<%=vo.getEmpSuperId()%>">직속상관 선택(현재 : <%=vo.getEmpSuperId()%>)</option>
+                                    <option value="<%=vo.getEmpSuperId()%>">직속상관 선택(본인 선택 불가)</option>
                                     <%
                                     for(int i = 0; i<al1.size(); i++){
                                     	out.print("<option value="+al1.get(i).getEmpId()+">"+al1.get(i).getEmpName()+"("+al1.get(i).getEmpId()+")</option>");
@@ -96,8 +103,9 @@
                             
                             
                             <div class="col-6">
+                                <span style="font-size:0.75em;">□ 소속구역 선택(현재 : <%=vo.getAreaId()%>)</span>
                                 <select name="area" id="area">
-                                    <option value="<%=vo.getAreaId()%>">소속구역 선택(현재 : <%=vo.getAreaId()%>)</option>
+                                    <option value="<%=vo.getAreaId()%>">소속구역 선택</option>
                                     <%
                                     for(int i = 0; i<al2.size(); i++){
                                     	out.print("<option value="+al2.get(i).getAreaId()+">"+al2.get(i).getAreaName()+"("+al2.get(i).getAreaId()+")</option>");
