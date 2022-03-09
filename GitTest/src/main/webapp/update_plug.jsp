@@ -59,16 +59,16 @@
                         <div class="row gtr-uniform">
                             
                             <div class="col-6 col-12-xsmall">
-                                <input type="text" name="power" id="power" value="" placeholder="플러그의 사용전력(*숫자 데이터 입력) (현재값 : <%=vo.getPlugPower() %>)" />
+                                <input type="text" name="power" id="power" value="<%=vo.getPlugPower()%>" placeholder="플러그의 사용전력(*숫자 데이터 입력) (현재값 : <%=vo.getPlugPower() %>)" />
                             </div>
                             
                              <div class="col-6 col-12-xsmall">
-                                <input type="text" name="device" id="device" value="" placeholder="플러그의 사용장치(없으면 입력 X) (현재값 : <%=vo.getDevice() %>)" />
+                                <input type="text" name="device" id="device" value="<%=vo.getDevice()%>" placeholder="플러그의 사용장치(없으면 입력 X) (현재값 : <%=vo.getDevice() %>)" />
                             </div>
                             
                             <div class="col-6">
                                 <select name="id" id="id">
-                                    <option value="">소속직원 선택 (현재값 : <%=vo.getId() %>)</option>
+                                    <option value="<%=vo.getId()%>">소속직원 선택 (현재값 : <%=vo.getId() %>)</option>
                                     <option value="">없음</option>
                                     <%
                                     for(int i = 0; i<al1.size(); i++){
@@ -80,7 +80,7 @@
                             
                             <div class="col-6">
                                 <select name="area" id="area">
-                                    <option value="">소속구역 선택 (현재값 : <%=vo.getAreaId() %>)</option>
+                                    <option value="<%=vo.getAreaId()%>">소속구역 선택 (현재값 : <%=vo.getAreaId() %>)</option>
                                     <%
                                     for(int i = 0; i<al2.size(); i++){
                                     	out.print("<option value="+al2.get(i).getAreaId()+">"+al2.get(i).getAreaName()+"("+al2.get(i).getAreaId()+")</option>");
