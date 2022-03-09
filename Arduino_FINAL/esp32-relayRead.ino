@@ -36,10 +36,8 @@ void loop() {
 
     HTTPClient http;
 
-    http.begin("http://192.168.0.121:8080/GitTest/Realy_write");
+    http.begin("주소/GitTest/Realy_write");
 
-    //     http.begin("http://220.71.97.131:8081/IoT/Exam01");
-    //     http.begin("http://project-student.ddns.net/nayeho/Exam01"); //Specify the URL
     int httpCode = http.GET();                                        //Make the request
 
     if (httpCode > 0) { //Check for the returning code
