@@ -65,19 +65,20 @@ public class PlugDAO {
 		return cnt;
 	}
 	
-	// 플러그 정보 수정 (관리자용, 구역정보 제외)
-	public int updatePlug(int seq, String id, double power, String device) {
+	// 플러그 정보 수정 (관리자용)
+	public int updatePlug(int seq, String id, double power, String device, String area) {
 		int cnt = 0;
 		
 		try {
 			connect();
 			
-			String sql = "update t_plug set emp_id = ?, plug_power = ?, plug_device = ? where plug_seq = ?";
+			String sql = "update t_plug set emp_id = ?, plug_power = ?, plug_device = ?, area_id = ? where plug_seq = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setDouble(2, power);
 			psmt.setString(3, device);
-			psmt.setInt(4, seq);
+			psmt.setString(4, area);
+			psmt.setInt(5, seq);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -411,6 +412,41 @@ public class PlugDAO {
 				return al;
 			}
 			
+			// 시퀀스별 플러그 정보
+						public PlugVO selectSeq(int seq){
+
+							PlugVO vo = null;
+						
+							try {
+								connect();
+								
+								String sql = "select * from t_plug where plug_seq = ?";
+								psmt = conn.prepareStatement(sql);
+								psmt.setInt(1, seq);
+								rs = psmt.executeQuery();
+								
+								while(rs.next()){
+									int getplug = rs.getInt(1);
+									String getid = rs.getString(2);
+									Double getpower = rs.getDouble(3);
+									String getstatus = rs.getString(4);
+									String getdate = rs.getString(5);
+									String getarea = rs.getString(6);
+									String getdevice = rs.getString(7);
+									String getfixed = rs.getString(8);
+
+									
+									vo = new PlugVO(getplug, getid, getpower, getstatus, getdate, getarea, getdevice, getfixed);
+			
+								}
+											
+							}catch(Exception e){
+								e.printStackTrace();
+							}finally {
+								close();
+							}
+							return vo;
+						}
 			
 
 

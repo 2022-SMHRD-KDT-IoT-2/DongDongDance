@@ -1,3 +1,5 @@
+<%@page import="com.VO.PlugVO"%>
+<%@page import="com.DAO.PlugDAO"%>
 <%@page import="com.VO.AreaVO"%>
 <%@page import="com.VO.EmployeeVO"%>
 <%@page import="com.VO.RfidVO"%>
@@ -11,7 +13,7 @@
 <html>
 
 <head>
-    <title>플러그 추가</title>
+    <title>플러그 정보수정</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -19,11 +21,15 @@
 
 <body class="is-preload">
  <%
+ // int seq = Integer.parseInt(request.getParameter("seq"));
+int seq = 3;
+ PlugDAO pDAO = new PlugDAO();
  EmployeeDAO eDAO = new EmployeeDAO();
  AreaDAO aDAO = new AreaDAO();
  ArrayList<EmployeeVO> al1 = eDAO.selectAll();
  ArrayList<AreaVO> al2 = aDAO.getList();
- EmployeeVO vo = null;
+ PlugVO vo = pDAO.selectSeq(seq);
+ 
    %>
     <!-- Wrapper -->
     <div id="wrapper">
@@ -34,7 +40,7 @@
 
                 <!-- Header -->
                 <header id="header">
-                    <strong>플러그 추가</strong>
+                    <strong>플러그 정보수정</strong>
                     <ul class="icons">
                         <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
                         <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -49,34 +55,33 @@
 
                 <!-- Form -->
                 <section>
-                    <h2>세부정보 입력</h2>
-                    <form method="post" action="RegPlugCon.do">
+                    <h2>세부정보 입력 (플러그 번호 : <%=vo.getPlugSeq() %>)</h2>
+                    <form method="post" action="UpdatePlugCon.do">
                         <div class="row gtr-uniform">
                             
                             <div class="col-6 col-12-xsmall">
-                                <input type="text" name="power" id="power" value="" placeholder="플러그의 사용전력(*숫자 데이터 입력)" />
+                                <input type="text" name="power" id="power" value="" placeholder="플러그의 사용전력(*숫자 데이터 입력) (현재값 : <%=vo.getPlugPower() %>)" />
                             </div>
                             
                              <div class="col-6 col-12-xsmall">
-                                <input type="text" name="device" id="device" value="" placeholder="플러그의 사용장치(없으면 입력 X)" />
+                                <input type="text" name="device" id="device" value="" placeholder="플러그의 사용장치(없으면 입력 X) (현재값 : <%=vo.getDevice() %>)" />
                             </div>
                             
                             <div class="col-6">
                                 <select name="id" id="id">
-                                    <option value="">소속직원 선택</option>
+                                    <option value="">소속직원 선택 (현재값 : <%=vo.getId() %>)</option>
                                     <option value="">없음</option>
                                     <%
                                     for(int i = 0; i<al1.size(); i++){
                                     	out.print("<option value="+al1.get(i).getEmpId()+">"+al1.get(i).getEmpName()+"("+al1.get(i).getEmpId()+")</option>");
-                                    
                                     }
                                     %>
                                 </select>
                             </div>
-                         
+                            
                             <div class="col-6">
                                 <select name="area" id="area">
-                                    <option value="">소속구역 선택</option>
+                                    <option value="">소속구역 선택 (현재값 : <%=vo.getAreaId() %>)</option>
                                     <%
                                     for(int i = 0; i<al2.size(); i++){
                                     	out.print("<option value="+al2.get(i).getAreaId()+">"+al2.get(i).getAreaName()+"("+al2.get(i).getAreaId()+")</option>");
@@ -84,11 +89,12 @@
                                     %>
                                 </select>
                             </div>
-
+                           
+                            <input type="hidden" name="seq" id="seq" value="<%=seq%>">
                           
                             <div class="col-12">
                                 <ul class="actions">
-                                    <li><input type="submit" value="등록" class="primary" /></li>
+                                    <li><input type="submit" value="수정" class="primary" /></li>
                                     <li><input type="reset" value="리셋" ></li>
                                 </ul>
                             </div>
