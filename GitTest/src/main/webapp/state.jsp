@@ -69,7 +69,7 @@
                                  <th>Date</th>
                                  <th>Position</th>
                                  <th>Location</th>
-                               </tr >
+                               </tr>
                                        
                                        <%
             
