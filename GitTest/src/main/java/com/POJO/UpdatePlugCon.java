@@ -21,6 +21,9 @@ public class UpdatePlugCon implements Command {
 		if(id.equals("null")) {
 			id = "";
 		}
+		if(device.equals("null")) {
+			device = "";
+		}
 		
 		EmployeeDAO edao = new EmployeeDAO();
 		if(!id.equals("")) {

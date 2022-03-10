@@ -54,36 +54,43 @@
                         <div class="row gtr-uniform">
                             
                             <div class="col-6 col-12-xsmall">
+                                <span style="font-size:0.75em;">□ 사원 아이디 입력</span>
                                 <input type="text" name="id" id="id" value="" placeholder="사원 아이디 입력" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
+                                <span style="font-size:0.75em;">□ 사원 이름 입력</span>
                                 <input type="text" name="name" id="name" value="" placeholder="사원 이름 입력" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
+                                <span style="font-size:0.75em;">□ 사원 좌석번호 입력</span>
                                 <input type="text" name="seat" id="seat" value="" placeholder="사원 좌석번호 입력" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
+                                 <span style="font-size:0.75em;">□ 사원 전화번호 입력</span>
                                 <input type="text" name="phone" id="phone" value="" placeholder="사원 전화번호 입력" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
+                                <span style="font-size:0.75em;">□ RFID UID 입력</span>
                                 <input type="text" name="rfid" id="rfid" value="" placeholder="RFID UID 입력" />
                             </div>
                             
                             <div class="col-6">
+                                <span style="font-size:0.75em;">□ 관리자 여부 입력</span>
                                 <select name="yn" id="yn">
-                                    <option value="">관리자 여부</option>
+                                    <option value="N">관리자 여부</option>
                                     <option value="Y">관리자</option>
                                     <option value="N">일반사원</option>
                                 </select>
                             </div>
                             
                             <div class="col-6">
+                                <span style="font-size:0.75em;">□ 직속상관 선택</span>
                                 <select name="superid" id="superid">
-                                    <option value="">직속상관 선택</option>
+                                    <option value="">직속상관 선택(본인 선택 불가)</option>
                                     <%
                                     for(int i = 0; i<al1.size(); i++){
                                     	out.print("<option value="+al1.get(i).getEmpId()+">"+al1.get(i).getEmpName()+"("+al1.get(i).getEmpId()+")</option>");
@@ -94,18 +101,18 @@
                             
                             
                             <div class="col-6">
+                                <span style="font-size:0.75em;">□ 소속구역 선택</span>
                                 <select name="area" id="area">
                                     <option value="">소속구역 선택</option>
                                     <%
                                     for(int i = 0; i<al2.size(); i++){
-                                    	out.print("<option value="+al2.get(i).getAreaId()+">"+al2.get(i).getAreaName()+"</option>");
+                                    	out.print("<option value="+al2.get(i).getAreaId()+">"+al2.get(i).getAreaName()+"("+al2.get(i).getAreaId()+")</option>");
                                     }
                                     %>
                                 </select>
                             </div>
-                           
                             
-                          
+
                             <div class="col-12">
                                 <ul class="actions">
                                     <li><input type="submit" value="등록" class="primary" /></li>

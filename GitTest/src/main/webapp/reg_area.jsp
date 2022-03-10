@@ -47,12 +47,14 @@
                     <form method="post" action="RegAreaCon.do">
                         <div class="row gtr-uniform">
                             
-                            <div class="col-6 col-12-xsmall">
-                                <input type="text" name="aid" id="aid" value="" placeholder="구역의 일련번호(앞 두 자리는 방 번호)" />
+                             <div class="col-6 col-12-xsmall">
+                                <span style="font-size:0.75em;">□ 구역의 코드입력(앞 두자리는 방 코드)</span>
+                                <input type="text" name="id" id="id" value="" placeholder="구역의 일련번호(앞 두 자리는 방 번호)" />
                             </div>
                             
                             <div class="col-6 col-12-xsmall">
-                                <input type="text" name="aname" id="aname" value="" placeholder="구역의 명칭(6자 이내)" />
+                                <span style="font-size:0.75em;">□ 구역의 명칭(6자 이내)</span>
+                                <input type="text" name="name" id="name" value="" placeholder="구역의 명칭(6자 이내)" />
                             </div>
                            
                             
