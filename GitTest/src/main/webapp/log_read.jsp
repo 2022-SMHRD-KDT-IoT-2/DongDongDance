@@ -65,13 +65,15 @@
             
                                           for(int i=0; i<al.size(); i++){
                                              out.print("<tr>");
-                                             out.print("<td><a href='log_update.jsp?seq="+al.get(i).getLogSeq()+"'>"+al.get(i).getLogSeq()+"</td>");
+                                             out.print("<td>"+al.get(i).getLogSeq()+"</td>");
                                              out.print("<td>"+al.get(i).getLogType()+"</td>");
                                              out.print("<td>"+al.get(i).getLogTime()+"</td>");
                                              out.print("<td>"+al.get(i).getLogMemo()+"</td>");
-                                             out.print("<td><form style='display:inline' action='DeleteLogCon.do?seq="+al.get(i).getLogSeq()+"'>"
-                                             +"<input type='submit' value='삭제' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
-                                             +"</form></td>");
+                                             out.print("<td><form style='display:inline; margin:0px' action='log_update.jsp?seq="+al.get(i).getLogSeq()+"'>"
+                                                     +"<input type='submit' value='수정' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
+                                                     +"</form>  /  <form style='display:inline; margin:0px' action='DeleteLogCon.do?seq="+al.get(i).getLogSeq()+"'>"
+                                                     +"<input type='submit' value='삭제' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
+                                                     +"</form></td>");
                                              out.print("</tr>");
                                           }
 
