@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Command.Command;
 import com.DAO.AreaDAO;
+import com.DAO.EmployeeDAO;
 import com.DAO.PlugDAO;
 import com.VO.AreaVO;
+import com.VO.EmployeeVO;
 import com.VO.PlugVO;
 
 public class UpdatePlugFxCon implements Command {
@@ -23,6 +25,8 @@ public class UpdatePlugFxCon implements Command {
 		PlugVO vo = null;
 		AreaDAO aDao = new AreaDAO();
 		AreaVO avo = null;
+		EmployeeDAO eDao = new EmployeeDAO();
+		EmployeeVO evo = null;
 		
 		if(fixed.equals("0")) {
 			fixed = "1";
@@ -33,8 +37,13 @@ public class UpdatePlugFxCon implements Command {
 		}else if(fixed.equals("2")){
 			fixed = "0";
 			vo = dao.selectSeq(plug);
-			avo = aDao.getOne(vo.getAreaId());
-			fs = avo.getAreaStatus();
+			if(vo.getId().equals("null")) {
+				avo = aDao.getOne(vo.getAreaId());
+				fs = avo.getAreaStatus();				
+			}else {
+				evo = eDao.selectOne(vo.getId());
+				fs = evo.getEmpStatus();
+			}
 		}
 		
 		dao.updateFixed(plug, fixed);
