@@ -118,7 +118,7 @@ ArrayList<EmployeeVO> al = eDao.selectAll();
                                              out.print("<h5><a href='select_emp_one.jsp?id="+al.get(i).getEmpId()+"'>"+al.get(i).getEmpName()+"</a></h5>");
                                              out.print("</div>");
                                              out.print("<div class=\"info\">");
-                                             out.print("<p> 연락처 : "+al.get(i).getEmpPhone()+"</p>");
+                                             out.print("<p> 구역 : "+aDao.selectName(al.get(i).getAreaId())+"</p>");
                                              out.print("<p> 직급 : "+eDao.selectPo(al.get(i).getEmpId())+"</p>");
                                              out.print("<p> 현재상태 : "+rDao.selectType(al.get(i).getEmpId())+"</p>");
                                              out.print("</div>");

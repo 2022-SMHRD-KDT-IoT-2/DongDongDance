@@ -72,6 +72,11 @@
 	AreaDAO aDao = new AreaDAO();
 	ArrayList<PlugVO> al1 = pDao.selectAll();
 	ArrayList<AreaVO> al2 = aDao.getList();
+	
+	String aa = "";
+	String ab = "";
+	String ac = "";
+	String ad = "";
 	%>
 	<%
    EmployeeVO evo = (EmployeeVO)session.getAttribute("loginvo");
@@ -148,14 +153,32 @@
 								</tr>
 								<%
 								for (int i = 0; i < al1.size(); i++) {
+									if(al1.get(i).getPlugStatus().equals("1")){
+										aa = "ON";
+									}else{
+										aa = "OFF";
+									}
+									
+									
+									if(al1.get(i).getFixed().equals("0")){
+										ac = "설정안함";
+									}if(al1.get(i).getFixed().equals("1")){
+										ac = "ON고정";
+									}if(al1.get(i).getFixed().equals("2")){
+										ac = "OFF고정";
+									}
 									out.print("<tr>");
 									out.print("<td>" + al1.get(i).getPlugSeq() + "</td>");
 									out.print("<td>" + al1.get(i).getId() + "</td>");
-									out.print("<td>" + al1.get(i).getPlugStatus() + "</td>");
+									out.print("<td>" + aa + "</td>");
 									out.print("<td>" + al1.get(i).getPlugInsDate() + "</td>");
 									out.print("<td>" + al1.get(i).getAreaId() + "</td>");
 									out.print("<td>" + al1.get(i).getDevice() + "</td>");
-									out.print("<td>" + al1.get(i).getFixed() + "</td>");
+									out.print("<td><form style='display:inline; margin:0px' action='UpdatePlugFxCon.do'>"
+									        + "<input type='hidden' value='" + al1.get(i).getPlugSeq() + "' id='plug' name='plug'>"
+											+ "<input type='hidden' value='" + al1.get(i).getFixed() + "' id='fixed' name='fixed'>"
+											+ "<input type='submit' value='" + ac + "' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
+											+ "</form>");
 									out.print("<td><form style='display:inline; margin:0px' action='update_plug.jsp'>" + "<input type='hidden' value='"
 									+ al1.get(i).getPlugSeq() + "' id='seq' name='seq'>"
 									+ "<input type='submit' value='수정' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
