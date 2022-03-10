@@ -10,6 +10,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+.logout {
+	text-decoration: none;
+	float: right;
+	border-block: 0;
+}
+</style>
 </head>
 
 <body class="is-preload">
@@ -26,6 +33,7 @@
         <!-- Main -->
         <div id="main">
             <div class="inner">
+            <div><a class="logout" href="#">LOGOUT</a></div>
 
                 <!-- Header -->
                 <header id="header">

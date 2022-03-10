@@ -47,6 +47,11 @@
 		.location{
 			text-align: center;
 		}
+		.logout {
+	text-decoration: none;
+	float: right;
+	border-block: 0;
+}
 	</style>
 </head>
 
@@ -65,6 +70,7 @@
 		<!-- Main -->
 		<div id="main" style="width: calc(100vw - 26em);">
 			<div class="inner">
+			<div><a class="logout" href="#">LOGOUT</a></div>
 
 				<!-- Header -->
 				<header id="header">
