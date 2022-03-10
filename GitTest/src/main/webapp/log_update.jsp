@@ -82,8 +82,9 @@
                         <div class="row gtr-uniform">
                             <input type="hidden" name="seq" id="seq" value="<%=seq%>">
                             <div class="col-6">
+                            <span style="font-size:0.75em;">□ 근태기록 수정 (현재 기록 : <%=vo.getLogType() %>)</span>
                                 <select name="type" id="type">
-                                    <option value="">현재기록 : <%=vo.getLogType() %></option>
+                                    <option value="<%=vo.getLogType()%>">근태타입 선택</option>
                                     <option value="0">퇴근</option>
                                     <option value="1">출근</option>
                                     <option value="2">지각</option>
@@ -99,7 +100,8 @@
                             </div>
                             
                             <div class="col-12">
-                                <textarea name="memo" id="memo" placeholder="특이 사항을 입력하세요.(특이사항이 없을 경우 n차 수정이라는 값을 입력하셔야 합니다.) 이전기록 : <%=vo.getLogMemo() %>" rows="6"></textarea>
+                                <span style="font-size:0.75em;">□ 특이사항 입력 (현재 기록 : <%=vo.getLogMemo() %>)</span>
+                                <textarea name="memo" id="memo" placeholder="특이 사항을 입력하세요.(특이사항이 없을 경우 n차 수정이라는 값을 입력하셔야 합니다.)" rows="6"></textarea>
                             </div>
                             <div class="col-12">
                                 <ul class="actions">
