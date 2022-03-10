@@ -42,14 +42,13 @@ if(vo != null){
 %>
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-										<div>
+				<div style="position: absolute; right: 16px; top: 5px;">
 					<a class="logout" href="LogoutCon.do">LOGOUT</a>
 					<span style="float: right;"><%=vo.getEmpName()%>(<%=sq%>)[<%=ss%>] /_</span>
 				</div>
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
 
 							<!-- Header -->
 								<header id="header">
