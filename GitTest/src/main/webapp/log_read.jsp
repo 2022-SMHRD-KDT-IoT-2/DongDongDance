@@ -69,9 +69,11 @@
                                              out.print("<td>"+al.get(i).getLogType()+"</td>");
                                              out.print("<td>"+al.get(i).getLogTime()+"</td>");
                                              out.print("<td>"+al.get(i).getLogMemo()+"</td>");
-                                             out.print("<td><form style='display:inline; margin:0px' action='log_update.jsp?seq="+al.get(i).getLogSeq()+"'>"
+                                             out.print("<td><form style='display:inline; margin:0px' action='log_update.jsp'>"
+                                            		 +"<input type='hidden' value='"+al.get(i).getLogSeq()+"' id='seq' name='seq'>"
                                                      +"<input type='submit' value='수정' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
-                                                     +"</form>  /  <form style='display:inline; margin:0px' action='DeleteLogCon.do?seq="+al.get(i).getLogSeq()+"'>"
+                                                     +"</form>  /  <form style='display:inline; margin:0px' action='DeleteLogCon.do'>"
+                                                     +"<input type='hidden' value='"+al.get(i).getLogSeq()+"' id='seq' name='seq'>"
                                                      +"<input type='submit' value='삭제' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
                                                      +"</form></td>");
                                              out.print("</tr>");
