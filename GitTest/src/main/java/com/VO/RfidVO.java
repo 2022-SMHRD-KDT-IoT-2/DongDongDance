@@ -21,6 +21,15 @@ public class RfidVO {
 		this.logMemo = logMemo;
 	}
 	
+	public RfidVO(int logSeq, String logType, String logTime, String logMemo, String empId) {
+		super();
+		this.logSeq = logSeq;
+		this.logType = logType;
+		this.logTime = logTime;
+		this.logMemo = logMemo;
+		this.empId = empId;
+	}
+	
 	public RfidVO(String logType, String logMemo) {
 		super();
 		this.logType = logType;

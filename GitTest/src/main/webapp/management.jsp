@@ -162,9 +162,9 @@
 									
 									if(al1.get(i).getFixed().equals("0")){
 										ac = "설정안함";
-									}if(al1.get(i).getFixed().equals("1")){
+									}else if(al1.get(i).getFixed().equals("1")){
 										ac = "ON고정";
-									}if(al1.get(i).getFixed().equals("2")){
+									}else if(al1.get(i).getFixed().equals("2")){
 										ac = "OFF고정";
 									}
 									out.print("<tr>");
@@ -209,9 +209,14 @@
 								</tr>
 								<%
 								for (int i = 0; i < al2.size(); i++) {
+									if(al2.get(i).getAreaStatus().equals("0")){
+										ad = "OFF";
+									}else if(al2.get(i).getAreaStatus().equals("1")){
+										ad = "ON";
+									}
 									out.print("<tr>");
 									out.print("<td>" + al2.get(i).getAreaId() + "</td>");
-									out.print("<td>" + al2.get(i).getAreaStatus() + "</td>");
+									out.print("<td>" + ad + "</td>");
 									out.print("<td>" + al2.get(i).getAreaName() + "</td>");
 									out.print("<td><form style='display:inline; margin:0px' action='update_area.jsp'>" + "<input type='hidden' value='"
 									+ al2.get(i).getAreaId() + "' id='id' name='id'>"

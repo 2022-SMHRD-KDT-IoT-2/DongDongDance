@@ -448,6 +448,32 @@ public class EmployeeDAO {
       }
       return ts;
    }
+    
+    // id에서 이름 추출
+    public String selectNa(String id) {
+        
+        String ts = "";
+        try {
+           connect();
+           String sql = "select emp_name from t_employee where emp_id = ?";
+           psmt = conn.prepareStatement(sql);
+           psmt.setString(1, id);
+           rs = psmt.executeQuery();
+
+           if (rs.next()) {
+              String getname = rs.getString(1);
+              
+              ts = getname;
+           }
+           
+
+        } catch (Exception e) {
+           e.printStackTrace();
+        } finally {
+           close();
+        }
+        return ts;
+     }
 	
 	
 }

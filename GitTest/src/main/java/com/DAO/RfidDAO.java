@@ -295,6 +295,63 @@ public class RfidDAO {
 
 		}
 	    
+	    public ArrayList<RfidVO> selectA(){
+
+			ArrayList<RfidVO> al = new ArrayList<RfidVO>();
+			
+			try {
+				connect();
+				
+				String sql = "select log_seq, log_type, log_time, substr(log_memo, 1, 6), emp_id from t_rfid_log order by log_seq desc";
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery();
+				
+				while(rs.next()){
+					int getseq = rs.getInt(1);
+					String gettype = rs.getString(2);
+					String gettime = rs.getString(3);
+					String getmemo = rs.getString(4);
+					String getid = rs.getString(5);
+
+					String ts = "";
+					
+					if(gettype.equals("0")) {
+			               ts = "퇴근";
+			            }else if(gettype.equals("1")) {
+			               ts = "출근";
+			            }else if(gettype.equals("2")) {
+			               ts = "지각";
+			            }else if(gettype.equals("3")) {
+			               ts = "조퇴";
+			            }else if(gettype.equals("4")) {
+			               ts = "주말출근";
+			            }else if(gettype.equals("5")) {
+			               ts = "주말퇴근";
+			            }else if(gettype.equals("6")) {
+			               ts = "출근취소";
+			            }else if(gettype.equals("7")) {
+			               ts = "결근";
+			            }else if(gettype.equals("8")) {
+			               ts = "점심";
+			            }else if(gettype.equals("9")) {
+			               ts = "복귀";
+			            }else if(gettype.equals("A")) {
+			               ts = "추가근무";
+			            }
+					
+					RfidVO vo = new RfidVO(getseq, ts, gettime, getmemo, getid);
+					al.add(vo);
+				}		
+							
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return al;
+
+		}
+	    
 	    public RfidVO selectLog(int seq){
 
 			RfidVO vo = null;

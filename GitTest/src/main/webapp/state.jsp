@@ -94,7 +94,7 @@
  					<tr id="sectionid" >
                                  <th>ID</th>
                                  <th>NAME</th>
-                                 <th>State</th>
+                                 <th>Status</th>
                                  <th>Date</th>
                                  <th>Position</th>
                                  <th>Location</th>
@@ -118,6 +118,9 @@
                                     </tr>
                                  </thead>
                               </table>
+					      <ul class="actions">
+					 	<li><a href="log_reada.jsp" class="button primary">전체조회</a></li>
+					    </ul>
                            </div>
                            <!-- 본문 끝 -->
                            
