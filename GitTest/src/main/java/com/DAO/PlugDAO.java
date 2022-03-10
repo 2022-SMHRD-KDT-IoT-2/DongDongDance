@@ -204,7 +204,7 @@ public class PlugDAO {
 		try {
 			connect();
 
-			String sql = "select * from t_plug";
+			String sql = "select plug_seq, emp_id, plug_power, plug_status, substr(plug_ins_date, 1, 10), area_id, plug_device, plug_fixed from t_plug";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 
