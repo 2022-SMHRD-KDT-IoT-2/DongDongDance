@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.EmployeeDAO"%>
+<%@page import="com.VO.EmployeeVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,7 +20,25 @@
 		</style>
 </head>
 <body class="is-preload">
+<%
+EmployeeVO vo = (EmployeeVO)session.getAttribute("loginvo");
+String ss = "";
+String sq = "";
+if(vo != null){
+	if(vo.getEmpStatus().equals("1")){
+		ss = "근무중";
+	}else{
+		ss = "퇴근";
+	}
+	
+	if(vo.getAdminYn().equals("Y")){
+		sq = "관리자";
+	}else{
+		sq = "직원";
+	}
+}
 
+%>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -25,7 +46,8 @@
 					<div id="main">
 						<div class="inner">
 										<div>
-					<a class="logout" href="#">LOGOUT</a>
+					<a class="logout" href="LogoutCon.do">LOGOUT</a>
+					<span style="float: right;"><%=vo.getEmpName()%>(<%=sq%>)[<%=ss%>] /_</span>
 				</div>
 
 							<!-- Header -->
@@ -45,8 +67,8 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>Hi, 동동댄스님<br/>
-											환영합니다</h1>
+											<h1><%=vo.getEmpName() %> 님<br>
+											 열심히 일해봅시다!</h1>
 											
 										</header>
 										<p style="color: rgba(186, 185, 184, 0.844);">Building Energy Management Systems (BEMS) are computer-based systems that aid in managing, controlling, and monitoring the building technical services and energy consumption by equipment used in the building. 

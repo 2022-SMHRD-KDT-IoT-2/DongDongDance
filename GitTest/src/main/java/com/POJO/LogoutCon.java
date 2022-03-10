@@ -12,6 +12,6 @@ public class LogoutCon implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		session.removeAttribute("loginvo");
-		return "Login.html";
+		return "Login.jsp";
 }
 }
