@@ -144,5 +144,75 @@ public class PlugSenDAO {
 		}
 		return ps_value*220;
 	}
+	
+	// 이번달 플러그 사용량 총합
+	public double monthlyPower1() {
+		double ps_value = 0;
+		try {
+			connect();
+
+			String sql = "SELECT sum(ps_value) FROM t_plug_sensing WHERE ps_datetime > sysdate - 30";
+
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				ps_value = rs.getDouble(1);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return (ps_value*220)/1000;
+	}
+	
+	// 지난달 플러그 사용량 총합
+		public double monthlyPower2() {
+			double ps_value = 0;
+			try {
+				connect();
+
+				String sql = "SELECT sum(ps_value) FROM t_plug_sensing WHERE ps_datetime between sysdate - 60 and sysdate - 30";
+
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery();
+
+				if (rs.next()) {
+					ps_value = rs.getDouble(1);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return (ps_value*220)/1000;
+		}
+		
+		// 2달전 플러그 사용량 총합
+				public double monthlyPower3() {
+					double ps_value = 0;
+					try {
+						connect();
+
+						String sql = "SELECT sum(ps_value) FROM t_plug_sensing WHERE ps_datetime between sysdate - 90 and sysdate - 60";
+
+						psmt = conn.prepareStatement(sql);
+						rs = psmt.executeQuery();
+
+						if (rs.next()) {
+							ps_value = rs.getDouble(1);
+						}
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						close();
+					}
+					return (ps_value*220)/1000;
+				}
+				
 
 }

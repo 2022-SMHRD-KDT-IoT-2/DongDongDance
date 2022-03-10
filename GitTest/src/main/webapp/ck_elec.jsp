@@ -1,3 +1,4 @@
+<%@page import="com.DAO.PlugSenDAO"%>
 <%@page import="com.VO.EmployeeVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
@@ -37,6 +38,18 @@
    }
 
    %>
+   	<%
+	PlugSenDAO psdao = new PlugSenDAO();
+	double m1 = psdao.monthlyPower1();
+	double m2 = psdao.monthlyPower2();
+	double m3 = psdao.monthlyPower3();
+	String ah = "";
+	if(m1>m3){
+		ah = "증가";
+	}else{
+		ah = "감소";
+	}
+	%>
    		<!-- Wrapper -->
    			<div id="wrapper">
 
@@ -68,6 +81,8 @@
 					<div>
 						<canvas id="monthly-power-usage-chart"> </canvas>
 					</div>
+					<br>
+					<h2 style="text-align:center">지난 달에 비해 전력사용량이 <%=(int)((m1/m2)*100)-100%>% <%=ah %>했습니다.</h2>
 				</section>
 
 			</div>
@@ -128,13 +143,14 @@
 		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
 	<script src="assets/js/chart.js"></script>
 	<script>
+
 		const ctx = document.getElementById('monthly-power-usage-chart').getContext('2d');
 		const myChart = new Chart(ctx, {
 			type: 'bar',
 			data: {
-				labels: ['1월', '2월', '3월 (현재까지 사용량)'],
+				labels: ['2달전', '1달전', '이번달(현재까지 사용량)'],
 				datasets: [{					
-					data: [35, 50, 20],
+					data: [<%=m3%>, <%=m2%>, <%=m1%>],
 					backgroundColor: [
 						'rgb(236, 255, 214)',
 						'rgb(196, 233, 155)',
@@ -162,7 +178,7 @@
 				}
 			}
 		});
-	
+	/*
 		let renewTime = 1000;
 		
 		setInterval(() => {			
@@ -172,7 +188,7 @@
 				changeLastData(myChart, json.value);			
 			});
 
-		}, renewTime);
+		}, renewTime); */
 		
 		
 	</script>
