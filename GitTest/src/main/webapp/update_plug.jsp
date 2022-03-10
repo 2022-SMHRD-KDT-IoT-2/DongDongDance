@@ -72,7 +72,8 @@
                             </div>
                             
                              <div class="col-6 col-12-xsmall">
-                                <input type="text" name="device" id="device" value="<%=vo.getDevice()%>" placeholder="플러그의 사용장치(없으면 입력 X) (현재값 : <%=vo.getDevice() %>)" />
+                                <span style="font-size:0.75em;">□ 연결장치 수정 [없으면 입력X] (현재값 : <%=vo.getDevice()%>)</span>
+                                <input type="text" name="device" id="device" value="<%=vo.getDevice()%>" placeholder="플러그의 사용장치(없으면 입력 X)" />
                             </div>
                             
                             <div class="col-6">
