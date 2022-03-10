@@ -119,6 +119,13 @@
                                              out.print("<td>"+al1.get(i).getAreaId()+"</td>");
                                              out.print("<td>"+al1.get(i).getDevice()+"</td>");
                                              out.print("<td>"+al1.get(i).getFixed()+"</td>");
+                                             out.print("<td><form style='display:inline; margin:0px' action='update_plug.jsp'>"
+                                            		 +"<input type='hidden' value='"+al1.get(i).getPlugSeq()+"' id='seq' name='seq'>"
+                                                     +"<input type='submit' value='수정' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
+                                                     +"</form>  /  <form style='display:inline; margin:0px' action='DeletePlugCon.do'>"
+                                                     +"<input type='hidden' value='"+al1.get(i).getPlugSeq()+"' id='seq' name='seq'>"
+                                                     +"<input type='submit' value='삭제' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
+                                                     +"</form></td>");
                                              out.print("</tr>");
                                           }
 
@@ -129,8 +136,6 @@
                     <br>
                     <ul class="actions">
                         <li><a href="reg_plug.jsp" class="button primary">추가</a></li>
-                        <li><a href="Update.jsp" class="button primary">Update</a></li>
-                        <li><a href="#" class="button">Delete</a></li>
                     </ul> 
                   </div>
                   
@@ -150,6 +155,13 @@
                                              out.print("<td>"+al2.get(i).getAreaId()+"</td>");
                                              out.print("<td>"+al2.get(i).getAreaStatus()+"</td>");
                                              out.print("<td>"+al2.get(i).getAreaName()+"</td>");
+                                             out.print("<td><form style='display:inline; margin:0px' action='update_area.jsp'>"
+                                            		 +"<input type='hidden' value='"+al2.get(i).getAreaId()+"' id='id' name='id'>"
+                                                     +"<input type='submit' value='수정' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
+                                                     +"</form>  /  <form style='display:inline; margin:0px' action='DeleteAreaCon.do'>"
+                                                     +"<input type='hidden' value='"+al2.get(i).getAreaId()+"' id='id' name='id'>"
+                                                     +"<input type='submit' value='삭제' style='padding: 0; color: #7f888f !important;  box-shadow: none; font-size: 0.8em'>"
+                                                     +"</form></td>");
                                              out.print("</tr>");
                                           }
 
@@ -160,8 +172,6 @@
                     <br>
                     <ul class="actions">
                         <li><a href="reg_area.jsp" class="button primary">추가</a></li>
-                        <li><a href="Update.jsp" class="button primary">Update</a></li>
-                        <li><a href="#" class="button">Delete</a></li>
                     </ul>
                   </div>
 
