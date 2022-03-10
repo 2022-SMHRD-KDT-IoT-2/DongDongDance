@@ -25,7 +25,11 @@
       strong{
           margin-right: 20px;
       }
-      
+      .logout {
+	text-decoration: none;
+	float: right;
+	border-block: 0;
+}
 
 
    </style>
@@ -46,6 +50,7 @@ ArrayList<EmployeeVO> al = eDao.selectAll();
       <!-- Main -->
       <div id="main">
          <div class="inner">
+         <div><a class="logout" href="#">LOGOUT</a></div>
 
             <!-- Header -->
             <header id="header">

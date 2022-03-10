@@ -16,6 +16,11 @@
          #sectionid {
             background-color: #e9f0f7;
          }
+         .logout {
+	text-decoration: none;
+	float: right;
+	border-block: 0;
+}
       </style>
       
       
@@ -36,6 +41,7 @@
             <!-- Main -->
                <div id="main">
                   <div class="inner">
+                  <div><a class="logout" href="#">LOGOUT</a></div>
 
                      <!-- Header -->
                         <header id="header">
