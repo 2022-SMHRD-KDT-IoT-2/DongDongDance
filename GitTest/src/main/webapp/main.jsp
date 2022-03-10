@@ -24,6 +24,7 @@
 EmployeeVO vo = (EmployeeVO)session.getAttribute("loginvo");
 String ss = "";
 String sq = "";
+
 if(vo != null){
 	if(vo.getEmpStatus().equals("1")){
 		ss = "근무중";
