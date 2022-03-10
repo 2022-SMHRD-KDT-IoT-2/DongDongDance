@@ -34,14 +34,37 @@
    
    ArrayList<EmployeeVO> al = eDao.selectAll();
    %>
+<%
+   EmployeeVO evo = (EmployeeVO)session.getAttribute("loginvo");
+   String ss = "";
+   String sq = "";
 
-      <!-- Wrapper -->
-         <div id="wrapper">
+   if(evo != null){
+   	if(evo.getEmpStatus().equals("1")){
+   		ss = "근무중";
+   	}else{
+   		ss = "퇴근";
+   	}
+   	
+   	if(evo.getAdminYn().equals("Y")){
+   		sq = "관리자";
+   	}else{
+   		sq = "직원";
+   	}
+   }
 
-            <!-- Main -->
-               <div id="main">
-                  <div class="inner">
-                  <div><a class="logout" href="#">LOGOUT</a></div>
+   %>
+   		<!-- Wrapper -->
+   			<div id="wrapper">
+
+   				<!-- Main -->
+   					<div id="main">
+   						<div class="inner">
+   										<div>
+   					<a class="logout" href="LogoutCon.do">LOGOUT</a>
+   					<span style="float: right;"><%=evo.getEmpName()%>(<%=sq%>)[<%=ss%>] /_</span>
+   				</div>
+
 
                      <!-- Header -->
                         <header id="header">

@@ -1,3 +1,4 @@
+<%@page import="com.VO.EmployeeVO"%>
 <%@page import="com.VO.RfidVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.AreaDAO"%>
@@ -24,15 +25,36 @@
 
 <body class="is-preload">
  <%
+   EmployeeVO evo = (EmployeeVO)session.getAttribute("loginvo");
+   String ss = "";
+   String sq = "";
+
+   if(evo != null){
+   	if(evo.getEmpStatus().equals("1")){
+   		ss = "근무중";
+   	}else{
+   		ss = "퇴근";
+   	}
+   	
+   	if(evo.getAdminYn().equals("Y")){
+   		sq = "관리자";
+   	}else{
+   		sq = "직원";
+   	}
+   }
 
    %>
-    <!-- Wrapper -->
-    <div id="wrapper">
+   		<!-- Wrapper -->
+   			<div id="wrapper">
 
-        <!-- Main -->
-        <div id="main">
-            <div class="inner">
-            <div><a class="logout" href="#">LOGOUT</a></div>
+   				<!-- Main -->
+   					<div id="main">
+   						<div class="inner">
+   										<div>
+   					<a class="logout" href="LogoutCon.do">LOGOUT</a>
+   					<span style="float: right;"><%=evo.getEmpName()%>(<%=sq%>)[<%=ss%>] /_</span>
+   				</div>
+
 
                 <!-- Header -->
                 <header id="header">
