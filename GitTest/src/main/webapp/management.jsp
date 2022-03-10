@@ -69,7 +69,7 @@
     <div id="wrapper">
 
         <!-- Main -->
-        <div id="main">
+        <div id="main" style="width: calc(100vw - 26em);">
             <div class="inner">
 
                 <!-- Header -->
@@ -170,9 +170,7 @@
                 <!-- º»¹® ³¡ -->
 
             </div>
-        </div>
-
-        <!-- Sidebar -->
+            <!-- Sidebar -->
         <div id="sidebar">
             <div class="inner">
 
@@ -214,6 +212,9 @@
             </div>
         </div>
      
+        </div>
+
+        
      
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
