@@ -214,5 +214,102 @@ public class PlugSenDAO {
 					return (ps_value*220)/1000;
 				}
 				
+				// 이번달 구역별 플러그 사용량 총합
+				public double monthlyPowerA1(String aid) {
+					double ps_value = 0;
+					try {
+						connect();
+
+						String sql = "SELECT sum(ps_value) FROM t_plug_sensing WHERE ps_datetime > sysdate - 30 and plug_seq in (select plug_seq from t_plug where area_id = ?)";
+
+						psmt = conn.prepareStatement(sql);
+						psmt.setString(1, aid);
+						rs = psmt.executeQuery();
+
+						if (rs.next()) {
+							ps_value = rs.getDouble(1);
+						}
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						close();
+					}
+					return (ps_value*220)/1000;
+				}
+				
+				// 지난달 구역별 플러그 사용량 총합
+					public double monthlyPowerA2(String aid) {
+						double ps_value = 0;
+						try {
+							connect();
+
+							String sql = "SELECT sum(ps_value) FROM t_plug_sensing WHERE ps_datetime between sysdate - 60 and sysdate - 30 and plug_seq in (select plug_seq from t_plug where area_id = ?)";
+
+							psmt = conn.prepareStatement(sql);
+							psmt.setString(1, aid);
+							rs = psmt.executeQuery();
+
+							if (rs.next()) {
+								ps_value = rs.getDouble(1);
+							}
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						} finally {
+							close();
+						}
+						return (ps_value*220)/1000;
+					}
+					
+					// 이번달 직원별 플러그 사용량 총합
+					public double monthlyPowerE1(String id) {
+						double ps_value = 0;
+						try {
+							connect();
+
+							String sql = "SELECT sum(ps_value) FROM t_plug_sensing WHERE ps_datetime > sysdate - 30 and plug_seq in (select plug_seq from t_plug where emp_id = ?)";
+
+							psmt = conn.prepareStatement(sql);
+							psmt.setString(1, id);
+							rs = psmt.executeQuery();
+
+							if (rs.next()) {
+								ps_value = rs.getDouble(1);
+							}
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						} finally {
+							close();
+						}
+						return (ps_value*220)/1000;
+					}
+					
+					// 지난달 직원별 플러그 사용량 총합
+						public double monthlyPowerE2(String id) {
+							double ps_value = 0;
+							try {
+								connect();
+
+								String sql = "SELECT sum(ps_value) FROM t_plug_sensing WHERE ps_datetime between sysdate - 60 and sysdate - 30 and plug_seq = plug_seq in (select plug_seq from t_plug where emp_id = ?)";
+
+								psmt = conn.prepareStatement(sql);
+								psmt.setString(1, id);
+								rs = psmt.executeQuery();
+
+								if (rs.next()) {
+									ps_value = rs.getDouble(1);
+								}
+
+							} catch (Exception e) {
+								e.printStackTrace();
+							} finally {
+								close();
+							}
+							return (ps_value*220)/1000;
+						}
+		
+			
 
 }

@@ -1,3 +1,6 @@
+<%@page import="com.VO.AreaVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.AreaDAO"%>
 <%@page import="com.DAO.PlugSenDAO"%>
 <%@page import="com.VO.EmployeeVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -39,10 +42,13 @@
 
    %>
    	<%
+   	AreaDAO adao = new AreaDAO();
 	PlugSenDAO psdao = new PlugSenDAO();
-	double m1 = psdao.monthlyPower1();
-	double m2 = psdao.monthlyPower2();
-	double m3 = psdao.monthlyPower3();
+	double m1 = 0;
+	double m2 = 0;
+	double m3 = 0;
+	ArrayList<AreaVO> al = adao.getList();
+	ArrayList<Double> al2 = new ArrayList<Double>();
 	String ah = "";
 	if(m1>m3){
 		ah = "증가";
@@ -82,10 +88,10 @@
 						<canvas id="monthly-power-usage-chart"> </canvas>
 					</div>
 					<br>
-					<h2 style="text-align:center">지난 달에 비해 전력사용량이 <%=(int)((m1/m2)*100)-100%>% <%=ah %>했습니다.</h2>
+					<h2 style="text-align:center">이번달 구역별 전력사용량 현황</h2>
 				</section>
 				 <ul class="actions">
-					 	<li><a href="ck_elec_area.jsp" class="button primary">구역별 조회</a></li>
+					 	<li><a href="ck_elec.jsp" class="button primary">전체 조회</a></li>
 					 	<li><a href="ck_elec_emp.jsp" class="button primary">직원별 조회</a></li>
 			     </ul>
 
@@ -152,9 +158,16 @@
 		const myChart = new Chart(ctx, {
 			type: 'bar',
 			data: {
-				labels: ['2달전', '1달전', '이번달(현재까지 사용량)'],
+				labels: [<%
+				         for(int i=0; i<al.size(); i++){
+				        	 out.print("'"+al.get(i).getAreaName()+"',");
+				           al2.add(psdao.monthlyPowerA1(al.get(i).getAreaId()));
+					}%>],
 				datasets: [{					
-					data: [<%=m3%>, <%=m2%>, <%=m1%>],
+					data: [<%for(int i=0; i<al2.size(); i++){						
+					out.print(al2.get(i)+",");
+					}%>
+					],
 					backgroundColor: [
 						'rgb(236, 255, 214)',
 						'rgb(196, 233, 155)',
