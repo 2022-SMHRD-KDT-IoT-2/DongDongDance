@@ -55,7 +55,7 @@
   				<!-- Main -->
   					<div id="main">
   						<div class="inner">
-  										<div>
+  						<div style="position: absolute; right: 16px; top: 5px;">
   					<a class="logout" href="LogoutCon.do">LOGOUT</a>
   					<span style="float: right;"><%=evo.getEmpName()%>(<%=sq%>)[<%=ss%>] /_</span>
   				</div>
