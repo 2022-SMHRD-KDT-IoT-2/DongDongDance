@@ -63,10 +63,10 @@
    				<!-- Main -->
    					<div id="main">
    						<div class="inner">
-   										<div>
+   										
    					<a class="logout" href="LogoutCon.do">LOGOUT</a>
    					<span style="float: right;"><%=evo.getEmpName()%>(<%=sq%>)[<%=ss%>] /_</span>
-   				</div>
+   				
 
 
                 <!-- Header -->
