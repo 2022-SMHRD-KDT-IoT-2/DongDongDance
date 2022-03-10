@@ -14,6 +14,7 @@ import com.Command.Command;
 import com.POJO.AreaCheckCon;
 import com.POJO.DeleteAreaCon;
 import com.POJO.DeleteEmpCon;
+import com.POJO.DeleteLogCon;
 import com.POJO.DeletePlugCon;
 import com.POJO.DeletePlugSenCon;
 import com.POJO.IdCheckCon;
@@ -92,6 +93,8 @@ public class FrontController extends HttpServlet {
 			command = new UpdateLogCon();
 		}else if(result.equals("UpdateAreaCon.do")) {
 			command = new UpdateAreaCon();
+		}else if(result.equals("DeleteLogCon.do")) {
+			command = new DeleteLogCon();
 		}
 		
 		String url = command.execute(request, response);

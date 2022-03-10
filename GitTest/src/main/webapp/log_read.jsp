@@ -69,6 +69,7 @@
                                              out.print("<td>"+al.get(i).getLogType()+"</td>");
                                              out.print("<td>"+al.get(i).getLogTime()+"</td>");
                                              out.print("<td>"+al.get(i).getLogMemo()+"</td>");
+                                             out.print("<td><a href = 'DeleteLogCon.do?seq="+al.get(i).getLogSeq()+"'>delete</a></td>");                                             
                                              out.print("</tr>");
                                           }
 
