@@ -44,7 +44,7 @@ if(vo != null){
 			<div id="wrapper">
 				<div style="position: absolute; right: 16px; top: 5px;">
 					<a class="logout" href="LogoutCon.do">LOGOUT</a>
-					<span style="float: right;"><%=vo.getEmpName()%>(<%=sq%>)[<%=ss%>] /_</span>
+					<span style="float: right;"><%=vo.getEmpName()%>(<%=sq%>)[<%=ss%>] /&nbsp;</span>
 				</div>
 				<!-- Main -->
 					<div id="main">

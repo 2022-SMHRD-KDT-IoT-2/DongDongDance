@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Mng_emp</title>
+   <title>사원관리</title>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
    <link rel="stylesheet" href="assets/css/main.css" />
@@ -72,7 +72,7 @@ ArrayList<EmployeeVO> al = eDao.selectAll();
    						<div class="inner">
    						<div style="position: absolute; right: 16px; top: 5px;">
    					<a class="logout" href="LogoutCon.do">LOGOUT</a>
-   					<span style="float: right;"><%=evo.getEmpName()%>(<%=sq%>)[<%=ss%>] /_</span>
+   					<span style="float: right;"><%=evo.getEmpName()%>(<%=sq%>)[<%=ss%>] /&nbsp;</span>
    				</div>
 
 
