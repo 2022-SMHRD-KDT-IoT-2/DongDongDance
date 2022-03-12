@@ -44,7 +44,7 @@
 	double m2 = psdao.monthlyPower2();
 	double m3 = psdao.monthlyPower3();
 	String ah = "";
-	if(m1>m3){
+	if(m1>m2){
 		ah = "증가";
 	}else{
 		ah = "감소";
