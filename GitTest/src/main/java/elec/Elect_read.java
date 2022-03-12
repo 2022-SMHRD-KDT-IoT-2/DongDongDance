@@ -16,9 +16,12 @@ public class Elect_read extends HttpServlet {
 	
 	public double doub(String str) {
 		double value1f = Double.parseDouble(str);
-		if(value1f == 0.09 || value1f == -0.09) {
-			value1f = 0;
-		}
+//		if(value1f < 0.93) {
+//			value1f = 0;
+//		}
+//		else {
+//			value1f -=0.93;
+//		}
 		return value1f;
 	}
 
