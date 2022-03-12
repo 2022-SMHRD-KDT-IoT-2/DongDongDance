@@ -26,7 +26,7 @@ public class Rfid_read extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		String uid = request.getParameter("uid"); // 아두이노에서 uid값을 받아온다.
+		String uid = request.getParameter("uid"); // 아두이노에서 uid값을 받아온다.
 //		PrintWriter out = response.getWriter();
 //		System.out.println(uid); // 출력확인
 //		out.println(uid); // 출력확인
@@ -35,7 +35,7 @@ public class Rfid_read extends HttpServlet {
 		
 		
 		
-		String uid = "1234";
+//		String uid = "1234";
 		RfidDAO R_dao = new RfidDAO();
 		EmployeeDAO E_dao = new EmployeeDAO();
 
