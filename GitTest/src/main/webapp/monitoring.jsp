@@ -251,26 +251,36 @@
 		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
 
 	<script>
-		let renewTime = 3000;
-		let chartId = 'myChart';
-		// 칸 구별
-		let chartLabels = ['1', '2', '3', '4', '5'];
-		let chartDatas = ['0.5', '1', '1.5', '2', '2.5'];
-		let chart = chartInit(
-			chartId,
-			chartLabels,
-			chartDatas
-		);
+	const ctx = 'myChart';
+    let renewTime = 3000;
+    var config = {
+              type: 'line',
+              data: {
+                  labels: ['1', '2', '3', '4', '5'],
+                  datasets: [
+                      {
+                          data: ['0.5', '1', '1.5', '2', '2.5'],
+                      }
+                  ]
+              }
+    };
+    const myChart = new Chart(ctx, config);
+    
+    setInterval(() => {         
+       fetch('/GitTest/Api').then(response => {
+          return response.json();
+       }).then(json => {
+          addData(myChart, json.min, json.value);         
+       });
 
-		setInterval(() => {			
-			// 여기에 값 넣으면 된다!! 6은 db에 시간 테이블
-			fetch('/GitTest/Api').then(response => {
-				return response.json();
-			}).then(json => {
-				addData(chart, json.min, json.value);			
-			});
-
-		}, renewTime);
+       var df = config.data.datasets[0].data;
+       var dg = config.data.labels;
+       console.log(dg);
+       df.shift();      //데이터의 가장 왼쪽 값을 제거
+       dg.shift();      //데이터의 가장 왼쪽 값을 제거
+       console.log(df);
+       console.log(dg);
+    }, renewTime);
 	</script>
 
 	<!-- 알림창 -->
