@@ -464,4 +464,26 @@ public class PlugDAO {
 
 	}
 
+	public int selectone(String id) {
+
+		try {
+			connect();
+
+			String sql = "select plug_seq from t_plug where emp_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				int getplug = rs.getInt(1);
+				return getplug;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return 0;
+	}
 }

@@ -126,8 +126,7 @@ public class PlugSenDAO {
 		double ps_value = 0;
 		try {
 			connect();
-
-			String sql = "SELECT ps_value FROM (SELECT *FROM t_plug_sensing WHERE PS_SEQ = ?  ORDER BY ps_seq desc) WHERE ROWNUM= 1";
+			String sql = "SELECT ps_value FROM (SELECT *FROM t_plug_sensing WHERE PLUG_SEQ = ?  ORDER BY ps_seq desc) WHERE ROWNUM= 1";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, seq);

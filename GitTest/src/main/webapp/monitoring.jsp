@@ -1,110 +1,117 @@
+<%@page import="com.DAO.PlugDAO"%>
 <%@page import="com.VO.EmployeeVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.AreaDAO"%>
 <%@page import="com.DAO.RfidDAO"%>
 <%@page import="com.DAO.EmployeeDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Monitoring</title>
-	<meta charset="euc-kr" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<style>
-		.swal-button {
-			padding-top: 0;
-			color: white !important;
-			background-color: rgb(197, 197, 197);
-		}
+<title>Monitoring</title>
+<meta charset="euc-kr" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<style>
+.swal-button {
+	padding-top: 0;
+	color: white !important;
+	background-color: rgb(197, 197, 197);
+}
 
-		.swal-button:not([disabled]):hover {
+.swal-button:not([disabled]):hover {
+	background-color: rgb(143, 188, 149);
+}
 
-			background-color: rgb(143, 188, 149);
-		}
+.actions li {
+	width: 110px;
+}
 
-		.actions li {
-			width: 110px;
-		}
+.actions p {
+	margin: 0;
+	padding: 0;
+}
 
-		.actions p {
-			margin: 0;
-			padding: 0;
-		}
+.actions label {
+	margin: 0;
+	padding: 0;
+}
 
-		.actions label {
-			margin: 0;
-			padding: 0;
-		}
+.justified {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 37px;
+}
 
-		.justified {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			margin-top: 37px ;
-		}
-		.location{
-			text-align: center;
-		}
-		.logout {
+.location {
+	text-align: center;
+}
+
+.logout {
 	text-decoration: none;
 	float: right;
 	border-block: 0;
 }
-	</style>
+</style>
 </head>
 
 <body class="is-preload">
-<%
-   
-   EmployeeDAO eDao = new EmployeeDAO();
-   RfidDAO rDao = new RfidDAO();
-   AreaDAO aDao = new AreaDAO();
-   
-   ArrayList<EmployeeVO> al = eDao.selectAll();
-   %>
-<%
-   EmployeeVO evo = (EmployeeVO)session.getAttribute("loginvo");
-   String ss = "";
-   String sq = "";
+	<%
+	String seq = request.getParameter("seq");
+	EmployeeDAO eDao = new EmployeeDAO();
+	RfidDAO rDao = new RfidDAO();
+	AreaDAO aDao = new AreaDAO();
 
-   if(evo != null){
-   	if(evo.getEmpStatus().equals("1")){
-   		ss = "근무중";
-   	}else{
-   		ss = "퇴근";
-   	}
-   	
-   	if(evo.getAdminYn().equals("Y")){
-   		sq = "관리자";
-   	}else{
-   		sq = "직원";
-   	}
-   }
+	ArrayList<EmployeeVO> al = eDao.selectAll();
+	%>
+	<%
+	EmployeeVO evo = (EmployeeVO) session.getAttribute("loginvo");
+	String ss = "";
+	String sq = "";
 
-   %>
-   		<!-- Wrapper -->
-   			<div id="wrapper">
+	if (evo != null) {
+		if (evo.getEmpStatus().equals("1")) {
+			ss = "근무중";
+		} else {
+			ss = "퇴근";
+		}
 
-   				<!-- Main -->
-   					<div id="main">
-   						<div class="inner">
-   						<div style="position: absolute; right: 16px; top: 5px;">
-   					<a class="logout" href="LogoutCon.do">LOGOUT</a>
-   					<span style="float: right;"><%=evo.getEmpName()%>(<%=sq%>)[<%=ss%>] /&nbsp;</span>
-   				</div>
+		if (evo.getAdminYn().equals("Y")) {
+			sq = "관리자";
+		} else {
+			sq = "직원";
+		}
+	}
+	%>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<div style="position: absolute; right: 16px; top: 5px;">
+					<a class="logout" href="LogoutCon.do">LOGOUT</a> <span
+						style="float: right;"><%=evo.getEmpName()%>(<%=sq%>)[<%=ss%>]
+						/&nbsp;</span>
+				</div>
 
 				<!-- Header -->
 				<header id="header">
 					<strong>모니터링</strong>
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
-						</li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+						<li><a href="#" class="icon brands fa-twitter"><span
+								class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span
+								class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span
+								class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span
+								class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-medium-m"><span
+								class="label">Medium</span></a></li>
 					</ul>
 				</header>
 
@@ -112,29 +119,26 @@
 				<section>
 					<header class="main">
 						<div class="location">
-						<li>장소: 한수진 방</li>
+							<li>장소: 한수진 방</li>
 						</div>
 					</header>
 					<!-- 본문 시작! -->
 					<canvas id="myChart" width="1000px" height="350px"></canvas>
 
 					<!-- 스위치 -->
-					<ul class="actions" style="display: flex;  justify-content: space-evenly;
-						 text-align: center; ">
+					<ul class="actions"
+						style="display: flex; justify-content: space-evenly; text-align: center;">
 
 						<li class="justified">
-							<p>연락</p>
-							<label class="messageButton">
-								<img src="assets/image/greenMessage.png" alt="" width="60px" />
-							</label>
+							<p>연락</p> <label class="messageButton"> <img
+								src="assets/image/greenMessage.png" alt="" width="60px" />
+						</label>
 						</li>
 
 						<li class="justified">
-							<p>제어</p>
-							<label class="switch-button">
-								<input type="checkbox" />
-								<span class="onoff-switch"></span>
-							</label>
+							<p>제어</p> <label class="switch-button"> <input
+								type="checkbox" /> <span class="onoff-switch"></span>
+						</label>
 						</li>
 					</ul>
 
@@ -144,11 +148,7 @@
 					<!-- 서브@@@@@@@@@@@ -->
 					<input type="checkbox" id="menuicon">
 					<ul>
-						<li>
-							<label for="menuicon">
-
-							</label>
-						</li>
+						<li><label for="menuicon"> </label></li>
 
 					</ul>
 					<!-- 서브라이트박스 끝 -->
@@ -160,19 +160,22 @@
 						<div class="searchbox">
 							<div class="Sheader">
 								<h1 id="searchboxname">사원 검색</h1>
-								<input onkeyup="filter()" type="text" id="Svalue" placeholder="Type to Search">
+								<input onkeyup="filter()" type="text" id="Svalue"
+									placeholder="Type to Search">
 							</div>
 
 							<div class="Scontainer">
-							
-							<%  for(int i=0; i<al.size(); i++){
-                                             out.print("<div class='Sitem'>");
-                                             out.print("<span class='Sicon'>"+al.get(i).getEmpName()+"</span>");
-                                             out.print("<span class='Sname'><a href = '#'>"+al.get(i).getEmpName()+"</a></span>");
-                                             out.print("</div>");
-                                  }
 
-                            %>
+								<%
+								PlugDAO pDao = new PlugDAO();
+								for (int i = 0; i < al.size(); i++) {
+									out.print("<div class='Sitem'>");
+									out.print("<span class='Sicon'>" + al.get(i).getEmpName() + "</span>");
+									out.print("<span class='Sname'><a href = 'http://localhost:8081/GitTest/monitoring.jsp?seq="
+									+ pDao.selectone(al.get(i).getEmpId()) + "'>" + al.get(i).getEmpName() + "</a></span>");
+									out.print("</div>");
+								}
+								%>
 
 							</div>
 						</div>
@@ -211,13 +214,13 @@
 						<h2>Menu</h2>
 					</header>
 					<ul>
-                        <li><a href="main.jsp">Home</a></li>
-                        <li><a href="state.jsp">근태확인</a></li>
-                        <li><a href="monitoring.jsp">모니터링</a></li>
-                        <li><a href="cnt_light.jsp">조명관리</a></li>
-                        <li><a href="mng_emp.jsp">사원관리</a></li>
-                        <li><a href="management.jsp">기능관리</a></li>
-                        <li><a href="ck_elec.jsp">전기사용량</a></li>
+						<li><a href="main.jsp">Home</a></li>
+						<li><a href="state.jsp">근태확인</a></li>
+						<li><a href="monitoring.jsp">모니터링</a></li>
+						<li><a href="cnt_light.jsp">조명관리</a></li>
+						<li><a href="mng_emp.jsp">사원관리</a></li>
+						<li><a href="management.jsp">기능관리</a></li>
+						<li><a href="ck_elec.jsp">전기사용량</a></li>
 					</ul>
 				</nav>
 
@@ -229,9 +232,11 @@
 
 				<!-- Footer -->
 				<footer id="footer">
-					<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
-							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
-							UP</a>.</p>
+					<p class="copyright">
+						&copy; Untitled. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a
+							href="https://html5up.net">HTML5 UP</a>.
+					</p>
 				</footer>
 
 			</div>
@@ -247,8 +252,10 @@
 	<script src="assets/js/main.js"></script>
 
 	<script src="assets/js/chart.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
-		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
+		integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc="
+		crossorigin="anonymous"></script>
 
 	<script>
 	const ctx = 'myChart';
@@ -269,9 +276,9 @@
               }
     };
     const myChart = new Chart(ctx, config);
-    
+    var p_seq ="<%=seq%>"; 
     setInterval(() => {         
-       fetch('/GitTest/Api').then(response => {
+       fetch('/GitTest/Api?seq='+p_seq).then(response => {
           return response.json();
        }).then(json => {
           addData(myChart, json.min, json.value);         
@@ -300,7 +307,7 @@
 
 		}
 	</script>
-<script type="text/javascript">
+	<script type="text/javascript">
    function filter(){
 
      var Svalue, Sname, Sitem, i;
