@@ -4,8 +4,15 @@
 <%@page import="com.DAO.AreaDAO"%>
 <%@page import="com.DAO.RfidDAO"%>
 <%@page import="com.DAO.EmployeeDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+ 
+<%@page import="java.util.*"%>
+<%
+ 
+    request.setCharacterEncoding("UTF-8");
+ 
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,6 +68,8 @@
 <body class="is-preload">
 	<%
 	String seq = request.getParameter("seq");
+	String name = request.getParameter("name");
+	System.out.println("ë°›ì€ name ê°’ : " + name);
 	if(seq == null){
 		seq = "-1";
 	}
@@ -77,15 +86,15 @@
 
 	if (evo != null) {
 		if (evo.getEmpStatus().equals("1")) {
-			ss = "±Ù¹«Áß";
+			ss = "ê·¼ë¬´ì¤‘";
 		} else {
-			ss = "Åğ±Ù";
+			ss = "í‡´ê·¼";
 		}
 
 		if (evo.getAdminYn().equals("Y")) {
-			sq = "°ü¸®ÀÚ";
+			sq = "ê´€ë¦¬ì";
 		} else {
-			sq = "Á÷¿ø";
+			sq = "ì§ì›";
 		}
 	}
 	%>
@@ -103,7 +112,7 @@
 
 				<!-- Header -->
 				<header id="header">
-					<strong>¸ğ´ÏÅÍ¸µ</strong>
+					<strong>ëª¨ë‹ˆí„°ë§</strong>
 					<ul class="icons">
 						<li><a href="#" class="icon brands fa-twitter"><span
 								class="label">Twitter</span></a></li>
@@ -122,47 +131,52 @@
 				<section>
 					<header class="main">
 						<div class="location">
-							<li>Àå¼Ò: ÇÑ¼öÁø ¹æ</li>
+						<%if(name!=null) {%>
+						<li><%=name%> ì‚¬ì›ì˜ ì „ë ¥ì‚¬ìš©ëŸ‰</li>
+						<%}else{ %>
+						<li>ì „ì²´ ì „ë ¥ì‚¬ìš©ëŸ‰</li>
+						<%}%>
+							
 						</div>
 					</header>
-					<!-- º»¹® ½ÃÀÛ! -->
+					<!-- ë³¸ë¬¸ ì‹œì‘! -->
 					<canvas id="myChart" width="1000px" height="350px"></canvas>
 
-					<!-- ½ºÀ§Ä¡ -->
+					<!-- ìŠ¤ìœ„ì¹˜ -->
 					<ul class="actions"
 						style="display: flex; justify-content: space-evenly; text-align: center;">
 
 						<li class="justified">
-							<p>¿¬¶ô</p> <label class="messageButton"> <img
+							<p>ì—°ë½</p> <label class="messageButton"> <img
 								src="assets/image/greenMessage.png" alt="" width="60px" />
 						</label>
 						</li>
 
 						<li class="justified">
-							<p>Á¦¾î</p> <label class="switch-button"> <input
+							<p>ì œì–´</p> <label class="switch-button"> <input
 								type="checkbox" /> <span class="onoff-switch"></span>
 						</label>
 						</li>
 					</ul>
 
 
-					<!-- ½ºÀ§Ä¡ ³¡ -->
+					<!-- ìŠ¤ìœ„ì¹˜ ë -->
 
-					<!-- ¼­ºê@@@@@@@@@@@ -->
+					<!-- ì„œë¸Œ@@@@@@@@@@@ -->
 					<input type="checkbox" id="menuicon">
 					<ul>
 						<li><label for="menuicon"> </label></li>
 
 					</ul>
-					<!-- ¼­ºê¶óÀÌÆ®¹Ú½º ³¡ -->
+					<!-- ì„œë¸Œë¼ì´íŠ¸ë°•ìŠ¤ ë -->
 
-					<!--ÁøÂ¥ ¼­Ä¡¹Ú½º  -->
+					<!--ì§„ì§œ ì„œì¹˜ë°•ìŠ¤  -->
 					<div class="sidebarRight">
-						<!-- ¼­Ä¡¹Ú½º -->
+						<!-- ì„œì¹˜ë°•ìŠ¤ -->
 
 						<div class="searchbox">
 							<div class="Sheader">
-								<h1 id="searchboxname">»ç¿ø °Ë»ö</h1>
+								<h1 id="searchboxname">ì‚¬ì› ê²€ìƒ‰</h1>
 								<input onkeyup="filter()" type="text" id="Svalue"
 									placeholder="Type to Search">
 							</div>
@@ -175,7 +189,7 @@
 									out.print("<div class='Sitem'>");
 									out.print("<span class='Sicon'>" + al.get(i).getEmpName() + "</span>");
 									out.print("<span class='Sname'><a href = 'http://localhost:8081/GitTest/monitoring.jsp?seq="
-									+ pDao.selectone(al.get(i).getEmpId()) + "'>" + al.get(i).getEmpName() + "</a></span>");
+									+ pDao.selectone(al.get(i).getEmpId()) + "&name="+al.get(i).getEmpName()+"'>" + al.get(i).getEmpName() + "</a></span>");
 									out.print("</div>");
 								}
 								%>
@@ -187,13 +201,13 @@
 
 
 					</div>
-					<!-- ÁøÀÚ¼­Ä¡¹Ú½º ³¡ -->
+					<!-- ì§„ìì„œì¹˜ë°•ìŠ¤ ë -->
 
 
 
 
 
-					<!-- º»¹® ³¡! -->
+					<!-- ë³¸ë¬¸ ë! -->
 
 				</section>
 
@@ -218,12 +232,12 @@
 					</header>
 					<ul>
 						<li><a href="main.jsp">Home</a></li>
-						<li><a href="state.jsp">±ÙÅÂÈ®ÀÎ</a></li>
-						<li><a href="monitoring.jsp">¸ğ´ÏÅÍ¸µ</a></li>
-						<li><a href="cnt_light.jsp">Á¶¸í°ü¸®</a></li>
-						<li><a href="mng_emp.jsp">»ç¿ø°ü¸®</a></li>
-						<li><a href="management.jsp">±â´É°ü¸®</a></li>
-						<li><a href="ck_elec.jsp">Àü±â»ç¿ë·®</a></li>
+						<li><a href="state.jsp">ê·¼íƒœí™•ì¸</a></li>
+						<li><a href="monitoring.jsp">ëª¨ë‹ˆí„°ë§</a></li>
+						<li><a href="cnt_light.jsp">ì¡°ëª…ê´€ë¦¬</a></li>
+						<li><a href="mng_emp.jsp">ì‚¬ì›ê´€ë¦¬</a></li>
+						<li><a href="management.jsp">ê¸°ëŠ¥ê´€ë¦¬</a></li>
+						<li><a href="ck_elec.jsp">ì „ê¸°ì‚¬ìš©ëŸ‰</a></li>
 					</ul>
 				</nav>
 
@@ -270,16 +284,25 @@
                   labels: [null, null, null, null, null, null],
                   datasets: [
                       {
-                    	  label: '»ç¿ë·®',
+                    	  label: 'ì‚¬ìš©ëŸ‰ (Watt)',
                           data: ['0', '50', '100', '150', '200'],
                           backgroundColor: '#80ff00',
                           borderColor: '#80ff00'
                       }
                   ]
+              },
+              options: {
+                  scales: {
+                      y: {
+                          title: {
+                        	 
+                          }
+                      }
+                  }
               }
     };
     const myChart = new Chart(ctx, config);
-    var p_seq ="<%=seq%>"; 
+    var p_seq =<%=seq%>; 
     setInterval(() => {         
        fetch('/GitTest/Api?seq='+p_seq).then(response => {
           return response.json();
@@ -290,21 +313,21 @@
        var df = config.data.datasets[0].data;
        var dg = config.data.labels;
        console.log(dg);
-       df.shift();      //µ¥ÀÌÅÍÀÇ °¡Àå ¿ŞÂÊ °ªÀ» Á¦°Å
-       dg.shift();      //µ¥ÀÌÅÍÀÇ °¡Àå ¿ŞÂÊ °ªÀ» Á¦°Å
+       df.shift();      //ë°ì´í„°ì˜ ê°€ì¥ ì™¼ìª½ ê°’ì„ ì œê±°
+       dg.shift();      //ë°ì´í„°ì˜ ê°€ì¥ ì™¼ìª½ ê°’ì„ ì œê±°
        console.log(df);
        console.log(dg);
     }, renewTime);
 	</script>
 
-	<!-- ¾Ë¸²Ã¢ -->
+	<!-- ì•Œë¦¼ì°½ -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script>
 		document.getElementsByClassName('messageButton')[0].onclick = () => {
 
 			swal({
-				title: "Àü·Â ÀÌ»ó°¨Áö ¾Ë¸²",
-				text: "<<ÇÑ¼öÁø ´Ô¿¡°Ô ¾Ë¸²À» º¸³Â½À´Ï´Ù."
+				title: "ì „ë ¥ ì´ìƒê°ì§€ ì•Œë¦¼",
+				text: "<<í•œìˆ˜ì§„ ë‹˜ì—ê²Œ ì•Œë¦¼ì„ ë³´ëƒˆìŠµë‹ˆë‹¤."
 				//    alert()
 			})
 

@@ -34,7 +34,8 @@ public class Api extends HttpServlet {
 		String c = a.substring(2,4);
 		String d = a.substring(4,6);
 		String e = b+ ":" + c + ":"+d;
-		if(seq.equals("-1")) {
+		
+		if(seq.equals("-1") ) {
 			Gson gson = new Gson();
 			JsonObject jsonObject = new JsonObject();
 			PlugSenDAO dao = new PlugSenDAO();
