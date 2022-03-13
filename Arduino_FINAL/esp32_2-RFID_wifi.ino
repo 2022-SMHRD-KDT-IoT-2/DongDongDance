@@ -3,7 +3,10 @@
 #include <ArduinoJson.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
+#include <Tone32.h>
 
+#define BUZZER_PIN 16
+#define BUZZER_CHANNEL 0
 #define RST_PIN   22                            // reset핀은 22번으로 설정
 #define SS_PIN    21                           // SS핀은 21번으로 설정
 // SS핀은 데이터를 주고받는 역할의 핀( SS = Slave Selector )
@@ -32,7 +35,8 @@ void loop() {
     delay(500);                                // 0.5초 딜레이
     return;                                    // return
   }
-
+  tone(BUZZER_PIN, NOTE_B4, 300, BUZZER_CHANNEL);
+  noTone(BUZZER_PIN, BUZZER_CHANNEL);
   Serial.print("Card UID:");                  // 태그의 ID출력
   String uid = "";
   for (byte i = 0; i < 4; i++) {    // 태그의 ID출력하는 반복문.태그의 ID사이즈(4)까지
