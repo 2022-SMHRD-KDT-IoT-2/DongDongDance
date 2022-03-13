@@ -14,7 +14,10 @@
 
 <body>
 <section class="login-form">
-        <h1>LOGO DESIGN</h1>
+		<div style="text-align: center;">
+		<img src="assets/image/logo3.png" width="180px">
+		</div>
+        <h1></h1>
         <form action="LoginCon.do" method="post">
             <div class="int-area">
                 <input type="text" name="id" id="id" autocomplete="off" required>
