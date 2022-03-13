@@ -168,7 +168,7 @@
 							<%  for(int i=0; i<al.size(); i++){
                                              out.print("<div class='Sitem'>");
                                              out.print("<span class='Sicon'>"+al.get(i).getEmpName()+"</span>");
-                                             out.print("<span class='Sname'>"+al.get(i).getEmpName()+"</span>");
+                                             out.print("<span class='Sname'><a href = '#'>"+al.get(i).getEmpName()+"</a></span>");
                                              out.print("</div>");
                                   }
 
