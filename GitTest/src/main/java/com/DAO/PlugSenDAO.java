@@ -102,16 +102,17 @@ public class PlugSenDAO {
 
 	public double selectall() { // 일단 전체값 중 최근 갱신된 1행의 ps_value 반환
 		double ps_value = 0;
+		double sum = 0;
 		try {
 			connect();
 
-			String sql = "SELECT ps_value FROM (SELECT * FROM t_plug_sensing ORDER BY ps_seq desc) WHERE ROWNUM= 1";
+			String sql = "SELECT ps_value FROM (SELECT * FROM t_plug_sensing ORDER BY ps_seq desc) WHERE ROWNUM <= 4";
 
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-
-			if (rs.next()) {
+			while (rs.next()) {
 				ps_value = rs.getDouble(1);
+				sum+=ps_value;
 			}
 
 		} catch (Exception e) {
@@ -119,7 +120,8 @@ public class PlugSenDAO {
 		} finally {
 			close();
 		}
-		return ps_value*220;
+		System.out.println("selestall 메소드 값 : "+sum);
+		return sum*220;
 	}
 
 	public double selectone(int seq) { // 플러그 번호대상으로 반환

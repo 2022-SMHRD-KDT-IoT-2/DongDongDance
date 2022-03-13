@@ -61,6 +61,9 @@
 <body class="is-preload">
 	<%
 	String seq = request.getParameter("seq");
+	if(seq == null){
+		seq = "-1";
+	}
 	EmployeeDAO eDao = new EmployeeDAO();
 	RfidDAO rDao = new RfidDAO();
 	AreaDAO aDao = new AreaDAO();
