@@ -256,10 +256,14 @@
     var config = {
               type: 'line',
               data: {
-                  labels: ['1', '2', '3', '4', '5'],
+            	 
+                  labels: [null, null, null, null, null, null],
                   datasets: [
                       {
-                          data: ['0.5', '1', '1.5', '2', '2.5'],
+                    	  label: '»ç¿ë·®',
+                          data: ['0', '50', '100', '150', '200'],
+                          backgroundColor: '#80ff00',
+                          borderColor: '#80ff00'
                       }
                   ]
               }
