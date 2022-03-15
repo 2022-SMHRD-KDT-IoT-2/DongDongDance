@@ -20,9 +20,9 @@ Challenge Point :
  ![image](https://user-images.githubusercontent.com/97868648/158286745-c4e94f5a-8e15-4cef-ba9b-58b91ecdec52.png)
 
 - 사용언어 : Java 1.8 / HTML / CSS / Javascript
-- 개발도구 : eclipse / VSCode / RaspberryPI
-- 서버환경 : tocatm 8.5 / Flask
-- 데이터베이스 : oracle 11g
+- 개발도구 : eclipse / VSCode 
+- 서버환경 : tocatm 9.0 
+- 데이터베이스 : oracle database
 - 디자인도구 : ppt
 - 영상편집도구 : vllo
 
