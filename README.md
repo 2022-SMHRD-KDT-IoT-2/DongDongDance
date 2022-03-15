@@ -37,6 +37,8 @@ Challenge Point :
 ![image](https://user-images.githubusercontent.com/97868648/158286911-69747795-d43f-4323-afb3-31a99ef9636f.png)
 
 ## 6. 사용 부품
+[부품주문서.xlsx](https://github.com/2022-SMHRD-KDT-IoT-2/DongDongDance/files/8249759/default.xlsx)
+
 ![image](https://user-images.githubusercontent.com/97868648/158294783-8e82d89c-431d-455c-88c7-881d27e1054b.png)
 
 
