@@ -37,14 +37,8 @@ Challenge Point :
 ![image](https://user-images.githubusercontent.com/97868648/158286911-69747795-d43f-4323-afb3-31a99ef9636f.png)
 
 ## 6. 사용 부품
-- ESP32 D1 R32
-![image](https://user-images.githubusercontent.com/97868176/158290418-bca78488-511f-41ef-9ff3-ef746dea3cb5.png)
-- Arduino UNO
-![image](https://user-images.githubusercontent.com/97868176/158290448-9eccb352-ce8a-4981-a35a-bbb3e8d80085.png)
-- ACS-712 30A
-![image](https://user-images.githubusercontent.com/97868176/158290460-93be21e9-97a1-4931-bade-3649707c8108.png)
-- 아두이노 4채널 5V 릴레이 모듈
-![image](https://user-images.githubusercontent.com/97868176/158290478-c03324d0-3148-4c5f-915c-7da4799982cf.png)
+![image](https://user-images.githubusercontent.com/97868648/158294783-8e82d89c-431d-455c-88c7-881d27e1054b.png)
+
 
 ## 7. 회로도
 
