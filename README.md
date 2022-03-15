@@ -31,9 +31,12 @@ Challenge Point :
 ![image](https://user-images.githubusercontent.com/97868648/158286763-a9d71ef5-b85b-4a6e-ae0e-8ff7a50f1a31.png)
 
 5. 기능 흐름도
-디스펜서(사용자 감지 및 자동 분사) 슬라이드19
-스마트미러(사용자 얼굴 인식 및 정보 안내) 슬라이드17
-모바일 어플리케이션(화장품 정보 등록/수정/삭제) 슬라이드18
+![image](https://user-images.githubusercontent.com/97868648/158286890-edec369b-69fe-4ddc-869c-f7c57207a36b.png)
+![image](https://user-images.githubusercontent.com/97868648/158286901-e49ecea3-2f64-46a6-96fb-79b9834c6f57.png)
+![image](https://user-images.githubusercontent.com/97868648/158286911-69747795-d43f-4323-afb3-31a99ef9636f.png)
+
+
+
 6. 사용 부품
 주문리스트.xlsx 3차발표PPT_누르미
 7. 회로도
