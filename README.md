@@ -55,4 +55,4 @@ Challenge Point :
 
 ## 10. 팀원 소개 및 역할
 
-![image](https://user-images.githubusercontent.com/97868648/158286824-d4c97978-bde8-442b-a602-0bd461bfe9a1.png)
+![image](https://user-images.githubusercontent.com/97868176/158299117-ae6593c0-11e6-4276-bdfd-0a365a50bb9e.png)
