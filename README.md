@@ -50,7 +50,9 @@ Challenge Point :
 
 ![image](https://user-images.githubusercontent.com/97868648/158287302-6e1f3a67-4b00-4c26-a19d-3fc512fd970d.png)
 
+## 9. 개발 일정
+![image](https://user-images.githubusercontent.com/97868176/158297858-29a494ef-30d5-49e4-b80b-ee24e67ac0ba.png)
 
-## 9. 팀원 소개 및 역할
+## 10. 팀원 소개 및 역할
 
 ![image](https://user-images.githubusercontent.com/97868648/158286824-d4c97978-bde8-442b-a602-0bd461bfe9a1.png)
