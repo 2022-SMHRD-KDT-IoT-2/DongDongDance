@@ -9,7 +9,7 @@ Challenge Point :
 ![image](https://user-images.githubusercontent.com/97868648/158286679-6baeed74-0ed8-4cf4-bc63-1d746beeacc9.png)
 
 2. 주요기능
-3. 
+ 
 - 근태관리솔루션과 연동한 자동제어시스템
 - 원격제어 기능
 - 조밀한 지역제어 가능
@@ -38,13 +38,14 @@ Challenge Point :
 
 
 6. 사용 부품
-주문리스트.xlsx 3차발표PPT_누르미
+
+
 7. 회로도
 ![image](https://user-images.githubusercontent.com/97868648/158286812-4341f221-8052-41a4-8dd9-10aba525192f.png)
 
 8. 활용 사진 예시
-완성 누르미 제품 슬라이드23
-어플리케이션 화면 슬라이드24 슬라이드25
+![image](https://user-images.githubusercontent.com/97868648/158287302-6e1f3a67-4b00-4c26-a19d-3fc512fd970d.png)
+
 
 9.팀원 소개 및 역할
 ![image](https://user-images.githubusercontent.com/97868648/158286824-d4c97978-bde8-442b-a602-0bd461bfe9a1.png)
