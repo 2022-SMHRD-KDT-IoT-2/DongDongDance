@@ -28,7 +28,7 @@ Challenge Point :
 
 ## 4. 대표 이미지
 
-![image](https://user-images.githubusercontent.com/97868648/158286763-a9d71ef5-b85b-4a6e-ae0e-8ff7a50f1a31.png)
+![image](https://user-images.githubusercontent.com/97868176/158299057-15e68de4-9c41-4489-9573-687425e57272.png)
 
 ## 5. 기능 흐름도
 
