@@ -3,6 +3,7 @@
 근태관리 솔루션과 연동되는 
 사무실 BEMS
 [동동댄스.pptx](https://github.com/2022-SMHRD-KDT-IoT-2/DongDongDance/files/8254966/default.pptx)
+[동동댄스시연영상.zip](https://github.com/2022-SMHRD-KDT-IoT-2/DongDongDance/files/8254993/default.zip)
 
 ## 2. Challenge Point : 
 ![image](https://user-images.githubusercontent.com/97868648/158286679-6baeed74-0ed8-4cf4-bc63-1d746beeacc9.png)
