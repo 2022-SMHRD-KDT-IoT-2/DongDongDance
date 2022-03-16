@@ -23,7 +23,7 @@
 
 - 사용언어 : Java 1.8 / HTML / CSS / Javascript
 - 개발도구 : eclipse / VSCode 
-- 서버환경 : tocatm 9.0 
+- 서버환경 : tomcat 9.0 
 - 데이터베이스 : oracle database
 - 디자인도구 : ppt
 - 영상편집도구 : vllo
