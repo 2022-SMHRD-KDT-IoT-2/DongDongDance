@@ -16,7 +16,7 @@
 	text-decoration: none;
 	float: right;
 	border-block: 0;
-}
+} 
 		</style>
 </head>
 <body class="is-preload">
